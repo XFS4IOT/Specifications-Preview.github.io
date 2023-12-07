@@ -275,28 +275,6 @@ a.navigation_list_item_link:hover {
   z-index: 1;
 }
 
-#watermark-spacer {
-  position: relative;
-  padding-top: 50px;
-}
-
-#watermark {
-  position: fixed;
-  top: 80px;
-  left: 5px;
-  writing-mode: vertical-rl; 
-  transform: rotate(180deg);
-  transform-origin: center center;
-  opacity: 0.8;
-  text-align: center;
-  color: red;
-  font-size: 9pt;
-  font-weight: normal;
-  z-index: 2;
-  white-space: nowrap;
-  line-height: 1.2;
-}
-
 code {
   padding: 0.5em 0.5em;
   background-color: #eee;
