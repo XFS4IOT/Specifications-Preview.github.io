@@ -13,7 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: 'restqa-404-links'
-      uses: restqa/404-links@3.1.4
-      env:
-        GITHUB_TOKEN: ${{ secrets.NODE_TOKEN_GITHUB }}
+    - name: check-html-links-action step
+      id: check-links
+      uses: modernweb-dev/check-html-links-action@v1
+      with:
+        doc-folder: 'html'
+
