@@ -1,5 +1,5 @@
 theme: jekyll-theme-tactile
-title: XFS4IoT Specification Preview
+title: XFS4IoT Specification
 exclude: ["README.md", "Rakefile", "changelog.md", "License.md"]
 production_url : https://xfs4iot.github.io/Specifications-Preview.github.io
 BASE_PATH : https://xfs4iot.github.io/Specifications-Preview.github.io
