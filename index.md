@@ -4,7 +4,7 @@ Title: XFS4IoT Specifications
 
 XFS4IoT Specification latest preview:
 - [HTML](html/index.html)
-- <a href="./schema-output/schema_2024_04.json" download>Click to Download Schema JSON</a>
+- [Right-click to Download Schema file](schema-output/schema_2024_04.json)
 
 XFS4IoT Specification Release 2023-02 - Released:
 - [HTML](2023-02/index.html)
