@@ -4,11 +4,10 @@ Title: XFS4IoT Specifications
 
 XFS4IoT Specification latest preview:
 - [HTML](html/index.html)
-- [Schema]()
+- [Schema](schema-output/schema_2024_04.json)
 
 XFS4IoT Specification Release 2023-02 - Released:
 - [HTML](2023-02/index.html)
-- [Schema]()
 
 XFS4IoT Specification Release 2021-01 - Released:
 - [PDF](pdf/XFS4IoT-Release-2021-1-Release-Candidate.pdf)
