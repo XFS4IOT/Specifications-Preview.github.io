@@ -16,4 +16,3 @@ XFS4IoT Specification Release 2021-01 - Released:
 End-to-End Security v1.0 - Released:
 - [PDF](<pdf/XFS Generic E2E Release Candidate.pdf>)
 
-2023-02/Schema_2023-02.json
