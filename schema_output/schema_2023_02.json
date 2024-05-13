@@ -107,7 +107,7 @@
                                 "const": "Common.Status"
                             },
                             "version": {
-                                "const": "2.1"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -116,7 +116,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Common.StatusCompletion/2.1"
+                        "$ref": "/messages#/Common.StatusCompletion/3.0"
                     }
                 }
             }
@@ -133,7 +133,7 @@
                                 "const": "Common.Capabilities"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -142,7 +142,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Common.CapabilitiesCompletion/2.0"
+                        "$ref": "/messages#/Common.CapabilitiesCompletion/3.0"
                     }
                 }
             }
@@ -8843,7 +8843,7 @@
                                 "const": "Lights.SetLight"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8852,7 +8852,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Lights.SetLightCommand/2.0"
+                        "$ref": "/messages#/Lights.SetLightCommand/3.0"
                     }
                 }
             }
@@ -9500,13 +9500,13 @@
                 }
             },
             "Common.StatusCompletion": {
-                "2.1": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2023-02/Common.StatusCompletionData"
                 }
             },
             "Common.CapabilitiesCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2023-02/Common.Caps"
                 }
@@ -16836,7 +16836,7 @@
                 }
             },
             "Lights.SetLightCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2023-02/Lights.SetStatus"
                 }
@@ -18748,23 +18748,16 @@
                         "null"
                     ],
                     "default": null,
-                    "required": [
-                        "position"
-                    ],
+                    "patternProperties": {
+                        "^left$|^right$|^center$|^top$|^bottom$|^front$|^rear$|^default$|^[a-zA-Z]([a-zA-Z0-9]*)$": {
+                            "$ref": "#/2023-02/Lights.PositionStatus"
+                        }
+                    }
+                },
+                "Lights.PositionStatus": {
+                    "type": "object",
+                    "minProperties": 1,
                     "properties": {
-                        "position": {
-                            "type": "string",
-                            "enum": [
-                                "left",
-                                "right",
-                                "center",
-                                "top",
-                                "bottom",
-                                "front",
-                                "rear",
-                                "default"
-                            ]
-                        },
                         "flashRate": {
                             "type": [
                                 "string",
@@ -23156,9 +23149,17 @@
                         "null"
                     ],
                     "default": null,
+                    "minProperties": 1,
+                    "patternProperties": {
+                        "^left$|^right$|^center$|^top$|^bottom$|^front$|^rear$|^default$|^[a-zA-Z]([a-zA-Z0-9]*)$": {
+                            "$ref": "#/2023-02/Lights.PositionCaps"
+                        }
+                    }
+                },
+                "Lights.PositionCaps": {
+                    "type": "object",
                     "required": [
-                        "flashRate",
-                        "color"
+                        "flashRate"
                     ],
                     "properties": {
                         "flashRate": {
@@ -23182,12 +23183,17 @@
                                 },
                                 "continuous": {
                                     "type": "boolean",
-                                    "default": true
+                                    "default": false
                                 }
                             }
                         },
                         "color": {
-                            "type": "object",
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
                             "properties": {
                                 "red": {
                                     "type": "boolean",
@@ -23225,49 +23231,13 @@
                                 "null"
                             ],
                             "default": null,
+                            "minProperties": 1,
                             "properties": {
                                 "entry": {
                                     "type": "boolean",
                                     "default": false
                                 },
                                 "exit": {
-                                    "type": "boolean",
-                                    "default": false
-                                }
-                            }
-                        },
-                        "position": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "properties": {
-                                "left": {
-                                    "type": "boolean",
-                                    "default": false
-                                },
-                                "right": {
-                                    "type": "boolean",
-                                    "default": false
-                                },
-                                "center": {
-                                    "type": "boolean",
-                                    "default": false
-                                },
-                                "top": {
-                                    "type": "boolean",
-                                    "default": false
-                                },
-                                "bottom": {
-                                    "type": "boolean",
-                                    "default": false
-                                },
-                                "front": {
-                                    "type": "boolean",
-                                    "default": false
-                                },
-                                "rear": {
                                     "type": "boolean",
                                     "default": false
                                 }
