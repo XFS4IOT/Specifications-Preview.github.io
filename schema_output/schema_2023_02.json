@@ -3591,7 +3591,7 @@
                                 "const": "Check.MediaInsertedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -3600,7 +3600,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaInsertedEvent/2.0"
+                        "$ref": "/messages#/Check.MediaInsertedEvent/2.1"
                     }
                 }
             }
@@ -3825,7 +3825,7 @@
                                 "const": "Check.PresentMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -3834,7 +3834,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.PresentMediaCommand/2.0"
+                        "$ref": "/messages#/Check.PresentMediaCommand/2.1"
                     }
                 }
             }
@@ -11818,7 +11818,7 @@
                 "2.0": {}
             },
             "Check.MediaInsertedEvent": {
-                "2.0": {}
+                "2.1": {}
             },
             "Check.MediaRefusedEvent": {
                 "2.0": {
@@ -11921,7 +11921,7 @@
                 }
             },
             "Check.PresentMediaCommand": {
-                "2.0": {
+                "2.1": {
                     "type": "object",
                     "$ref": "/schemas#/2023-02/Check.PresentMediaRequest"
                 }
@@ -27193,7 +27193,7 @@
                     "enum": [
                         "input",
                         "refused",
-                        "rebuncher"
+                        "output"
                     ]
                 },
                 "Check.ReadImage": {
@@ -27226,11 +27226,19 @@
                             ],
                             "properties": {
                                 "position": {
-                                    "$ref": "#/2023-02/Check.Position"
+                                    "$ref": "#/2023-02/Check.PresentMediaPosition"
                                 }
                             }
                         }
                     }
+                },
+                "Check.PresentMediaPosition": {
+                    "type": "string",
+                    "enum": [
+                        "input",
+                        "refused",
+                        "rebuncher"
+                    ]
                 },
                 "Check.RetractMedia": {
                     "type": "object",
