@@ -9623,8 +9623,7 @@
                     ],
                     "properties": {
                         "commandNonce": {
-                            "type": "string",
-                            "pattern": "^[0-9A-F]{32}$|^[0-9]*$"
+                            "$ref": "/schemas#/2023-02/Common.E2ENonce"
                         }
                     }
                 }
@@ -9725,18 +9724,10 @@
                                 ],
                                 "properties": {
                                     "aid": {
-                                        "type": "string",
-                                        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64"
                                     },
                                     "kernelIdentifier": {
-                                        "type": [
-                                            "string",
-                                            "null"
-                                        ],
-                                        "default": null,
-                                        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                                     }
                                 }
                             },
@@ -9908,13 +9899,7 @@
                                     ]
                                 },
                                 "data": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ],
-                                    "default": null,
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                                 }
                             }
                         },
@@ -9922,22 +9907,10 @@
                             "$ref": "/schemas#/2023-02/CardReader.CardDataNullable"
                         },
                         "frontImage": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "backImage": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "track1JIS": {
                             "$ref": "/schemas#/2023-02/CardReader.CardDataNullable"
@@ -10086,9 +10059,7 @@
                     ],
                     "properties": {
                         "keyValue": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -10131,9 +10102,7 @@
                             "default": "chipProtocolNotRequired"
                         },
                         "chipData": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -10175,13 +10144,7 @@
                             "default": null
                         },
                         "chipData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -10263,13 +10226,7 @@
                             "default": null
                         },
                         "chipData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -10283,9 +10240,7 @@
                     ],
                     "properties": {
                         "terminalData": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         },
                         "aidData": {
                             "type": "array",
@@ -10298,9 +10253,7 @@
                                 ],
                                 "properties": {
                                     "aid": {
-                                        "type": "string",
-                                        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64"
                                     },
                                     "partialSelection": {
                                         "type": "boolean",
@@ -10311,18 +10264,10 @@
                                         "minimum": 0
                                     },
                                     "kernelIdentifier": {
-                                        "type": [
-                                            "string",
-                                            "null"
-                                        ],
-                                        "default": null,
-                                        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                                     },
                                     "configData": {
-                                        "type": "string",
-                                        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64"
                                     }
                                 }
                             }
@@ -10341,8 +10286,7 @@
                                 ],
                                 "properties": {
                                     "rid": {
-                                        "type": "string",
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64"
                                     },
                                     "caPublicKey": {
                                         "type": "object",
@@ -10363,19 +10307,13 @@
                                                 "minimum": 0
                                             },
                                             "exponent": {
-                                                "type": "string",
-                                                "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                                "contentEncoding": "base64"
+                                                "$ref": "/schemas#/2023-02/Common.Base64"
                                             },
                                             "modulus": {
-                                                "type": "string",
-                                                "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                                "contentEncoding": "base64"
+                                                "$ref": "/schemas#/2023-02/Common.Base64"
                                             },
                                             "checksum": {
-                                                "type": "string",
-                                                "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                                "contentEncoding": "base64"
+                                                "$ref": "/schemas#/2023-02/Common.Base64"
                                             }
                                         }
                                     }
@@ -10409,13 +10347,7 @@
                     "type": "object",
                     "properties": {
                         "data": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -10464,9 +10396,7 @@
                     ],
                     "properties": {
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -10958,12 +10888,7 @@
                             "$ref": "/schemas#/2023-02/CashManagement.OutputPosition"
                         },
                         "nonce": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "pattern": "^[0-9A-F]{32}$|^[0-9]*$"
+                            "$ref": "/schemas#/2023-02/Common.E2ENonceNullable"
                         }
                     }
                 }
@@ -12308,9 +12233,7 @@
                         {
                             "properties": {
                                 "inputData": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "/schemas#/2023-02/Common.Base64"
                                 }
                             }
                         }
@@ -12380,13 +12303,7 @@
                             }
                         },
                         "value": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "constructing": {
                             "type": "boolean",
@@ -12417,13 +12334,7 @@
                             ]
                         },
                         "verificationData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "verifyKey": {
                             "type": [
@@ -12508,13 +12419,7 @@
                             ]
                         },
                         "verificationData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "verifyAttributes": {
                             "type": [
@@ -12647,25 +12552,13 @@
                             ]
                         },
                         "value": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "rsaSignatureAlgorithm": {
                             "$ref": "/schemas#/2023-02/KeyManagement.RSASignatureAlgorithm"
                         },
                         "signature": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -12767,30 +12660,13 @@
                             ]
                         },
                         "value": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "selfSignature": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "signature": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -12830,13 +12706,7 @@
                             ]
                         },
                         "certificate": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -12849,9 +12719,7 @@
                     ],
                     "properties": {
                         "replaceCertificate": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -12873,13 +12741,7 @@
                             ]
                         },
                         "newCertificateData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}?$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -12899,13 +12761,7 @@
                             ]
                         },
                         "randomItem": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -12949,13 +12805,7 @@
                             ]
                         },
                         "kcv": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -12985,9 +12835,7 @@
                             ]
                         },
                         "certificateData": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -13021,13 +12869,7 @@
                             ]
                         },
                         "rsaData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -13064,13 +12906,7 @@
                     "type": "object",
                     "properties": {
                         "dataToSign": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         },
                         "signers": {
                             "type": [
@@ -13262,13 +13098,7 @@
                             ]
                         },
                         "randomNumber": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -13319,9 +13149,7 @@
                                     ]
                                 },
                                 "data": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "/schemas#/2023-02/Common.Base64"
                                 }
                             }
                         }
@@ -13350,13 +13178,7 @@
                             ]
                         },
                         "data": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -13373,9 +13195,7 @@
                             "type": "string"
                         },
                         "ksn": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -13394,9 +13214,7 @@
                                     "type": "string"
                                 },
                                 "data": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "/schemas#/2023-02/Common.Base64"
                                 }
                             }
                         },
@@ -13467,13 +13285,7 @@
                             ]
                         },
                         "authenticationData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -13500,14 +13312,10 @@
                                     "type": "string"
                                 },
                                 "data": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "/schemas#/2023-02/Common.Base64"
                                 },
                                 "verifyData": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "/schemas#/2023-02/Common.Base64"
                                 }
                             }
                         },
@@ -13592,9 +13400,7 @@
                             ]
                         },
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -13614,13 +13420,7 @@
                             ]
                         },
                         "digest": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -13880,10 +13680,7 @@
                             "$ref": "/schemas#/2023-02/Keyboard.EntryCompletion"
                         },
                         "kcv": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": "",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -14096,13 +13893,7 @@
                             "type": "string"
                         },
                         "keyEncKey": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -14154,9 +13945,7 @@
                             "type": "string"
                         },
                         "chipData": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         },
                         "algorithmData": {
                             "type": "object",
@@ -14203,13 +13992,7 @@
                             "default": null
                         },
                         "chipData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -14284,13 +14067,7 @@
                             ]
                         },
                         "pinBlock": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -14980,9 +14757,7 @@
                             ]
                         },
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
                 }
@@ -15009,10 +14784,7 @@
                             ]
                         },
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]*={0,2}$",
-                            "default": "",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -15025,9 +14797,7 @@
                     ],
                     "properties": {
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64"
                         },
                         "mediaControl": {
                             "type": [
@@ -16470,13 +16240,7 @@
                                         ]
                                     },
                                     "barcodeData": {
-                                        "type": [
-                                            "string",
-                                            "null"
-                                        ],
-                                        "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                        "default": null,
-                                        "contentEncoding": "base64"
+                                        "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                                     },
                                     "symbologyName": {
                                         "type": [
@@ -16663,13 +16427,7 @@
                                             "default": 0
                                         },
                                         "templateData": {
-                                            "type": [
-                                                "string",
-                                                "null"
-                                            ],
-                                            "pattern": "^[A-Za-z0-9+/]+={0,2}?$",
-                                            "default": null,
-                                            "contentEncoding": "base64"
+                                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                                         }
                                     }
                                 }
@@ -16803,13 +16561,7 @@
                             "default": null
                         },
                         "pictureFile": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
                 }
@@ -23639,6 +23391,11 @@
                         }
                     }
                 },
+                "Common.E2ENonce": {
+                    "type": "string",
+                    "pattern": "^[0-9A-F]{32}$|^[0-9]*$",
+                    "format": "nonce"
+                },
                 "Common.StatusChangedData": {
                     "type": "object",
                     "properties": {
@@ -23716,6 +23473,20 @@
                     },
                     "$ref": "#/2023-02/Common.CommonStatusProperties"
                 },
+                "Common.Base64": {
+                    "type": "string",
+                    "pattern": "^([a-zA-Z0-9+/]{4})*([a-zA-Z0-9+/]{4}|[a-zA-Z0-9+/]{2}([a-zA-Z0-9+/]|=)=)$",
+                    "contentEncoding": "base64"
+                },
+                "Common.Base64Nullable": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^([a-zA-Z0-9+/]{4})*([a-zA-Z0-9+/]{4}|[a-zA-Z0-9+/]{2}([a-zA-Z0-9+/]|=)=)$",
+                    "default": null,
+                    "contentEncoding": "base64"
+                },
                 "CardReader.CardDataNullable": {
                     "type": [
                         "object",
@@ -23750,13 +23521,7 @@
                     ]
                 },
                 "CardReader.CardDataData": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "default": null,
-                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                    "contentEncoding": "base64"
+                    "$ref": "#/2023-02/Common.Base64Nullable"
                 },
                 "CardReader.CardData": {
                     "type": "object",
@@ -23774,9 +23539,7 @@
                     ],
                     "properties": {
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64"
                         },
                         "writeMethod": {
                             "type": [
@@ -23834,9 +23597,7 @@
                             ]
                         },
                         "dataRead": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64"
                         },
                         "clessOutcome": {
                             "$ref": "#/2023-02/CardReader.EMVClessOutcome"
@@ -23895,13 +23656,7 @@
                             "default": 0
                         },
                         "discretionaryData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]*={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64Nullable"
                         }
                     }
                 },
@@ -24001,9 +23756,7 @@
                             ]
                         },
                         "dataRead": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64"
                         },
                         "clessOutcome": {
                             "$ref": "#/2023-02/CardReader.EMVClessOutcome"
@@ -24281,13 +24034,7 @@
                                     "default": null
                                 },
                                 "image": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ],
-                                    "default": null,
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "#/2023-02/Common.Base64Nullable"
                                 },
                                 "onClassificationList": {
                                     "$ref": "#/2023-02/CashManagement.OnClassificationList"
@@ -24336,13 +24083,7 @@
                     ]
                 },
                 "CashManagement.SignatureData": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "default": null,
-                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                    "contentEncoding": "base64"
+                    "$ref": "#/2023-02/Common.Base64Nullable"
                 },
                 "CashManagement.OnClassificationList": {
                     "type": [
@@ -25660,6 +25401,15 @@
                         }
                     }
                 },
+                "Common.E2ENonceNullable": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^[0-9A-F]{32}$|^[0-9]*$",
+                    "format": "nonce",
+                    "default": null
+                },
                 "CashDispenser.PresentStatus": {
                     "type": "object",
                     "required": [
@@ -25678,11 +25428,7 @@
                             ]
                         },
                         "token": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
+                            "$ref": "#/2023-02/Common.E2ETokenNullable"
                         }
                     }
                 },
@@ -25740,6 +25486,15 @@
                             "$ref": "#/2023-02/CashDispenser.Currencies"
                         }
                     }
+                },
+                "Common.E2ETokenNullable": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^(?=[!-~]{0,1024}$)NONCE=[0-9A-F]+,TOKENFORMAT=1,TOKENLENGTH=[0-9]{4},(?:[A-Z0-9]+=[^,=]+?,)+HMACSHA256=[0-9A-F]{64}$",
+                    "format": "e2eToken",
+                    "default": null
                 },
                 "CashDispenser.DenominateRequest": {
                     "type": "object",
@@ -25839,11 +25594,7 @@
                             "$ref": "#/2023-02/CashManagement.OutputPosition"
                         },
                         "token": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
+                            "$ref": "#/2023-02/Common.E2ETokenNullable"
                         }
                     }
                 },
@@ -26812,13 +26563,7 @@
                     ]
                 },
                 "Check.Image": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "default": null,
-                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                    "contentEncoding": "base64"
+                    "$ref": "#/2023-02/Common.Base64Nullable"
                 },
                 "Check.InsertOrientation": {
                     "type": [
@@ -27476,9 +27221,7 @@
                                     "default": null
                                 },
                                 "data": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "#/2023-02/Common.Base64"
                                 }
                             }
                         }
@@ -27528,9 +27271,7 @@
                                     "default": null
                                 },
                                 "value": {
-                                    "type": "string",
-                                    "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                                    "contentEncoding": "base64"
+                                    "$ref": "#/2023-02/Common.Base64"
                                 }
                             }
                         }
@@ -27602,9 +27343,7 @@
                     ],
                     "properties": {
                         "keyToken": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64"
                         },
                         "key": {
                             "type": "string"
@@ -27653,13 +27392,7 @@
                             "default": null
                         },
                         "keyAcceptData": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]*={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64Nullable"
                         },
                         "keyCheckMode": {
                             "type": [
@@ -27673,13 +27406,7 @@
                             "default": null
                         },
                         "keyCheckValue": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "pattern": "^[A-Za-z0-9+/]*={0,2}$",
-                            "default": null,
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64Nullable"
                         }
                     }
                 },
@@ -27712,9 +27439,7 @@
                             ]
                         },
                         "value": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64"
                         },
                         "verifyKey": {
                             "type": [
@@ -28199,10 +27924,7 @@
                             ]
                         },
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]*={0,2}$",
-                            "default": "",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64Nullable"
                         }
                     }
                 },
@@ -28434,9 +28156,7 @@
                             "$ref": "#/2023-02/Biometric.DataType"
                         },
                         "data": {
-                            "type": "string",
-                            "pattern": "^[A-Za-z0-9+/]+={0,2}$",
-                            "contentEncoding": "base64"
+                            "$ref": "#/2023-02/Common.Base64"
                         }
                     }
                 },
