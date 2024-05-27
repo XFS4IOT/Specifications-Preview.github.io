@@ -19820,9 +19820,14 @@
                                 },
                                 "billCassette": {
                                     "type": "boolean",
-                                    "default": false
+                                    "default": false,
+                                    "deprecated": true
                                 },
                                 "cashIn": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "itemCassette": {
                                     "type": "boolean",
                                     "default": false
                                 }
@@ -19849,9 +19854,14 @@
                                 },
                                 "billCassette": {
                                     "type": "boolean",
-                                    "default": false
+                                    "default": false,
+                                    "deprecated": true
                                 },
                                 "cashIn": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "itemCassette": {
                                     "type": "boolean",
                                     "default": false
                                 }
@@ -19878,9 +19888,14 @@
                                 },
                                 "billCassette": {
                                     "type": "boolean",
-                                    "default": false
+                                    "default": false,
+                                    "deprecated": true
                                 },
                                 "cashIn": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "itemCassette": {
                                     "type": "boolean",
                                     "default": false
                                 }
@@ -20007,9 +20022,14 @@
                                 },
                                 "billCassettes": {
                                     "type": "boolean",
-                                    "default": false
+                                    "default": false,
+                                    "deprecated": true
                                 },
                                 "cashIn": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "itemCassette": {
                                     "type": "boolean",
                                     "default": false
                                 }
