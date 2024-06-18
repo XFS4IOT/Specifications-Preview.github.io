@@ -3481,6 +3481,32 @@
                     "header": {
                         "properties": {
                             "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Check.GetTransactionStatus"
+                            },
+                            "version": {
+                                "const": "2.1"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Check.GetTransactionStatusCommand/2.1"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
                                 "const": "completion"
                             },
                             "name": {
@@ -11614,6 +11640,17 @@
                                 "noItems",
                                 "cashUnitError"
                             ]
+                        }
+                    }
+                }
+            },
+            "Check.GetTransactionStatusCommand": {
+                "2.1": {
+                    "type": "object",
+                    "properties": {
+                        "includeImage": {
+                            "type": "boolean",
+                            "default": true
                         }
                     }
                 }
