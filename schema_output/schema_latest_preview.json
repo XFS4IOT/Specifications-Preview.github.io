@@ -9126,6 +9126,32 @@
                                 "const": "unsolicited"
                             },
                             "name": {
+                                "const": "Storage.CountsChangedEvent"
+                            },
+                            "version": {
+                                "const": "2.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Storage.CountsChangedEvent/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
                                 "const": "Storage.StorageChangedEvent"
                             },
                             "version": {
@@ -16640,6 +16666,11 @@
                             ]
                         }
                     }
+                }
+            },
+            "Storage.CountsChangedEvent": {
+                "2.0": {
+                    "$ref": "/schemas#/2024-03/Storage.StorageUnits"
                 }
             },
             "Storage.StorageChangedEvent": {
@@ -28749,6 +28780,14 @@
                         "initial": {
                             "type": "integer",
                             "minimum": 0
+                        }
+                    }
+                },
+                "Storage.StorageUnits": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^unit[0-9A-Za-z]+$": {
+                            "$ref": "#/2024-03/Storage.StorageUnit"
                         }
                     }
                 },
