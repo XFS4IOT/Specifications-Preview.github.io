@@ -24056,12 +24056,7 @@
                             "$ref": "#/2024-03/CashManagement.RetractArea"
                         },
                         "index": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 1
+                            "$ref": "#/2024-03/CashManagement.ItemTargetIndex"
                         }
                     }
                 },
@@ -24075,6 +24070,14 @@
                         "itemCassette",
                         "cashIn"
                     ]
+                },
+                "CashManagement.ItemTargetIndex": {
+                    "type": [
+                        "integer",
+                        "null"
+                    ],
+                    "default": null,
+                    "minimum": 1
                 },
                 "CashManagement.Storage": {
                     "type": [
@@ -25108,6 +25111,9 @@
                     }
                 },
                 "CashManagement.ItemTarget": {
+                    "$ref": "#/2024-03/CashManagement.ItemTargetData"
+                },
+                "CashManagement.ItemTargetData": {
                     "type": [
                         "object",
                         "null"
@@ -25147,14 +25153,6 @@
                         "outFront",
                         "outRear"
                     ]
-                },
-                "CashManagement.ItemTargetIndex": {
-                    "type": [
-                        "integer",
-                        "null"
-                    ],
-                    "default": null,
-                    "minimum": 1
                 },
                 "CashManagement.CalibrateCommand": {
                     "type": "object",
@@ -25201,9 +25199,12 @@
                             "minimum": 0
                         },
                         "position": {
-                            "$ref": "#/2024-03/CashManagement.ItemTarget"
+                            "$ref": "#/2024-03/CashManagement.ItemTargetResult"
                         }
                     }
+                },
+                "CashManagement.ItemTargetResult": {
+                    "$ref": "#/2024-03/CashManagement.ItemTargetData"
                 },
                 "CashManagement.PositionInfo": {
                     "type": "object",
