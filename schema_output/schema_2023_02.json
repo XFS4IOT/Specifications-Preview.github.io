@@ -6864,32 +6864,6 @@
                                 "const": "command"
                             },
                             "name": {
-                                "const": "Printer.ResetCount"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Printer.ResetCountCommand/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "command"
-                            },
-                            "name": {
                                 "const": "Printer.Reset"
                             },
                             "version": {
@@ -7306,32 +7280,6 @@
                                 "const": "unsolicited"
                             },
                             "name": {
-                                "const": "Printer.RetractBinStatusEvent"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Printer.RetractBinStatusEvent/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
                                 "const": "Printer.DefinitionLoadedEvent"
                             },
                             "version": {
@@ -7371,32 +7319,6 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/Printer.MediaAutoRetractedEvent/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
-                                "const": "Printer.RetractBinThresholdEvent"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Printer.RetractBinThresholdEvent/2.0"
                     }
                 }
             }
@@ -15081,18 +15003,6 @@
                     }
                 }
             },
-            "Printer.ResetCountCommand": {
-                "2.0": {
-                    "type": "object",
-                    "properties": {
-                        "binNumber": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        }
-                    }
-                }
-            },
             "Printer.ResetCommand": {
                 "2.0": {
                     "type": "object",
@@ -15102,7 +15012,7 @@
                     "properties": {
                         "mediaControl": {
                             "type": "string",
-                            "pattern": "^eject$|^expel$|^unit[0-9]+$"
+                            "pattern": "^eject$|^expel$|^unit[0-9A-Za-z]+$"
                         }
                     }
                 }
@@ -15133,7 +15043,7 @@
                     "properties": {
                         "mediaControl": {
                             "type": "string",
-                            "pattern": "^transport$|^unit[0-9]+$",
+                            "pattern": "^transport$|^unit[0-9A-Za-z]+$",
                             "default": "transport"
                         }
                     }
@@ -15157,7 +15067,7 @@
                         },
                         "result": {
                             "type": "string",
-                            "pattern": "^transport$|^nomedia$|^unit[0-9]+$",
+                            "pattern": "^transport$|^nomedia$|^unit[0-9A-Za-z]+$",
                             "default": "nomedia"
                         }
                     }
@@ -15359,29 +15269,7 @@
                     "properties": {
                         "position": {
                             "type": "string",
-                            "pattern": "^present$|^entering$|^jammed$|^unknown$|^expelled$|^unit[0-9]+$"
-                        }
-                    }
-                }
-            },
-            "Printer.RetractBinStatusEvent": {
-                "2.0": {
-                    "type": "object",
-                    "required": [
-                        "binNumber",
-                        "state"
-                    ],
-                    "properties": {
-                        "binNumber": {
-                            "type": "integer",
-                            "minimum": 1
-                        },
-                        "state": {
-                            "type": "string",
-                            "enum": [
-                                "inserted",
-                                "removed"
-                            ]
+                            "pattern": "^present$|^entering$|^jammed$|^unknown$|^expelled$|^unit[0-9A-Za-z]+$"
                         }
                     }
                 }
@@ -15416,30 +15304,7 @@
                     "properties": {
                         "result": {
                             "type": "string",
-                            "pattern": "^transport$|^jammed$|^unit[0-9]+$"
-                        }
-                    }
-                }
-            },
-            "Printer.RetractBinThresholdEvent": {
-                "2.0": {
-                    "type": "object",
-                    "required": [
-                        "binNumber",
-                        "state"
-                    ],
-                    "properties": {
-                        "binNumber": {
-                            "type": "integer",
-                            "minimum": 1
-                        },
-                        "state": {
-                            "type": "string",
-                            "enum": [
-                                "ok",
-                                "full",
-                                "high"
-                            ]
+                            "pattern": "^transport$|^jammed$|^unit[0-9A-Za-z]+$"
                         }
                     }
                 }
@@ -18112,40 +17977,6 @@
                                 "fading",
                                 "inop"
                             ]
-                        },
-                        "retractBins": {
-                            "type": [
-                                "array",
-                                "null"
-                            ],
-                            "default": null,
-                            "items": {
-                                "type": "object",
-                                "properties": {
-                                    "state": {
-                                        "type": [
-                                            "string",
-                                            "null"
-                                        ],
-                                        "default": null,
-                                        "enum": [
-                                            "unknown",
-                                            "ok",
-                                            "full",
-                                            "high",
-                                            "missing"
-                                        ]
-                                    },
-                                    "count": {
-                                        "type": [
-                                            "integer",
-                                            "null"
-                                        ],
-                                        "default": null,
-                                        "minimum": 0
-                                    }
-                                }
-                            }
                         },
                         "mediaOnStacker": {
                             "type": [
@@ -22045,22 +21876,6 @@
                             "type": "boolean",
                             "default": false
                         },
-                        "retractBins": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "maxRetract": {
-                            "type": [
-                                "array",
-                                "null"
-                            ],
-                            "default": null,
-                            "items": {
-                                "type": "integer",
-                                "minimum": 0
-                            }
-                        },
                         "imageType": {
                             "type": [
                                 "object",
@@ -24398,6 +24213,9 @@
                         },
                         "check": {
                             "$ref": "#/2023-02/Check.Storage"
+                        },
+                        "printer": {
+                            "$ref": "#/2023-02/Printer.Storage"
                         }
                     }
                 },
@@ -25135,6 +24953,85 @@
                         "full",
                         "high",
                         "empty"
+                    ]
+                },
+                "Printer.Storage": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "capabilities": {
+                            "$ref": "#/2023-02/Printer.StorageCapabilities"
+                        },
+                        "status": {
+                            "$ref": "#/2023-02/Printer.StorageStatus"
+                        }
+                    }
+                },
+                "Printer.StorageCapabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "maxRetracts"
+                    ],
+                    "properties": {
+                        "maxRetracts": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "Printer.StorageStatus": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "index"
+                    ],
+                    "properties": {
+                        "index": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "initial": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 0
+                        },
+                        "in": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 0
+                        },
+                        "replenishmentStatus": {
+                            "$ref": "#/2023-02/Printer.ReplenishmentStatus"
+                        }
+                    }
+                },
+                "Printer.ReplenishmentStatus": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "ok",
+                        "full",
+                        "unknown",
+                        "high"
                     ]
                 },
                 "CashManagement.ItemInfoSummary": {
@@ -28695,6 +28592,9 @@
                         },
                         "check": {
                             "$ref": "#/2023-02/Check.StorageSet"
+                        },
+                        "printer": {
+                            "$ref": "#/2023-02/Printer.StorageSet"
                         }
                     }
                 },
@@ -28783,6 +28683,34 @@
                         "initial": {
                             "type": "object",
                             "$ref": "#/2023-02/Check.StorageCounts"
+                        }
+                    }
+                },
+                "Printer.StorageSet": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "status": {
+                            "$ref": "#/2023-02/Printer.StorageStatusSet"
+                        }
+                    }
+                },
+                "Printer.StorageStatusSet": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "initial"
+                    ],
+                    "properties": {
+                        "initial": {
+                            "type": "integer",
+                            "minimum": 0
                         }
                     }
                 },
