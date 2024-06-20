@@ -9204,6 +9204,84 @@
                                 "const": "command"
                             },
                             "name": {
+                                "const": "BanknoteNeutralization.SetProtection"
+                            },
+                            "version": {
+                                "const": "2.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/BanknoteNeutralization.SetProtectionCommand/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "BanknoteNeutralization.SetProtection"
+                            },
+                            "version": {
+                                "const": "2.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/BanknoteNeutralization.SetProtectionCompletion/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "BanknoteNeutralization.TriggerNeutralization"
+                            },
+                            "version": {
+                                "const": "2.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/BanknoteNeutralization.TriggerNeutralizationCommand/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
                                 "const": "VendorMode.Register"
                             },
                             "version": {
@@ -16683,6 +16761,71 @@
                     "$ref": "/schemas#/2023-02/Storage.SingleStorageUnit"
                 }
             },
+            "BanknoteNeutralization.SetProtectionCommand": {
+                "2.0": {
+                    "type": "object",
+                    "required": [
+                        "newState"
+                    ],
+                    "properties": {
+                        "newState": {
+                            "type": "string",
+                            "enum": [
+                                "arm",
+                                "ignoreAllSafeSensors",
+                                "disarm"
+                            ]
+                        },
+                        "token": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        }
+                    }
+                }
+            },
+            "BanknoteNeutralization.SetProtectionCompletion": {
+                "2.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "sensorNotReady"
+                            ]
+                        }
+                    }
+                }
+            },
+            "BanknoteNeutralization.TriggerNeutralizationCommand": {
+                "2.0": {
+                    "type": "object",
+                    "required": [
+                        "neutralizationAction"
+                    ],
+                    "properties": {
+                        "neutralizationAction": {
+                            "type": "string",
+                            "enum": [
+                                "trigger"
+                            ]
+                        },
+                        "token": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        }
+                    }
+                }
+            },
             "VendorMode.RegisterCommand": {
                 "2.0": {
                     "type": "object",
@@ -17038,6 +17181,9 @@
                         },
                         "lights": {
                             "$ref": "#/2023-02/Lights.Status"
+                        },
+                        "banknoteNeutralization": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.Status"
                         },
                         "auxiliaries": {
                             "$ref": "#/2023-02/Auxiliaries.Status"
@@ -18452,6 +18598,301 @@
                         }
                     }
                 },
+                "BanknoteNeutralization.Status": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "state": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.State"
+                        },
+                        "safeDoor": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.SafeDoorState"
+                        },
+                        "safeBolt": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.SafeBoltState"
+                        },
+                        "tilt": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.TiltState"
+                        },
+                        "light": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.LightState"
+                        },
+                        "gas": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.GasState"
+                        },
+                        "temperature": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.TemperatureState"
+                        },
+                        "seismic": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.SeismicState"
+                        },
+                        "customInputs": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.CustomInputStates"
+                        },
+                        "powerSupply": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.PowerSupply"
+                        },
+                        "warnings": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.Warnings"
+                        },
+                        "errors": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.Errors"
+                        }
+                    }
+                },
+                "BanknoteNeutralization.State": {
+                    "type": "object",
+                    "properties": {
+                        "mode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "fault",
+                                "armed",
+                                "disarmed",
+                                "neutralizationTriggered"
+                            ]
+                        },
+                        "submode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "allSafeSensorsIgnored",
+                                "armPending"
+                            ]
+                        }
+                    }
+                },
+                "BanknoteNeutralization.SafeDoorState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "fault",
+                        "doorOpened",
+                        "doorClosed",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.SafeBoltState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "fault",
+                        "boltUnlocked",
+                        "boltLocked",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.TiltState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "fault",
+                        "notTilted",
+                        "tilted",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.LightState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "fault",
+                        "notConfigured",
+                        "detected",
+                        "notDetected",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.GasState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "initializing",
+                        "fault",
+                        "notConfigured",
+                        "notDetected",
+                        "partialWarningLevel",
+                        "warningLevel",
+                        "partialCriticalLevel",
+                        "criticalLevel",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.TemperatureState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "fault",
+                        "ok",
+                        "tooCold",
+                        "tooHot",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.SeismicState": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "fault",
+                        "notConfigured",
+                        "notDetected",
+                        "warningLevel",
+                        "criticalLevel",
+                        "disabled"
+                    ]
+                },
+                "BanknoteNeutralization.CustomInputStates": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "patternProperties": {
+                        "^(maintenance|triggerNeutralization|disableGas|disableSeismic|disableSafeDoorAttack|oem[A-Z][a-zA-Z]*)$": {
+                            "type": "object",
+                            "properties": {
+                                "inputState": {
+                                    "type": "string",
+                                    "default": "disabled",
+                                    "enum": [
+                                        "fault",
+                                        "ok",
+                                        "triggered",
+                                        "disabled"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "BanknoteNeutralization.PowerSupply": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "initializing",
+                        "unknown",
+                        "ok",
+                        "externalMainPowerOutage",
+                        "low",
+                        "failure"
+                    ]
+                },
+                "BanknoteNeutralization.Warnings": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "protectionArmingFault": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "protectionDisarmingFault": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "externalMainPowerOutage": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "storageUnitLowPowerSupply": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "armedAutonomous": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "armedAlarm": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "gasWarningLevel": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "seismicActivityWarningLevel": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                },
+                "BanknoteNeutralization.Errors": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "protectionEnablingFailure": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "protectionDisarmingFailure": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "storageUnitPowerSupplyFailure": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "backupBatteryFailure": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "gasCriticalLevel": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "light": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "tilted": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "seismicActivityCriticalLevel": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                },
                 "Auxiliaries.Status": {
                     "type": [
                         "object",
@@ -19109,6 +19550,9 @@
                         "lights": {
                             "$ref": "#/2023-02/Lights.Capabilities"
                         },
+                        "banknoteNeutralization": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.Capabilities"
+                        },
                         "auxiliaries": {
                             "$ref": "#/2023-02/Auxiliaries.Capabilities"
                         },
@@ -19147,7 +19591,8 @@
                                 "Storage",
                                 "Biometric",
                                 "Check",
-                                "MixedMedia"
+                                "MixedMedia",
+                                "BanknoteNeutralization"
                             ]
                         },
                         "commands": {
@@ -22900,6 +23345,81 @@
                         }
                     }
                 },
+                "BanknoteNeutralization.Capabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "mode",
+                        "gasSensor",
+                        "lightSensor",
+                        "seismicSensor",
+                        "safeIntrusionDetection",
+                        "externalDryContactStatusBox",
+                        "realTimeClock",
+                        "physicalStorageUnitsAccessControl",
+                        "customInputs"
+                    ],
+                    "properties": {
+                        "mode": {
+                            "type": "string",
+                            "default": "autonomous",
+                            "enum": [
+                                "autonomous",
+                                "programmable",
+                                "vendorSpecific"
+                            ]
+                        },
+                        "gasSensor": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "lightSensor": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "seismicSensor": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "safeIntrusionDetection": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "externalDryContactStatusBox": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "realTimeClock": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "physicalStorageUnitsAccessControl": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "customInputs": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "patternProperties": {
+                                "^(maintenance|triggerNeutralization|disableGas|disableSeismic|disableSafeDoorAttack|oem[A-Z][a-zA-Z]*)$": {
+                                    "type": "object",
+                                    "properties": {
+                                        "activeInput": {
+                                            "type": "boolean",
+                                            "default": true
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "Auxiliaries.Capabilities": {
                     "type": [
                         "object",
@@ -24285,6 +24805,9 @@
                         "check": {
                             "$ref": "#/2023-02/Check.Storage"
                         },
+                        "banknoteNeutralization": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.StorageUnitStatus"
+                        },
                         "printer": {
                             "$ref": "#/2023-02/Printer.Storage"
                         }
@@ -25025,6 +25548,94 @@
                         "high",
                         "empty"
                     ]
+                },
+                "BanknoteNeutralization.StorageUnitStatus": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "identifier",
+                        "protection",
+                        "powerSupply",
+                        "tilt",
+                        "temperature",
+                        "lid",
+                        "neutralizationTrigger"
+                    ],
+                    "properties": {
+                        "identifier": {
+                            "pattern": "^[0-9A-Za-z]*$",
+                            "type": "string"
+                        },
+                        "protection": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "fault",
+                                "armed",
+                                "disarmed",
+                                "neutralizationTriggered"
+                            ]
+                        },
+                        "warning": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "cassetteRunsAutonomously",
+                                "alarm"
+                            ]
+                        },
+                        "powerSupply": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.PowerSupply"
+                        },
+                        "tilt": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.TiltState"
+                        },
+                        "temperature": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.TemperatureState"
+                        },
+                        "lid": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "fault",
+                                "opened",
+                                "closed",
+                                "disabled"
+                            ]
+                        },
+                        "neutralizationTrigger": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "initializing",
+                                "ready",
+                                "disabled",
+                                "fault"
+                            ]
+                        },
+                        "storageUnitIdentifier": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        }
+                    }
                 },
                 "Printer.Storage": {
                     "type": [
