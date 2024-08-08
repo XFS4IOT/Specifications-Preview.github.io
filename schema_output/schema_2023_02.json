@@ -7046,58 +7046,6 @@
                                 "const": "command"
                             },
                             "name": {
-                                "const": "Printer.LoadDefinition"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Printer.LoadDefinitionCommand/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "completion"
-                            },
-                            "name": {
-                                "const": "Printer.LoadDefinition"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Printer.LoadDefinitionCompletion/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "command"
-                            },
-                            "name": {
                                 "const": "Printer.SupplyReplenish"
                             },
                             "version": {
@@ -7189,6 +7137,110 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/Printer.SetBlackMarkModeCommand/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Printer.SetForm"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Printer.SetFormCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Printer.SetForm"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Printer.SetFormCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Printer.SetMedia"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Printer.SetMediaCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Printer.SetMedia"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Printer.SetMediaCompletion/1.0"
                     }
                 }
             }
@@ -7293,32 +7345,6 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/Printer.MediaDetectedEvent/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
-                                "const": "Printer.DefinitionLoadedEvent"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Printer.DefinitionLoadedEvent/2.0"
                     }
                 }
             }
@@ -8993,13 +9019,13 @@
                     "header": {
                         "properties": {
                             "type": {
-                                "const": "completion"
+                                "const": "command"
                             },
                             "name": {
-                                "const": "Storage.GetStorage"
+                                "const": "Deposit.Entry"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "1.0"
                             }
                         }
                     }
@@ -9008,7 +9034,527 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.GetStorageCompletion/2.0"
+                        "$ref": "/messages#/Deposit.EntryCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Deposit.Entry"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EntryCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
+                                "const": "Deposit.EnvTakenEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EnvTakenEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
+                                "const": "Deposit.EnvDepositedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EnvDepositedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
+                                "const": "Deposit.DepositErrorEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.DepositErrorEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
+                                "const": "Deposit.EnvInsertedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EnvInsertedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
+                                "const": "Deposit.InsertDepositEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.InsertDepositEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Deposit.Dispense"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.DispenseCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Deposit.Reset"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.ResetCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Deposit.Reset"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.ResetCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
+                                "const": "Deposit.MediaDetectedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.MediaDetectedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Deposit.Retract"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.RetractCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Deposit.Retract"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.RetractCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Deposit.SupplyReplenish"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.SupplyReplenishCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Deposit.DepositErrorEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.DepositErrorEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Deposit.EnvDepositedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EnvDepositedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Deposit.EnvInsertedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EnvInsertedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Deposit.EnvTakenEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.EnvTakenEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Deposit.InsertDepositEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.InsertDepositEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Deposit.MediaDetectedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Deposit.MediaDetectedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Storage.GetStorage"
+                            },
+                            "version": {
+                                "const": "3.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Storage.GetStorageCompletion/3.0"
                     }
                 }
             }
@@ -9025,7 +9571,7 @@
                                 "const": "Storage.SetStorage"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -9034,7 +9580,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.SetStorageCommand/2.0"
+                        "$ref": "/messages#/Storage.SetStorageCommand/3.0"
                     }
                 }
             }
@@ -9051,7 +9597,7 @@
                                 "const": "Storage.SetStorage"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -9060,7 +9606,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.SetStorageCompletion/2.0"
+                        "$ref": "/messages#/Storage.SetStorageCompletion/3.0"
                     }
                 }
             }
@@ -14185,9 +14731,6 @@
             "Printer.GetQueryFormCompletion": {
                 "2.0": {
                     "type": "object",
-                    "required": [
-                        "formName"
-                    ],
                     "properties": {
                         "errorCode": {
                             "type": [
@@ -14196,105 +14739,16 @@
                             ],
                             "default": null,
                             "enum": [
-                                "formNotFound",
-                                "formInvalid"
+                                "formNotFound"
                             ]
                         },
-                        "formName": {
-                            "type": "string"
-                        },
-                        "base": {
-                            "type": "string",
-                            "enum": [
-                                "inch",
-                                "mm",
-                                "rowColumn",
-                                "na"
-                            ],
-                            "default": "na"
-                        },
-                        "unitX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "unitY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "width": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "height": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "alignment": {
-                            "type": "string",
-                            "enum": [
-                                "topLeft",
-                                "topRight",
-                                "bottomLeft",
-                                "bottomRight",
-                                "na"
-                            ],
-                            "default": "na"
-                        },
-                        "orientation": {
-                            "type": "string",
-                            "enum": [
-                                "portrait",
-                                "landscape",
-                                "na"
-                            ],
-                            "default": "na"
-                        },
-                        "offsetX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "offsetY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "versionMajor": {
+                        "form": {
                             "type": [
-                                "integer",
+                                "object",
                                 "null"
                             ],
                             "default": null,
-                            "minimum": 0
-                        },
-                        "versionMinor": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 0
-                        },
-                        "userPrompt": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
-                        },
-                        "fields": {
-                            "type": [
-                                "array",
-                                "null"
-                            ],
-                            "default": null,
-                            "items": {
-                                "type": "string"
-                            }
+                            "$ref": "/schemas#/2023-02/Printer.Form"
                         }
                     }
                 }
@@ -14303,10 +14757,10 @@
                 "2.0": {
                     "type": "object",
                     "required": [
-                        "mediaName"
+                        "name"
                     ],
                     "properties": {
-                        "mediaName": {
+                        "name": {
                             "type": "string"
                         }
                     }
@@ -14323,137 +14777,16 @@
                             ],
                             "default": null,
                             "enum": [
-                                "mediaNotFound",
-                                "mediaInvalid"
+                                "mediaNotFound"
                             ]
                         },
-                        "mediaType": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "generic",
-                                "passbook",
-                                "multipart"
-                            ],
-                            "default": null
-                        },
-                        "base": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "inch",
-                                "mm",
-                                "rowcolumn"
-                            ],
-                            "default": null
-                        },
-                        "unitX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "unitY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "sizeWidth": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "sizeHeight": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "pageCount": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "minimum": 0,
-                            "default": null
-                        },
-                        "lineCount": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "minimum": 0,
-                            "default": null
-                        },
-                        "printAreaX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "printAreaY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "printAreaWidth": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "printAreaHeight": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "restrictedAreaX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "restrictedAreaY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "restrictedAreaWidth": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "restrictedAreaHeight": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "stagger": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 0
-                        },
-                        "foldType": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "none",
-                                "horizontal",
-                                "vertical"
-                            ],
-                            "default": null
-                        },
-                        "paperSources": {
+                        "media": {
                             "type": [
                                 "object",
                                 "null"
                             ],
                             "default": null,
-                            "$ref": "/schemas#/2023-02/Printer.PaperSources"
+                            "$ref": "/schemas#/2023-02/Printer.Media"
                         }
                     }
                 }
@@ -14490,9 +14823,7 @@
                             "default": null,
                             "enum": [
                                 "formNotFound",
-                                "fieldNotFound",
-                                "formInvalid",
-                                "fieldInvalid"
+                                "fieldNotFound"
                             ]
                         },
                         "fields": {
@@ -14503,75 +14834,7 @@
                             "default": null,
                             "additionalProperties": {
                                 "type": "object",
-                                "required": [
-                                    "type",
-                                    "class",
-                                    "access",
-                                    "overflow"
-                                ],
-                                "properties": {
-                                    "indexCount": {
-                                        "type": "integer",
-                                        "minimum": 0,
-                                        "default": 0
-                                    },
-                                    "type": {
-                                        "type": "string",
-                                        "enum": [
-                                            "text",
-                                            "micr",
-                                            "ocr",
-                                            "msf",
-                                            "barcode",
-                                            "graphic",
-                                            "pagemark"
-                                        ]
-                                    },
-                                    "class": {
-                                        "type": "string",
-                                        "enum": [
-                                            "static",
-                                            "optional",
-                                            "required"
-                                        ]
-                                    },
-                                    "access": {
-                                        "type": "string",
-                                        "enum": [
-                                            "read",
-                                            "write",
-                                            "readWrite"
-                                        ]
-                                    },
-                                    "overflow": {
-                                        "type": "string",
-                                        "enum": [
-                                            "terminate",
-                                            "truncate",
-                                            "bestFit",
-                                            "overwrite",
-                                            "wordWrap"
-                                        ]
-                                    },
-                                    "initialValue": {
-                                        "type": "string",
-                                        "default": ""
-                                    },
-                                    "format": {
-                                        "type": "string",
-                                        "default": ""
-                                    },
-                                    "coercivity": {
-                                        "type": "string",
-                                        "enum": [
-                                            "auto",
-                                            "low",
-                                            "high",
-                                            "na"
-                                        ],
-                                        "default": "na"
-                                    }
-                                }
+                                "$ref": "/schemas#/2023-02/Printer.Field"
                             }
                         }
                     }
@@ -14585,8 +14848,7 @@
                     ],
                     "properties": {
                         "mediaControl": {
-                            "type": "object",
-                            "$ref": "/schemas#/2023-02/MediaControlProperties"
+                            "$ref": "/schemas#/2023-02/Printer.MediaControl"
                         }
                     }
                 }
@@ -14692,17 +14954,19 @@
                             ]
                         },
                         "mediaControl": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "$ref": "/schemas#/2023-02/MediaControlProperties"
+                            "$ref": "/schemas#/2023-02/Printer.MediaControlNullable"
                         },
                         "fields": {
                             "type": "object",
                             "additionalProperties": {
-                                "type": "string"
+                                "type": [
+                                    "array",
+                                    "string"
+                                ],
+                                "minProperties": 1,
+                                "items": {
+                                    "type": "string"
+                                }
                             }
                         },
                         "paperSource": {
@@ -14728,8 +14992,6 @@
                                 "fieldSpecFailure",
                                 "fieldError",
                                 "mediaNotFound",
-                                "mediaInvalid",
-                                "formInvalid",
                                 "mediaSkewed",
                                 "retractBinFull",
                                 "stackerFull",
@@ -14863,12 +15125,7 @@
                             "$ref": "/schemas#/2023-02/Common.Base64"
                         },
                         "mediaControl": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "$ref": "/schemas#/2023-02/MediaControlProperties"
+                            "$ref": "/schemas#/2023-02/Printer.MediaControlNullable"
                         },
                         "paperSource": {
                             "$ref": "/schemas#/2023-02/Printer.PaperSource"
@@ -14915,8 +15172,7 @@
                 "2.0": {
                     "type": "object",
                     "required": [
-                        "formName",
-                        "mediaControl"
+                        "formName"
                     ],
                     "properties": {
                         "formName": {
@@ -14940,8 +15196,7 @@
                             "default": null
                         },
                         "mediaControl": {
-                            "type": "object",
-                            "$ref": "/schemas#/2023-02/MediaControlProperties"
+                            "$ref": "/schemas#/2023-02/Printer.MediaControlNullable"
                         }
                     }
                 }
@@ -14962,8 +15217,6 @@
                                 "fieldSpecFailure",
                                 "fieldError",
                                 "mediaNotFound",
-                                "mediaInvalid",
-                                "formInvalid",
                                 "mediaSkewed",
                                 "retractBinFull",
                                 "shutterFail",
@@ -14984,7 +15237,14 @@
                             ],
                             "default": null,
                             "additionalProperties": {
-                                "type": "string"
+                                "type": [
+                                    "array",
+                                    "string"
+                                ],
+                                "minProperties": 1,
+                                "items": {
+                                    "type": "string"
+                                }
                             }
                         }
                     }
@@ -14995,56 +15255,19 @@
                     "type": "object",
                     "minProperties": 1,
                     "properties": {
-                        "frontImageType": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "tif",
-                                "wmf",
-                                "bmp",
-                                "jpg",
-                                "none"
-                            ],
-                            "default": null
+                        "frontImage": {
+                            "$ref": "/schemas#/2023-02/Printer.ImageRequest"
                         },
-                        "backImageType": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "tif",
-                                "wmf",
-                                "bmp",
-                                "jpg"
-                            ],
-                            "default": null
+                        "backImage": {
+                            "$ref": "/schemas#/2023-02/Printer.ImageRequest"
                         },
-                        "frontImageColorFormat": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "binary",
-                                "grayscale",
-                                "fullcolor"
-                            ],
-                            "default": null
+                        "passportDataGroup1": {
+                            "type": "boolean",
+                            "default": false
                         },
-                        "backImageColorFormat": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "enum": [
-                                "binary",
-                                "grayscale",
-                                "fullcolor"
-                            ],
-                            "default": null
+                        "passportDataGroup2": {
+                            "type": "boolean",
+                            "default": false
                         }
                     }
                 }
@@ -15079,6 +15302,12 @@
                                 },
                                 "back": {
                                     "$ref": "/schemas#/2023-02/Printer.Image"
+                                },
+                                "passportDataGroup1": {
+                                    "$ref": "/schemas#/2023-02/Printer.Image"
+                                },
+                                "passportDataGroup2": {
+                                    "$ref": "/schemas#/2023-02/Printer.Image"
                                 }
                             }
                         }
@@ -15089,26 +15318,11 @@
                 "2.0": {
                     "type": "object",
                     "required": [
-                        "base"
+                        "unit"
                     ],
                     "properties": {
-                        "base": {
-                            "type": "string",
-                            "enum": [
-                                "inches",
-                                "mm",
-                                "rowColumn"
-                            ]
-                        },
-                        "unitX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
-                        "unitY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
+                        "unit": {
+                            "$ref": "/schemas#/2023-02/Printer.Unit"
                         }
                     }
                 }
@@ -15131,15 +15345,21 @@
                                 "mediaRejected"
                             ]
                         },
-                        "sizeX": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
+                        "x": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "minimum": 1,
+                            "default": null
                         },
-                        "sizeY": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
+                        "y": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "minimum": 1,
+                            "default": null
                         }
                     }
                 }
@@ -15245,42 +15465,6 @@
                     }
                 }
             },
-            "Printer.LoadDefinitionCommand": {
-                "2.0": {
-                    "type": "object",
-                    "required": [
-                        "definition"
-                    ],
-                    "properties": {
-                        "definition": {
-                            "type": "string"
-                        },
-                        "overwrite": {
-                            "type": "boolean",
-                            "default": false
-                        }
-                    }
-                }
-            },
-            "Printer.LoadDefinitionCompletion": {
-                "2.0": {
-                    "type": "object",
-                    "properties": {
-                        "errorCode": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "enum": [
-                                "formInvalid",
-                                "mediaInvalid",
-                                "definitionExists"
-                            ]
-                        }
-                    }
-                }
-            },
             "Printer.SupplyReplenishCommand": {
                 "2.0": {
                     "type": "object",
@@ -15376,6 +15560,84 @@
                     }
                 }
             },
+            "Printer.SetFormCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "form": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "$ref": "/schemas#/2023-02/Printer.Form"
+                        }
+                    }
+                }
+            },
+            "Printer.SetFormCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "formInvalid",
+                                "formNotFound"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Printer.SetMediaCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "name"
+                    ],
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "media": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "$ref": "/schemas#/2023-02/Printer.Media"
+                        }
+                    }
+                }
+            },
+            "Printer.SetMediaCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "mediaInvalid",
+                                "mediaNotFound"
+                            ]
+                        }
+                    }
+                }
+            },
             "Printer.MediaTakenEvent": {
                 "2.0": {}
             },
@@ -15411,27 +15673,6 @@
                         "position": {
                             "type": "string",
                             "pattern": "^present$|^entering$|^jammed$|^unknown$|^expelled$|^unit[0-9A-Za-z]+$"
-                        }
-                    }
-                }
-            },
-            "Printer.DefinitionLoadedEvent": {
-                "2.0": {
-                    "type": "object",
-                    "required": [
-                        "name",
-                        "type"
-                    ],
-                    "properties": {
-                        "name": {
-                            "type": "string"
-                        },
-                        "type": {
-                            "type": "string",
-                            "enum": [
-                                "form",
-                                "media"
-                            ]
                         }
                     }
                 }
@@ -16675,14 +16916,242 @@
                     "$ref": "/schemas#/2023-02/Auxiliaries.AutoStartupTime"
                 }
             },
+            "Deposit.EntryCommand": {
+                "1.0": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "printData": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                }
+            },
+            "Deposit.EntryCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "depFull",
+                                "depJammed",
+                                "envSize",
+                                "printerFail",
+                                "shutterNotClosed",
+                                "shutterNotOpened",
+                                "containerMissing",
+                                "unknown",
+                                "characterNotSupp",
+                                "tonerOut"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.EnvTakenEvent": {
+                "1.0": {}
+            },
+            "Deposit.EnvDepositedEvent": {
+                "1.0": {}
+            },
+            "Deposit.DepositErrorEvent": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "error"
+                    ],
+                    "properties": {
+                        "error": {
+                            "type": "string",
+                            "enum": [
+                                "depFull",
+                                "depJammed",
+                                "envSize",
+                                "printerFail",
+                                "shutterNotClosed",
+                                "shutterNotOpened",
+                                "containerMissing",
+                                "unknown",
+                                "characterNotSupp",
+                                "tonerOut"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.EnvInsertedEvent": {
+                "1.0": {}
+            },
+            "Deposit.InsertDepositEvent": {
+                "1.0": {}
+            },
+            "Deposit.DispenseCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "empty",
+                                "jammed",
+                                "shutterNotOpened"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.ResetCommand": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "depMediaControl": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "eject",
+                                "retract"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.ResetCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "depFull",
+                                "depJammed",
+                                "envJammed",
+                                "shutterNotOpened",
+                                "shutterNotClosed",
+                                "containerMissing"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.MediaDetectedEvent": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "depositMedia"
+                    ],
+                    "properties": {
+                        "dispenseMedia": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "noMedia",
+                                "retracted",
+                                "dispenser",
+                                "ejected",
+                                "jammed",
+                                "unknown"
+                            ]
+                        },
+                        "depositMedia": {
+                            "type": "string",
+                            "enum": [
+                                "noMedia",
+                                "retracted",
+                                "dispenser",
+                                "ejected",
+                                "jammed",
+                                "unknown"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.RetractCommand": {
+                "1.0": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "printData": {
+                            "type": "string",
+                            "default": ""
+                        }
+                    }
+                }
+            },
+            "Deposit.RetractCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "depFull",
+                                "depJammed",
+                                "envJammed",
+                                "noEnv",
+                                "printerFail",
+                                "shutterNotClosed",
+                                "containerMissing",
+                                "characterNotSupp",
+                                "tonerOut"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Deposit.SupplyReplenishCommand": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "envelope": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "toner": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                }
+            },
             "Storage.GetStorageCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2023-02/Storage.Storage"
                 }
             },
             "Storage.SetStorageCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "storage"
@@ -16691,7 +17160,7 @@
                 }
             },
             "Storage.SetStorageCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -17187,6 +17656,9 @@
                         },
                         "auxiliaries": {
                             "$ref": "#/2023-02/Auxiliaries.Status"
+                        },
+                        "deposit": {
+                            "$ref": "#/2023-02/Deposit.Status"
                         },
                         "vendorMode": {
                             "$ref": "#/2023-02/VendorMode.Status"
@@ -19284,7 +19756,8 @@
                             "default": null,
                             "enum": [
                                 "on",
-                                "off"
+                                "off",
+                                "continuous"
                             ]
                         },
                         "signal": {
@@ -19432,6 +19905,93 @@
                     "minimum": 1,
                     "maximum": 1000
                 },
+                "Deposit.Status": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "depTransport": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "ok",
+                                "inoperative",
+                                "unknown"
+                            ]
+                        },
+                        "envDispenser": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "ok",
+                                "inoperative",
+                                "unknown"
+                            ]
+                        },
+                        "printer": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "ok",
+                                "inoperative",
+                                "unknown"
+                            ]
+                        },
+                        "toner": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "full",
+                                "low",
+                                "out",
+                                "unknown"
+                            ]
+                        },
+                        "shutter": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "closed",
+                                "open",
+                                "jammed",
+                                "unknown"
+                            ]
+                        },
+                        "depositLocation": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "unknown",
+                                "container",
+                                "transport",
+                                "printer",
+                                "shutter",
+                                "none",
+                                "removed"
+                            ]
+                        }
+                    }
+                },
                 "VendorMode.Status": {
                     "type": [
                         "object",
@@ -19556,6 +20116,9 @@
                         "auxiliaries": {
                             "$ref": "#/2023-02/Auxiliaries.Capabilities"
                         },
+                        "deposit": {
+                            "$ref": "#/2023-02/Deposit.Capabilities"
+                        },
                         "vendorApplication": {
                             "$ref": "#/2023-02/VendorApplication.Capabilities"
                         }
@@ -19592,6 +20155,7 @@
                                 "Biometric",
                                 "Check",
                                 "MixedMedia",
+                                "Deposit",
                                 "BanknoteNeutralization"
                             ]
                         },
@@ -22411,6 +22975,18 @@
                                 "jpg": {
                                     "type": "boolean",
                                     "default": false
+                                },
+                                "png": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "gif": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "svg": {
+                                    "type": "boolean",
+                                    "default": false
                                 }
                             }
                         },
@@ -22468,6 +23044,14 @@
                                     "default": false
                                 },
                                 "imageBack": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "passportDataGroup1": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "passportDataGroup2": {
                                     "type": "boolean",
                                     "default": false
                                 }
@@ -23169,78 +23753,88 @@
                     ],
                     "default": null,
                     "properties": {
-                        "cardReader": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
+                        "individualFlashRates": {
+                            "type": "boolean",
+                            "default": true
                         },
-                        "pinPad": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "notesDispenser": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "coinDispenser": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "receiptPrinter": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "passbookPrinter": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "envelopeDepository": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "checkUnit": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "billAcceptor": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "envelopeDispenser": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "documentPrinter": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "coinAcceptor": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "scanner": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "contactless": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "cardReader2": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "notesDispenser2": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "billAcceptor2": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "statusGood": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "statusWarning": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "statusBad": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "statusSupervisor": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "statusInService": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
-                        },
-                        "fasciaLight": {
-                            "$ref": "#/2023-02/Lights.LightCapabilities"
+                        "lights": {
+                            "type": "object",
+                            "minProperties": 1,
+                            "properties": {
+                                "cardReader": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "pinPad": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "notesDispenser": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "coinDispenser": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "receiptPrinter": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "passbookPrinter": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "envelopeDepository": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "checkUnit": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "billAcceptor": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "envelopeDispenser": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "documentPrinter": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "coinAcceptor": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "scanner": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "contactless": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "cardReader2": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "notesDispenser2": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "billAcceptor2": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "statusGood": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "statusWarning": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "statusBad": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "statusSupervisor": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "statusInService": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                },
+                                "fasciaLight": {
+                                    "$ref": "#/2023-02/Lights.LightCapabilities"
+                                }
+                            },
+                            "additionalProperties": {
+                                "$ref": "#/2023-02/Lights.LightCapabilities"
+                            }
                         }
-                    },
-                    "additionalProperties": {
-                        "$ref": "#/2023-02/Lights.LightCapabilities"
                     }
                 },
                 "Lights.LightCapabilities": {
@@ -23264,6 +23858,7 @@
                     "properties": {
                         "flashRate": {
                             "type": "object",
+                            "minProperties": 1,
                             "properties": {
                                 "off": {
                                     "type": "boolean",
@@ -23759,6 +24354,82 @@
                         }
                     }
                 },
+                "Deposit.Capabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "type"
+                    ],
+                    "properties": {
+                        "type": {
+                            "type": "object",
+                            "minProperties": 1,
+                            "properties": {
+                                "envelope": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "bag": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "depTransport": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "printer": {
+                            "$ref": "#/2023-02/Deposit.PrintCapabilities"
+                        },
+                        "shutter": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "retractEnvelope": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "container",
+                                "dispenser"
+                            ]
+                        }
+                    }
+                },
+                "Deposit.PrintCapabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "maxNumChars"
+                    ],
+                    "properties": {
+                        "toner": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "printOnRetract": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "maxNumChars": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "unicodeSupport": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                },
                 "VendorApplication.Capabilities": {
                     "type": [
                         "object",
@@ -23869,6 +24540,9 @@
                         },
                         "auxiliaries": {
                             "$ref": "#/2023-02/Auxiliaries.Status"
+                        },
+                        "deposit": {
+                            "$ref": "#/2023-02/Deposit.Status"
                         },
                         "vendorMode": {
                             "$ref": "#/2023-02/VendorMode.Status"
@@ -24805,6 +25479,9 @@
                         "check": {
                             "$ref": "#/2023-02/Check.Storage"
                         },
+                        "deposit": {
+                            "$ref": "#/2023-02/Deposit.Storage"
+                        },
                         "banknoteNeutralization": {
                             "$ref": "#/2023-02/BanknoteNeutralization.StorageUnitStatus"
                         },
@@ -25548,6 +26225,89 @@
                         "high",
                         "empty"
                     ]
+                },
+                "Deposit.Storage": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "capabilities": {
+                            "$ref": "#/2023-02/Deposit.StorageCapabilities"
+                        },
+                        "status": {
+                            "$ref": "#/2023-02/Deposit.StorageStatus"
+                        }
+                    }
+                },
+                "Deposit.StorageCapabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "envSupply": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "motorized",
+                                "manual"
+                            ]
+                        }
+                    }
+                },
+                "Deposit.StorageStatus": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "depContainer": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "ok",
+                                "high",
+                                "full",
+                                "inoperative",
+                                "missing",
+                                "unknown"
+                            ]
+                        },
+                        "envSupply": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "ok",
+                                "low",
+                                "empty",
+                                "inoperative",
+                                "missing",
+                                "unlocked",
+                                "unknown"
+                            ]
+                        },
+                        "numOfDeposits": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 0
+                        }
+                    }
                 },
                 "BanknoteNeutralization.StorageUnitStatus": {
                     "type": [
@@ -28389,11 +29149,866 @@
                         }
                     }
                 },
-                "MediaControlProperties": {
+                "Printer.Form": {
+                    "required": [
+                        "unit",
+                        "size",
+                        "fields"
+                    ],
                     "properties": {
-                        "eject": {
-                            "type": "boolean",
-                            "default": false
+                        "unit": {
+                            "$ref": "#/2023-02/Printer.Unit"
+                        },
+                        "size": {
+                            "$ref": "#/2023-02/Printer.Size"
+                        },
+                        "alignment": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "properties": {
+                                "relative": {
+                                    "type": "string",
+                                    "enum": [
+                                        "topLeft",
+                                        "topRight",
+                                        "bottomLeft",
+                                        "bottomRight"
+                                    ],
+                                    "default": "topLeft"
+                                },
+                                "x": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                },
+                                "y": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                }
+                            }
+                        },
+                        "orientation": {
+                            "type": "string",
+                            "enum": [
+                                "portrait",
+                                "landscape"
+                            ],
+                            "default": "portrait"
+                        },
+                        "skew": {
+                            "type": "integer",
+                            "default": 0,
+                            "maximum": 359,
+                            "minimum": 0
+                        },
+                        "version": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "properties": {
+                                "version": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "pattern": "^[1-9][0-9]*(\\.[0-9]+)?$"
+                                },
+                                "date": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "format": "date"
+                                },
+                                "author": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null
+                                }
+                            }
+                        },
+                        "cpi": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 1
+                        },
+                        "lpi": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 1
+                        },
+                        "pointSize": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 1
+                        },
+                        "copyright": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "title": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "comment": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "userPrompt": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "fields": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Printer.Field"
+                            }
+                        },
+                        "frames": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "additionalProperties": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Printer.Frame"
+                            }
+                        },
+                        "subForms": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "additionalProperties": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Printer.SubForm"
+                            }
+                        }
+                    }
+                },
+                "Printer.Unit": {
+                    "type": "object",
+                    "required": [
+                        "base"
+                    ],
+                    "properties": {
+                        "base": {
+                            "type": "string",
+                            "enum": [
+                                "inch",
+                                "mm",
+                                "rowColumn"
+                            ]
+                        },
+                        "x": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "default": 1
+                        },
+                        "y": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "default": 1
+                        }
+                    }
+                },
+                "Printer.Size": {
+                    "type": "object",
+                    "required": [
+                        "width",
+                        "height"
+                    ],
+                    "properties": {
+                        "width": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "height": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "Printer.Field": {
+                    "required": [
+                        "order",
+                        "position",
+                        "size"
+                    ],
+                    "properties": {
+                        "order": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "position": {
+                            "$ref": "#/2023-02/Printer.Position"
+                        },
+                        "follows": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "header": {
+                            "$ref": "#/2023-02/Printer.HeaderFooter"
+                        },
+                        "footer": {
+                            "$ref": "#/2023-02/Printer.HeaderFooter"
+                        },
+                        "side": {
+                            "type": "string",
+                            "enum": [
+                                "front",
+                                "back"
+                            ],
+                            "default": "front"
+                        },
+                        "size": {
+                            "$ref": "#/2023-02/Printer.Size"
+                        },
+                        "index": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "required": [
+                                "repeatCount"
+                            ],
+                            "properties": {
+                                "repeatCount": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                },
+                                "x": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                },
+                                "y": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                }
+                            }
+                        },
+                        "fieldType": {
+                            "type": "string",
+                            "enum": [
+                                "text",
+                                "micr",
+                                "ocr",
+                                "msf",
+                                "barcode",
+                                "graphic",
+                                "pagemark"
+                            ],
+                            "default": "text"
+                        },
+                        "scaling": {
+                            "type": "string",
+                            "enum": [
+                                "bestFit",
+                                "asIs",
+                                "maintainAspect"
+                            ],
+                            "default": "bestFit"
+                        },
+                        "barcode": {
+                            "type": "string",
+                            "enum": [
+                                "none",
+                                "above",
+                                "below",
+                                "both"
+                            ],
+                            "default": "none"
+                        },
+                        "coercivity": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "enum": [
+                                "auto",
+                                "low",
+                                "high"
+                            ],
+                            "default": null
+                        },
+                        "class": {
+                            "type": "string",
+                            "enum": [
+                                "optional",
+                                "static",
+                                "required"
+                            ],
+                            "default": "optional"
+                        },
+                        "access": {
+                            "type": "string",
+                            "enum": [
+                                "read",
+                                "write",
+                                "readWrite"
+                            ],
+                            "default": "write"
+                        },
+                        "overflow": {
+                            "type": "string",
+                            "enum": [
+                                "terminate",
+                                "truncate",
+                                "bestFit",
+                                "overwrite",
+                                "wordWrap"
+                            ],
+                            "default": "terminate"
+                        },
+                        "style": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "properties": {
+                                "bold": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "italic": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "underline": {
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "single",
+                                        "double"
+                                    ],
+                                    "default": "none"
+                                },
+                                "width": {
+                                    "type": "string",
+                                    "enum": [
+                                        "single",
+                                        "double",
+                                        "triple",
+                                        "quadruple"
+                                    ],
+                                    "default": "single"
+                                },
+                                "strike": {
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "single",
+                                        "double"
+                                    ],
+                                    "default": "none"
+                                },
+                                "rotate": {
+                                    "type": "string",
+                                    "enum": [
+                                        "none",
+                                        "ninety",
+                                        "upsideDown",
+                                        "twoSeventy"
+                                    ],
+                                    "default": "none"
+                                },
+                                "characterSpacing": {
+                                    "type": "string",
+                                    "enum": [
+                                        "standard",
+                                        "double"
+                                    ],
+                                    "default": "standard"
+                                },
+                                "lineSpacing": {
+                                    "type": "string",
+                                    "enum": [
+                                        "standard",
+                                        "double",
+                                        "triple",
+                                        "quadruple"
+                                    ],
+                                    "default": "standard"
+                                },
+                                "script": {
+                                    "type": "string",
+                                    "enum": [
+                                        "standard",
+                                        "superscript",
+                                        "subscript"
+                                    ],
+                                    "default": "standard"
+                                },
+                                "overscore": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "quality": {
+                                    "type": "string",
+                                    "enum": [
+                                        "standard",
+                                        "letter",
+                                        "nearLetter"
+                                    ],
+                                    "default": "standard"
+                                },
+                                "opaque": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "case": {
+                            "type": "string",
+                            "enum": [
+                                "noChange",
+                                "upper",
+                                "lower"
+                            ],
+                            "default": "noChange"
+                        },
+                        "horizontal": {
+                            "type": "string",
+                            "enum": [
+                                "left",
+                                "right",
+                                "center",
+                                "justify"
+                            ],
+                            "default": "left"
+                        },
+                        "vertical": {
+                            "type": "string",
+                            "enum": [
+                                "bottom",
+                                "center",
+                                "top"
+                            ],
+                            "default": "bottom"
+                        },
+                        "color": {
+                            "$ref": "#/2023-02/Printer.ColorFormat"
+                        },
+                        "font": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "required": [
+                                "name"
+                            ],
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "pointSize": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                },
+                                "cpi": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                },
+                                "lpi": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                }
+                            }
+                        },
+                        "format": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "initialValue": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "initialGraphic": {
+                            "$ref": "#/2023-02/Common.Base64Nullable"
+                        }
+                    }
+                },
+                "Printer.Position": {
+                    "type": "object",
+                    "required": [
+                        "x",
+                        "y"
+                    ],
+                    "properties": {
+                        "x": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "y": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "z": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "default": 0
+                        }
+                    }
+                },
+                "Printer.HeaderFooter": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^(([0-9]+|[0-9]+-[0-9]+),)*([0-9]+|[0-9]+-[0-9]+)+$|^ALL$",
+                    "default": null
+                },
+                "Printer.ColorFormat": {
+                    "type": "string",
+                    "pattern": "^black$|^white$|^gray$|^red$|^blue$|^green$|^yellow$|^([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]),([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5]),([01]?[0-9]?[0-9]|2[0-4][0-9]|25[0-5])$",
+                    "default": "black"
+                },
+                "Printer.Frame": {
+                    "type": "object",
+                    "required": [
+                        "position",
+                        "size"
+                    ],
+                    "properties": {
+                        "position": {
+                            "$ref": "#/2023-02/Printer.Position"
+                        },
+                        "frames": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "header": {
+                            "$ref": "#/2023-02/Printer.HeaderFooter"
+                        },
+                        "footer": {
+                            "$ref": "#/2023-02/Printer.HeaderFooter"
+                        },
+                        "side": {
+                            "type": "string",
+                            "enum": [
+                                "front",
+                                "back"
+                            ],
+                            "default": "front"
+                        },
+                        "size": {
+                            "$ref": "#/2023-02/Printer.Size"
+                        },
+                        "repeat": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "properties": {
+                                "repeatCountX": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "offsetX": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                },
+                                "repeatCountY": {
+                                    "type": "integer",
+                                    "minimum": 0
+                                },
+                                "offsetY": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "default": 0
+                                }
+                            }
+                        },
+                        "fieldType": {
+                            "type": "string",
+                            "enum": [
+                                "rectangle",
+                                "roundedCorner",
+                                "ellipse"
+                            ],
+                            "default": "rectangle"
+                        },
+                        "class": {
+                            "type": "string",
+                            "enum": [
+                                "static",
+                                "optional"
+                            ],
+                            "default": "static"
+                        },
+                        "overflow": {
+                            "type": "string",
+                            "enum": [
+                                "terminate",
+                                "truncate",
+                                "bestFit"
+                            ],
+                            "default": "terminate"
+                        },
+                        "style": {
+                            "type": "string",
+                            "enum": [
+                                "singleThin",
+                                "doubleThin",
+                                "singleThick",
+                                "doubleThick",
+                                "dotted"
+                            ],
+                            "default": "singleThin"
+                        },
+                        "color": {
+                            "$ref": "#/2023-02/Printer.ColorFormat"
+                        },
+                        "fillColor": {
+                            "$ref": "#/2023-02/Printer.ColorFormat"
+                        },
+                        "fillStyle": {
+                            "type": "string",
+                            "enum": [
+                                "none",
+                                "solid",
+                                "bdiagonal",
+                                "cross",
+                                "diagcross",
+                                "fdiagonal",
+                                "horizontal",
+                                "vertical"
+                            ],
+                            "default": "none"
+                        },
+                        "substSign": {
+                            "type": "string",
+                            "pattern": ".",
+                            "default": ""
+                        },
+                        "title": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "horizontal": {
+                            "type": "string",
+                            "enum": [
+                                "left",
+                                "right",
+                                "center"
+                            ],
+                            "default": "left"
+                        },
+                        "vertical": {
+                            "type": "string",
+                            "enum": [
+                                "bottom",
+                                "top"
+                            ],
+                            "default": "top"
+                        }
+                    }
+                },
+                "Printer.SubForm": {
+                    "required": [
+                        "position",
+                        "size",
+                        "fields"
+                    ],
+                    "properties": {
+                        "position": {
+                            "$ref": "#/2023-02/Printer.Position"
+                        },
+                        "size": {
+                            "$ref": "#/2023-02/Printer.Size"
+                        },
+                        "fields": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Printer.Field"
+                            }
+                        },
+                        "frames": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "additionalProperties": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Printer.Frame"
+                            }
+                        }
+                    }
+                },
+                "Printer.Media": {
+                    "required": [
+                        "unit",
+                        "size"
+                    ],
+                    "properties": {
+                        "mediaType": {
+                            "type": "string",
+                            "enum": [
+                                "generic",
+                                "passbook",
+                                "multipart"
+                            ],
+                            "default": "generic"
+                        },
+                        "source": {
+                            "type": "string",
+                            "pattern": "^any$|^upper$|^lower$|^external$|^aux$|^aux2$|^park$|^[a-zA-Z]([a-zA-Z0-9]*)$",
+                            "default": "any"
+                        },
+                        "unit": {
+                            "$ref": "#/2023-02/Printer.Unit"
+                        },
+                        "size": {
+                            "$ref": "#/2023-02/Printer.Size"
+                        },
+                        "printArea": {
+                            "$ref": "#/2023-02/Printer.Area"
+                        },
+                        "restricted": {
+                            "$ref": "#/2023-02/Printer.Area"
+                        },
+                        "fold": {
+                            "type": "string",
+                            "enum": [
+                                "horizontal",
+                                "vertical"
+                            ],
+                            "default": "horizontal"
+                        },
+                        "staggering": {
+                            "type": "integer",
+                            "default": 0,
+                            "minimum": 0
+                        },
+                        "page": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "minimum": 1,
+                            "default": null
+                        },
+                        "lines": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "minimum": 1,
+                            "default": null
+                        }
+                    }
+                },
+                "Printer.Area": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "x": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "default": 0
+                        },
+                        "y": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "default": 0
+                        },
+                        "width": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "default": 1
+                        },
+                        "height": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "default": 1
+                        }
+                    }
+                },
+                "Printer.MediaControl": {
+                    "type": "object",
+                    "$ref": "#/2023-02/Printer.MediaControlProperties"
+                },
+                "Printer.MediaControlProperties": {
+                    "minProperties": 1,
+                    "properties": {
+                        "move": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "eject",
+                                "retract",
+                                "park",
+                                "expel",
+                                "ejectToTransport",
+                                "stack"
+                            ]
                         },
                         "perforate": {
                             "type": "boolean",
@@ -28411,14 +30026,6 @@
                             "type": "boolean",
                             "default": false
                         },
-                        "retract": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "stack": {
-                            "type": "boolean",
-                            "default": false
-                        },
                         "partialCut": {
                             "type": "boolean",
                             "default": false
@@ -28427,13 +30034,16 @@
                             "type": "boolean",
                             "default": false
                         },
-                        "forward": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "backward": {
-                            "type": "boolean",
-                            "default": false
+                        "turnPage": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "forward",
+                                "backward"
+                            ]
                         },
                         "turnMedia": {
                             "type": "boolean",
@@ -28443,27 +30053,19 @@
                             "type": "boolean",
                             "default": false
                         },
-                        "park": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "expel": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "ejectToTransport": {
-                            "type": "boolean",
-                            "default": false
-                        },
                         "rotate180": {
-                            "type": "boolean",
-                            "default": false
-                        },
-                        "clearBuffer": {
                             "type": "boolean",
                             "default": false
                         }
                     }
+                },
+                "Printer.MediaControlNullable": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "$ref": "#/2023-02/Printer.MediaControlProperties"
                 },
                 "Printer.PaperSource": {
                     "type": "string",
@@ -28498,6 +30100,39 @@
                                 "notWrite",
                                 "hwerror",
                                 "graphic"
+                            ]
+                        }
+                    }
+                },
+                "Printer.ImageRequest": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "imageType",
+                        "colorFormat"
+                    ],
+                    "properties": {
+                        "imageType": {
+                            "type": "string",
+                            "enum": [
+                                "tif",
+                                "wmf",
+                                "bmp",
+                                "jpg",
+                                "png",
+                                "gif",
+                                "svg"
+                            ]
+                        },
+                        "colorFormat": {
+                            "type": "string",
+                            "enum": [
+                                "binary",
+                                "grayscale",
+                                "fullcolor"
                             ]
                         }
                     }
@@ -29273,6 +30908,9 @@
                         "check": {
                             "$ref": "#/2023-02/Check.StorageSet"
                         },
+                        "deposit": {
+                            "$ref": "#/2023-02/Deposit.StorageSet"
+                        },
                         "printer": {
                             "$ref": "#/2023-02/Printer.StorageSet"
                         }
@@ -29363,6 +31001,22 @@
                         "initial": {
                             "type": "object",
                             "$ref": "#/2023-02/Check.StorageCounts"
+                        }
+                    }
+                },
+                "Deposit.StorageSet": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "numOfDeposits"
+                    ],
+                    "properties": {
+                        "numOfDeposits": {
+                            "type": "integer",
+                            "minimum": 0
                         }
                     }
                 },
