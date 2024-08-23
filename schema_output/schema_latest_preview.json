@@ -17711,6 +17711,9 @@
                         },
                         "endToEndSecurity": {
                             "$ref": "#/2024-03/Common.EndToEndSecurityStatus"
+                        },
+                        "persistentDataStore": {
+                            "$ref": "#/2024-03/Common.PersistentDataStoreStatus"
                         }
                     }
                 },
@@ -17769,6 +17772,20 @@
                         "enforced"
                     ],
                     "default": null
+                },
+                "Common.PersistentDataStoreStatus": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "minProperties": 1,
+                    "default": null,
+                    "properties": {
+                        "remaining": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
                 },
                 "CardReader.Status": {
                     "type": [
@@ -20236,6 +20253,9 @@
                         },
                         "endToEndSecurity": {
                             "$ref": "#/2024-03/Common.EndToEndSecurity"
+                        },
+                        "persistentDataStore": {
+                            "$ref": "#/2024-03/Common.PersistentDataStoreCapability"
                         }
                     }
                 },
@@ -20377,6 +20397,20 @@
                         "commandNonceTimeout": {
                             "type": "integer",
                             "minimum": 0
+                        }
+                    }
+                },
+                "Common.PersistentDataStoreCapability": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "minProperties": 1,
+                    "default": null,
+                    "properties": {
+                        "capacity": {
+                            "type": "integer",
+                            "minimum": 1
                         }
                     }
                 },
