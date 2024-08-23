@@ -7543,7 +7543,7 @@
                                 "const": "TextTerminal.GetQueryForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -7552,7 +7552,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/TextTerminal.GetQueryFormCompletion/2.0"
+                        "$ref": "/messages#/TextTerminal.GetQueryFormCompletion/3.0"
                     }
                 }
             }
@@ -7595,7 +7595,7 @@
                                 "const": "TextTerminal.GetQueryField"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -7604,7 +7604,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/TextTerminal.GetQueryFieldCompletion/2.0"
+                        "$ref": "/messages#/TextTerminal.GetQueryFieldCompletion/3.0"
                     }
                 }
             }
@@ -8086,7 +8086,7 @@
                                 "const": "command"
                             },
                             "name": {
-                                "const": "TextTerminal.LoadForm"
+                                "const": "TextTerminal.SetForm"
                             },
                             "version": {
                                 "const": "2.0"
@@ -8098,7 +8098,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/TextTerminal.LoadFormCommand/2.0"
+                        "$ref": "/messages#/TextTerminal.SetFormCommand/2.0"
                     }
                 }
             }
@@ -8112,10 +8112,10 @@
                                 "const": "completion"
                             },
                             "name": {
-                                "const": "TextTerminal.LoadForm"
+                                "const": "TextTerminal.SetForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.0\""
                             }
                         }
                     }
@@ -8124,33 +8124,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/TextTerminal.LoadFormCompletion/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "event"
-                            },
-                            "name": {
-                                "const": "TextTerminal.FormLoadedEvent"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/TextTerminal.FormLoadedEvent/2.0"
+                        "$ref": "/messages#/TextTerminal.SetFormCompletion/2.0\""
                     }
                 }
             }
@@ -15799,7 +15773,7 @@
                 }
             },
             "TextTerminal.GetQueryFormCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15809,58 +15783,16 @@
                             ],
                             "default": null,
                             "enum": [
-                                "formNotFound",
-                                "formInvalid"
+                                "formNotFound"
                             ]
                         },
-                        "formName": {
+                        "form": {
                             "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
-                        },
-                        "width": {
-                            "type": [
-                                "integer",
+                                "object",
                                 "null"
                             ],
                             "default": null,
-                            "minimum": 0
-                        },
-                        "height": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 0
-                        },
-                        "versionMajor": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 0
-                        },
-                        "versionMinor": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 0
-                        },
-                        "fields": {
-                            "type": [
-                                "array",
-                                "null"
-                            ],
-                            "default": null,
-                            "items": {
-                                "type": "string"
-                            }
+                            "$ref": "/schemas#/2024-03/TextTerminal.Form"
                         }
                     }
                 }
@@ -15886,7 +15818,7 @@
                 }
             },
             "TextTerminal.GetQueryFieldCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15897,9 +15829,7 @@
                             "default": null,
                             "enum": [
                                 "formNotFound",
-                                "formInvalid",
-                                "fieldNotFound",
-                                "fieldInvalid"
+                                "fieldNotFound"
                             ]
                         },
                         "fields": {
@@ -15909,7 +15839,8 @@
                             ],
                             "default": null,
                             "additionalProperties": {
-                                "$ref": "/schemas#/2024-03/TextTerminal.FieldDetails"
+                                "type": "object",
+                                "$ref": "/schemas#/2024-03/TextTerminal.Field"
                             }
                         }
                     }
@@ -16335,25 +16266,29 @@
                     }
                 }
             },
-            "TextTerminal.LoadFormCommand": {
+            "TextTerminal.SetFormCommand": {
                 "2.0": {
                     "type": "object",
                     "required": [
-                        "definition"
+                        "name"
                     ],
                     "properties": {
-                        "definition": {
+                        "name": {
                             "type": "string"
                         },
-                        "overwrite": {
-                            "type": "boolean",
-                            "default": false
+                        "form": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "$ref": "/schemas#/2024-03/TextTerminal.Form"
                         }
                     }
                 }
             },
-            "TextTerminal.LoadFormCompletion": {
-                "2.0": {
+            "TextTerminal.SetFormCompletion": {
+                "2.0\"": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -16364,21 +16299,8 @@
                             "default": null,
                             "enum": [
                                 "formInvalid",
-                                "definitionExists"
+                                "formNotFound"
                             ]
-                        }
-                    }
-                }
-            },
-            "TextTerminal.FormLoadedEvent": {
-                "2.0": {
-                    "type": "object",
-                    "required": [
-                        "name"
-                    ],
-                    "properties": {
-                        "name": {
-                            "type": "string"
                         }
                     }
                 }
@@ -30194,56 +30116,193 @@
                         }
                     }
                 },
-                "TextTerminal.FieldDetails": {
-                    "type": [
-                        "object",
-                        "null"
+                "TextTerminal.Form": {
+                    "required": [
+                        "size",
+                        "fields"
                     ],
-                    "default": null,
                     "properties": {
-                        "type": {
-                            "type": "string",
-                            "default": "text",
-                            "enum": [
-                                "text",
-                                "invisible",
-                                "password"
-                            ]
+                        "size": {
+                            "$ref": "#/2024-03/TextTerminal.Size"
                         },
-                        "class": {
-                            "type": "string",
-                            "default": "optional",
-                            "enum": [
-                                "static",
-                                "optional",
-                                "required"
-                            ]
-                        },
-                        "access": {
+                        "version": {
                             "type": [
                                 "object",
                                 "null"
                             ],
                             "default": null,
                             "properties": {
-                                "read": {
-                                    "type": "boolean",
-                                    "default": false
+                                "version": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "pattern": "^[1-9][0-9]*(\\.[0-9]+)?$"
                                 },
-                                "write": {
-                                    "type": "boolean",
-                                    "default": true
+                                "date": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "format": "date"
+                                },
+                                "author": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null
                                 }
                             }
                         },
+                        "copyright": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "title": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "comment": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "fields": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object",
+                                "$ref": "#/2024-03/TextTerminal.Field"
+                            }
+                        }
+                    }
+                },
+                "TextTerminal.Size": {
+                    "type": "object",
+                    "required": [
+                        "width",
+                        "height"
+                    ],
+                    "properties": {
+                        "width": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "height": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
+                },
+                "TextTerminal.Field": {
+                    "required": [
+                        "position",
+                        "size"
+                    ],
+                    "properties": {
+                        "position": {
+                            "$ref": "#/2024-03/TextTerminal.Position"
+                        },
+                        "size": {
+                            "$ref": "#/2024-03/TextTerminal.Size"
+                        },
+                        "fieldType": {
+                            "type": "string",
+                            "enum": [
+                                "text",
+                                "invisible",
+                                "password",
+                                "graphic"
+                            ],
+                            "default": "text"
+                        },
+                        "scaling": {
+                            "type": "string",
+                            "enum": [
+                                "bestFit",
+                                "asIs",
+                                "maintainAspect"
+                            ],
+                            "default": "bestFit"
+                        },
+                        "class": {
+                            "type": "string",
+                            "enum": [
+                                "optional",
+                                "static",
+                                "required"
+                            ],
+                            "default": "optional"
+                        },
+                        "keys": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "enum": [
+                                "numeric",
+                                "hexadecimal",
+                                "alphanumeric"
+                            ],
+                            "default": "numeric"
+                        },
+                        "access": {
+                            "type": "string",
+                            "enum": [
+                                "read",
+                                "write",
+                                "readWrite"
+                            ],
+                            "default": "write"
+                        },
                         "overflow": {
                             "type": "string",
-                            "default": "terminate",
                             "enum": [
                                 "terminate",
                                 "truncate",
                                 "overwrite"
-                            ]
+                            ],
+                            "default": "terminate"
+                        },
+                        "style": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "properties": {
+                                "underline": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "inverted": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "flashing": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "horizontal": {
+                            "type": "string",
+                            "enum": [
+                                "left",
+                                "right",
+                                "center"
+                            ],
+                            "default": "left"
                         },
                         "format": {
                             "type": [
@@ -30251,6 +30310,33 @@
                                 "null"
                             ],
                             "default": null
+                        },
+                        "initialValue": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "initialGraphic": {
+                            "$ref": "#/2024-03/Common.Base64Nullable"
+                        }
+                    }
+                },
+                "TextTerminal.Position": {
+                    "type": "object",
+                    "required": [
+                        "x",
+                        "y"
+                    ],
+                    "properties": {
+                        "x": {
+                            "type": "integer",
+                            "minimum": 0
+                        },
+                        "y": {
+                            "type": "integer",
+                            "minimum": 0
                         }
                     }
                 },
