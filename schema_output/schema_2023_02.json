@@ -9727,7 +9727,7 @@
                                 "const": "BanknoteNeutralization.SetProtection"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "1.0"
                             }
                         }
                     }
@@ -9736,7 +9736,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/BanknoteNeutralization.SetProtectionCommand/2.0"
+                        "$ref": "/messages#/BanknoteNeutralization.SetProtectionCommand/1.0"
                     }
                 }
             }
@@ -9753,7 +9753,7 @@
                                 "const": "BanknoteNeutralization.SetProtection"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "1.0"
                             }
                         }
                     }
@@ -9762,7 +9762,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/BanknoteNeutralization.SetProtectionCompletion/2.0"
+                        "$ref": "/messages#/BanknoteNeutralization.SetProtectionCompletion/1.0"
                     }
                 }
             }
@@ -9779,7 +9779,7 @@
                                 "const": "BanknoteNeutralization.TriggerNeutralization"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "1.0"
                             }
                         }
                     }
@@ -9788,7 +9788,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/BanknoteNeutralization.TriggerNeutralizationCommand/2.0"
+                        "$ref": "/messages#/BanknoteNeutralization.TriggerNeutralizationCommand/1.0"
                     }
                 }
             }
@@ -10052,6 +10052,30 @@
                     }
                 }
             }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "PowerManagement.PowerSaveControl"
+                            },
+                            "version": {}
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.PowerSaveControlCommand/undefined"
+                    }
+                }
+            }
         }
     ],
     "$defs": {
@@ -10156,18 +10180,7 @@
                 }
             },
             "Common.PowerSaveControlCommand": {
-                "2.0": {
-                    "type": "object",
-                    "required": [
-                        "maxPowerSaveRecoveryTime"
-                    ],
-                    "properties": {
-                        "maxPowerSaveRecoveryTime": {
-                            "type": "integer",
-                            "minimum": 0
-                        }
-                    }
-                }
+                "undefined": {}
             },
             "Common.SetTransactionStateCommand": {
                 "2.0": {
@@ -17153,7 +17166,7 @@
                 }
             },
             "BanknoteNeutralization.SetProtectionCommand": {
-                "2.0": {
+                "1.0": {
                     "type": "object",
                     "required": [
                         "newState"
@@ -17178,7 +17191,7 @@
                 }
             },
             "BanknoteNeutralization.SetProtectionCompletion": {
-                "2.0": {
+                "1.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -17195,7 +17208,7 @@
                 }
             },
             "BanknoteNeutralization.TriggerNeutralizationCommand": {
-                "2.0": {
+                "1.0": {
                     "type": "object",
                     "required": [
                         "neutralizationAction"
@@ -17587,6 +17600,9 @@
                         },
                         "vendorApplication": {
                             "$ref": "#/2023-02/VendorApplication.Status"
+                        },
+                        "powerManagement": {
+                            "$ref": "#/2023-02/PowerManagement.Status"
                         }
                     }
                 },
@@ -17623,6 +17639,7 @@
                             "$ref": "#/2023-02/Common.PositionStatus"
                         },
                         "powerSaveRecoveryTime": {
+                            "deprecated": true,
                             "$ref": "#/2023-02/Common.PowerSaveRecoveryTime"
                         },
                         "antiFraudModule": {
@@ -19044,7 +19061,7 @@
                             "$ref": "#/2023-02/BanknoteNeutralization.CustomInputStates"
                         },
                         "powerSupply": {
-                            "$ref": "#/2023-02/BanknoteNeutralization.PowerSupply"
+                            "$ref": "#/2023-02/PowerManagement.Status"
                         },
                         "warnings": {
                             "$ref": "#/2023-02/BanknoteNeutralization.Warnings"
@@ -19207,19 +19224,87 @@
                         }
                     }
                 },
-                "BanknoteNeutralization.PowerSupply": {
+                "PowerManagement.Status": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "info": {
+                            "$ref": "#/2023-02/PowerManagement.PowerInfo"
+                        },
+                        "powerSaveRecoveryTime": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 0
+                        }
+                    }
+                },
+                "PowerManagement.PowerInfo": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "powerInStatus": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "powering",
+                                "noPower"
+                            ]
+                        },
+                        "powerOutStatus": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "powering",
+                                "noPower"
+                            ]
+                        },
+                        "batteryStatus": {
+                            "$ref": "#/2023-02/PowerManagement.BatteryStatus"
+                        },
+                        "batteryChargingStatus": {
+                            "$ref": "#/2023-02/PowerManagement.BatteryChargingStatus"
+                        }
+                    }
+                },
+                "PowerManagement.BatteryStatus": {
                     "type": [
                         "string",
                         "null"
                     ],
                     "default": null,
                     "enum": [
-                        "initializing",
-                        "unknown",
-                        "ok",
-                        "externalMainPowerOutage",
+                        "full",
                         "low",
+                        "operational",
+                        "critical",
                         "failure"
+                    ]
+                },
+                "PowerManagement.BatteryChargingStatus": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "enum": [
+                        "charging",
+                        "discharging",
+                        "notCharging"
                     ]
                 },
                 "BanknoteNeutralization.Warnings": {
@@ -20060,6 +20145,9 @@
                         },
                         "vendorApplication": {
                             "$ref": "#/2023-02/VendorApplication.Capabilities"
+                        },
+                        "powerManagement": {
+                            "$ref": "#/2023-02/PowerManagement.Capabilities"
                         }
                     }
                 },
@@ -20166,6 +20254,7 @@
                             }
                         },
                         "powerSaveControl": {
+                            "deprecated": true,
                             "type": "boolean",
                             "default": false
                         },
@@ -24419,6 +24508,23 @@
                         }
                     }
                 },
+                "PowerManagement.Capabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "powerSaveControl": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "batteryRechargeable": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                },
                 "Common.TransactionState": {
                     "type": "object",
                     "required": [
@@ -24505,6 +24611,9 @@
                         },
                         "vendorApplication": {
                             "$ref": "#/2023-02/VendorApplication.Status"
+                        },
+                        "powerManagement": {
+                            "$ref": "#/2023-02/PowerManagement.Status"
                         }
                     }
                 },
@@ -26310,7 +26419,7 @@
                             ]
                         },
                         "powerSupply": {
-                            "$ref": "#/2023-02/BanknoteNeutralization.PowerSupply"
+                            "$ref": "#/2023-02/PowerManagement.PowerInfo"
                         },
                         "tilt": {
                             "$ref": "#/2023-02/BanknoteNeutralization.TiltState"
