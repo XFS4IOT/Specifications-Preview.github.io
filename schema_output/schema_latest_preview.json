@@ -10064,7 +10064,9 @@
                             "name": {
                                 "const": "PowerManagement.PowerSaveControl"
                             },
-                            "version": {}
+                            "version": {
+                                "const": "1.0"
+                            }
                         }
                     }
                 }
@@ -10072,7 +10074,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Common.PowerSaveControlCommand/undefined"
+                        "$ref": "/messages#/PowerManagement.PowerSaveControlCommand/1.0"
                     }
                 }
             }
@@ -10180,7 +10182,18 @@
                 }
             },
             "Common.PowerSaveControlCommand": {
-                "undefined": {}
+                "2.0": {
+                    "type": "object",
+                    "required": [
+                        "maxPowerSaveRecoveryTime"
+                    ],
+                    "properties": {
+                        "maxPowerSaveRecoveryTime": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
+                }
             },
             "Common.SetTransactionStateCommand": {
                 "2.0": {
@@ -17311,6 +17324,20 @@
             "VendorApplication.InterfaceChangedEvent": {
                 "2.0": {
                     "$ref": "/schemas#/2024-03/VendorApplication.ActiveInterface"
+                }
+            },
+            "PowerManagement.PowerSaveControlCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "maxPowerSaveRecoveryTime"
+                    ],
+                    "properties": {
+                        "maxPowerSaveRecoveryTime": {
+                            "type": "integer",
+                            "minimum": 0
+                        }
+                    }
                 }
             }
         },
