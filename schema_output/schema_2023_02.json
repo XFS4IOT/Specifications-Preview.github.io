@@ -17849,32 +17849,6 @@
                                 "inoperable",
                                 "unknown"
                             ]
-                        },
-                        "dispenser": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "enum": [
-                                "ok",
-                                "state",
-                                "stop",
-                                "unknown"
-                            ]
-                        },
-                        "shutter": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "enum": [
-                                "closed",
-                                "open",
-                                "jammed",
-                                "unknown"
-                            ]
                         }
                     }
                 },
