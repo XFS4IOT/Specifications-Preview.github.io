@@ -19059,6 +19059,9 @@
                         "null"
                     ],
                     "default": null,
+                    "required": [
+                        "state"
+                    ],
                     "properties": {
                         "state": {
                             "$ref": "#/2023-02/BanknoteNeutralization.State"
@@ -24026,13 +24029,11 @@
                         "safeIntrusionDetection",
                         "externalDryContactStatusBox",
                         "realTimeClock",
-                        "physicalStorageUnitsAccessControl",
-                        "customInputs"
+                        "physicalStorageUnitsAccessControl"
                     ],
                     "properties": {
                         "mode": {
                             "type": "string",
-                            "default": "autonomous",
                             "enum": [
                                 "autonomous",
                                 "programmable",
@@ -26409,12 +26410,7 @@
                     "default": null,
                     "required": [
                         "identifier",
-                        "protection",
-                        "powerSupply",
-                        "tilt",
-                        "temperature",
-                        "lid",
-                        "neutralizationTrigger"
+                        "protection"
                     ],
                     "properties": {
                         "identifier": {
@@ -26422,11 +26418,7 @@
                             "type": "string"
                         },
                         "protection": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
+                            "type": "string",
                             "enum": [
                                 "fault",
                                 "armed",
