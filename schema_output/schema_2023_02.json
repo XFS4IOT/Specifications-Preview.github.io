@@ -10742,6 +10742,7 @@
                             "default": null
                         },
                         "chipData": {
+                            "sensitive": true,
                             "$ref": "/schemas#/2023-02/Common.Base64Nullable"
                         }
                     }
@@ -14411,6 +14412,7 @@
                     "properties": {
                         "validationData": {
                             "type": "string",
+                            "sensitive": true,
                             "pattern": "^[0-9]{16}$"
                         },
                         "offset": {
@@ -14492,6 +14494,7 @@
                     "properties": {
                         "pan": {
                             "type": "string",
+                            "sensitive": true,
                             "pattern": "^[0-9]{23}$"
                         },
                         "pvv": {
@@ -14554,6 +14557,7 @@
                             "type": "string"
                         },
                         "chipData": {
+                            "sensitive": true,
                             "$ref": "/schemas#/2023-02/Common.Base64"
                         },
                         "algorithmData": {
@@ -14965,7 +14969,8 @@
                                 ],
                                 "minProperties": 1,
                                 "items": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "sensitive": true
                                 }
                             }
                         },
@@ -15082,6 +15087,7 @@
                             ]
                         },
                         "data": {
+                            "sensitive": true,
                             "$ref": "/schemas#/2023-02/Common.Base64"
                         }
                     }
@@ -15122,6 +15128,7 @@
                     ],
                     "properties": {
                         "data": {
+                            "sensitive": true,
                             "$ref": "/schemas#/2023-02/Common.Base64"
                         },
                         "mediaControl": {
@@ -16087,7 +16094,8 @@
                             ],
                             "default": null,
                             "additionalProperties": {
-                                "type": "string"
+                                "type": "string",
+                                "sensitive": true
                             }
                         }
                     }
@@ -16246,6 +16254,7 @@
                             ]
                         },
                         "input": {
+                            "sensitive": true,
                             "type": [
                                 "string",
                                 "null"
@@ -24691,6 +24700,7 @@
                             "$ref": "#/2023-02/CardReader.CardDataStatus"
                         },
                         "data": {
+                            "sensitive": true,
                             "$ref": "#/2023-02/CardReader.CardDataData"
                         }
                     }
@@ -24787,6 +24797,7 @@
                             ]
                         },
                         "dataRead": {
+                            "sensitive": true,
                             "$ref": "#/2023-02/Common.Base64"
                         },
                         "clessOutcome": {
@@ -24846,6 +24857,7 @@
                             "default": 0
                         },
                         "discretionaryData": {
+                            "sensitive": true,
                             "$ref": "#/2023-02/Common.Base64Nullable"
                         }
                     }
@@ -24946,6 +24958,7 @@
                             ]
                         },
                         "dataRead": {
+                            "sensitive": true,
                             "$ref": "#/2023-02/Common.Base64"
                         },
                         "clessOutcome": {
@@ -27906,6 +27919,7 @@
                 },
                 "Check.CodelineData": {
                     "type": "string",
+                    "sensitive": true,
                     "default": ""
                 },
                 "Check.MagneticReadIndicator": {
@@ -29134,6 +29148,7 @@
                             "$ref": "#/2023-02/Keyboard.EntryCompletion"
                         },
                         "digit": {
+                            "sensitive": true,
                             "type": "string",
                             "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                         }
@@ -29164,6 +29179,7 @@
                                 "null"
                             ],
                             "default": null,
+                            "sensitive": true,
                             "pattern": "^[0-9a-fA-F]{2,}$"
                         },
                         "padding": {
@@ -30545,6 +30561,7 @@
                     "minProperties": 1,
                     "properties": {
                         "key": {
+                            "sensitive": true,
                             "$ref": "#/2023-02/TextTerminal.AllKeysNullable"
                         },
                         "commandKey": {
@@ -30636,6 +30653,7 @@
                             "$ref": "#/2023-02/Biometric.DataType"
                         },
                         "data": {
+                            "sensitive": true,
                             "$ref": "#/2023-02/Common.Base64"
                         }
                     }
