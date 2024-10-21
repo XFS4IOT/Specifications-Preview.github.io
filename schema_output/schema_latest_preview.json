@@ -4446,58 +4446,6 @@
                                 "const": "command"
                             },
                             "name": {
-                                "const": "KeyManagement.DeriveKey"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/KeyManagement.DeriveKeyCommand/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "completion"
-                            },
-                            "name": {
-                                "const": "KeyManagement.DeriveKey"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/KeyManagement.DeriveKeyCompletion/2.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "command"
-                            },
-                            "name": {
                                 "const": "KeyManagement.ImportKey"
                             },
                             "version": {
@@ -8785,6 +8733,292 @@
                     "header": {
                         "properties": {
                             "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "German.GetHSMTData"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.GetHSMTDataCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "German.SetHSMTData"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.SetHSMTDataCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "German.SetHSMTData"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.SetHSMTDataCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "German.SecureMsgSend"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.SecureMsgSendCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "German.SecureMsgSend"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.SecureMsgSendCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "German.SecureMsgReceive"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.SecureMsgReceiveCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "German.SecureMsgReceive"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.SecureMsgReceiveCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "German.HSMInit"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.HSMInitCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "German.HSMInit"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.HSMInitCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "German.HSMTDataChangedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.HSMTDataChangedEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "German.OPTRequiredEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/German.OPTRequiredEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
                                 "const": "command"
                             },
                             "name": {
@@ -12806,73 +13040,6 @@
                     }
                 }
             },
-            "KeyManagement.DeriveKeyCommand": {
-                "2.0": {
-                    "type": "object",
-                    "allOf": [
-                        {
-                            "required": [
-                                "derivationAlgorithm",
-                                "key",
-                                "keyGenKey",
-                                "inputData"
-                            ]
-                        },
-                        {
-                            "properties": {
-                                "derivationAlgorithm": {
-                                    "type": "string",
-                                    "enum": [
-                                        "chipZka"
-                                    ]
-                                },
-                                "key": {
-                                    "type": "string"
-                                },
-                                "keyGenKey": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        {
-                            "$ref": "/schemas#/2024-03/Crypto.IVProperties"
-                        },
-                        {
-                            "$ref": "/schemas#/2024-03/Crypto.PaddingProperty"
-                        },
-                        {
-                            "properties": {
-                                "inputData": {
-                                    "$ref": "/schemas#/2024-03/Common.Base64"
-                                }
-                            }
-                        }
-                    ]
-                }
-            },
-            "KeyManagement.DeriveKeyCompletion": {
-                "2.0": {
-                    "type": "object",
-                    "properties": {
-                        "errorCode": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "enum": [
-                                "accessDenied",
-                                "keyNotFound",
-                                "keyNoValue",
-                                "algorithmNotSupported",
-                                "duplicateKey",
-                                "useViolation",
-                                "invalidKeyLength"
-                            ]
-                        }
-                    }
-                }
-            },
             "KeyManagement.ImportKeyCommand": {
                 "3.0": {
                     "type": "object",
@@ -16791,6 +16958,187 @@
                     }
                 }
             },
+            "German.GetHSMTDataCompletion": {
+                "1.0": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "$ref": "/schemas#/2024-03/German.HSMTDataRead"
+                }
+            },
+            "German.SetHSMTDataCommand": {
+                "1.0": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "$ref": "/schemas#/2024-03/German.HSMTDataSet"
+                }
+            },
+            "German.SetHSMTDataCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "accessDenied",
+                                "hsmStateInvalid"
+                            ]
+                        }
+                    }
+                }
+            },
+            "German.SecureMsgSendCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "protocol"
+                    ],
+                    "properties": {
+                        "protocol": {
+                            "type": "string",
+                            "enum": [
+                                "isoPs",
+                                "rawData",
+                                "hsmLdi",
+                                "genAs",
+                                "pinCmp"
+                            ]
+                        },
+                        "msg": {
+                            "$ref": "/schemas#/2024-03/Common.Base64Nullable"
+                        }
+                    }
+                }
+            },
+            "German.SecureMsgSendCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "accessDenied",
+                                "hsmStateInvalid",
+                                "protocolInvalid",
+                                "formatInvalid",
+                                "contentInvalid",
+                                "keyNotFound",
+                                "noPin"
+                            ]
+                        },
+                        "msg": {
+                            "$ref": "/schemas#/2024-03/Common.Base64Nullable"
+                        }
+                    }
+                }
+            },
+            "German.SecureMsgReceiveCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "protocol"
+                    ],
+                    "properties": {
+                        "protocol": {
+                            "type": "string",
+                            "enum": [
+                                "isoPs",
+                                "rawData",
+                                "genAs"
+                            ]
+                        },
+                        "msg": {
+                            "$ref": "/schemas#/2024-03/Common.Base64Nullable"
+                        }
+                    }
+                }
+            },
+            "German.SecureMsgReceiveCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "accessDenied",
+                                "hsmStateInvalid",
+                                "macInvalid",
+                                "protocolInvalid",
+                                "formatInvalid",
+                                "contentInvalid",
+                                "keyNotFound"
+                            ]
+                        }
+                    }
+                }
+            },
+            "German.HSMInitCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "initMode"
+                    ],
+                    "properties": {
+                        "initMode": {
+                            "type": "string",
+                            "enum": [
+                                "temp",
+                                "definite",
+                                "irreversible"
+                            ]
+                        },
+                        "onlineTime": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "pattern": "^[0-9]{4}(0[1-9]|1[0-2])(0[1-9]|[12][0-9]|3[01])([01][0-9]|2[0-3])[0-5][0-9][0-5][0-9]$"
+                        }
+                    }
+                }
+            },
+            "German.HSMInitCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "modeNotSupported",
+                                "hsmStateInvalid"
+                            ]
+                        }
+                    }
+                }
+            },
+            "German.HSMTDataChangedEvent": {
+                "1.0": {
+                    "type": "object",
+                    "$ref": "/schemas#/2024-03/German.HSMTDataRead"
+                }
+            },
+            "German.OPTRequiredEvent": {
+                "1.0": {}
+            },
             "Lights.SetLightCommand": {
                 "3.0": {
                     "type": "object",
@@ -20170,6 +20518,9 @@
                         "camera": {
                             "$ref": "#/2024-03/Camera.Capabilities"
                         },
+                        "german": {
+                            "$ref": "#/2024-03/German.Capabilities"
+                        },
                         "lights": {
                             "$ref": "#/2024-03/Lights.Capabilities"
                         },
@@ -20222,6 +20573,7 @@
                                 "Check",
                                 "MixedMedia",
                                 "Deposit",
+                                "German",
                                 "BanknoteNeutralization"
                             ]
                         },
@@ -22169,19 +22521,6 @@
                             "type": "integer",
                             "minimum": 0
                         },
-                        "derivationAlgorithms": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "properties": {
-                                "chipZka": {
-                                    "type": "boolean",
-                                    "default": false
-                                }
-                            }
-                        },
                         "keyCheckModes": {
                             "type": [
                                 "object",
@@ -22198,13 +22537,6 @@
                                     "default": false
                                 }
                             }
-                        },
-                        "hsmVendor": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
                         },
                         "rsaAuthenticationScheme": {
                             "type": [
@@ -23829,6 +24161,22 @@
                 "Camera.Available": {
                     "type": "boolean",
                     "default": false
+                },
+                "German.Capabilities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "hsmVendor": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        }
+                    }
                 },
                 "Lights.Capabilities": {
                     "type": [
@@ -28699,49 +29047,6 @@
                         "reserved3"
                     ]
                 },
-                "Crypto.IVProperties": {
-                    "properties": {
-                        "storedKey": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
-                        },
-                        "iv": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "required": [
-                                "value"
-                            ],
-                            "properties": {
-                                "key": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ],
-                                    "default": null
-                                },
-                                "value": {
-                                    "$ref": "#/2024-03/Common.Base64"
-                                }
-                            }
-                        }
-                    }
-                },
-                "Crypto.PaddingProperty": {
-                    "properties": {
-                        "padding": {
-                            "type": "integer",
-                            "default": 0,
-                            "minimum": 0,
-                            "maximum": 255
-                        }
-                    }
-                },
                 "KeyManagement.KeyUsage": {
                     "$ref": "#/2024-03/KeyManagement.KeyUsageDescription",
                     "type": "string",
@@ -28914,6 +29219,49 @@
                                 "null"
                             ],
                             "default": null
+                        }
+                    }
+                },
+                "Crypto.IVProperties": {
+                    "properties": {
+                        "storedKey": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "iv": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "required": [
+                                "value"
+                            ],
+                            "properties": {
+                                "key": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null
+                                },
+                                "value": {
+                                    "$ref": "#/2024-03/Common.Base64"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Crypto.PaddingProperty": {
+                    "properties": {
+                        "padding": {
+                            "type": "integer",
+                            "default": 0,
+                            "minimum": 0,
+                            "maximum": 255
                         }
                     }
                 },
@@ -30711,6 +31059,77 @@
                             ]
                         }
                     }
+                },
+                "German.HSMTDataRead": {
+                    "minProperties": 1,
+                    "$ref": "#/2024-03/German.HSMTDataSetProperties",
+                    "properties": {
+                        "zkaId": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^.{16}$",
+                            "default": null
+                        },
+                        "hsmStatus": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 1,
+                            "maximum": 5
+                        },
+                        "hsmManufacturerId": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^.{6,}$",
+                            "default": null
+                        },
+                        "hsmSerialNumber": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^.{10}$",
+                            "default": null
+                        }
+                    }
+                },
+                "German.HSMTDataSetProperties": {
+                    "properties": {
+                        "terminalId": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^[0-9]{8}$",
+                            "default": null
+                        },
+                        "bankCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^[0-9]{8}$",
+                            "default": null
+                        },
+                        "onlineDateAndTime": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "pattern": "^20\\d{2}(0[1-9]|1[0,1,2])(0[1-9]|[12][0-9]|3[01])(0[0-9]|1[0-9]|2[0-3])[0-5][0-9][0-5][0-9]$",
+                            "default": null
+                        }
+                    }
+                },
+                "German.HSMTDataSet": {
+                    "minProperties": 1,
+                    "$ref": "#/2024-03/German.HSMTDataSetProperties"
                 },
                 "Lights.SetStatus": {
                     "type": "object",
