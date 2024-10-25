@@ -5463,7 +5463,7 @@
                                 "const": "Keyboard.GetLayout"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5472,7 +5472,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Keyboard.GetLayoutCompletion/2.0"
+                        "$ref": "/messages#/Keyboard.GetLayoutCompletion/3.0"
                     }
                 }
             }
@@ -14222,7 +14222,7 @@
                 }
             },
             "Keyboard.GetLayoutCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -29357,26 +29357,22 @@
                             "minItems": 1,
                             "items": {
                                 "type": "object",
-                                "oneOf": [
-                                    {
-                                        "$ref": "#/2024-03/Keyboard.FunctionKey"
-                                    },
-                                    {
-                                        "$ref": "#/2024-03/Keyboard.ShiftKey"
-                                    }
-                                ]
+                                "$ref": "#/2024-03/Keyboard.Key"
                             }
                         }
                     }
                 },
-                "Keyboard.FunctionKey": {
+                "Keyboard.Key": {
                     "$ref": "#/2024-03/Keyboard.KeyPosition",
                     "required": [
                         "key"
                     ],
                     "properties": {
                         "key": {
-                            "$ref": "#/2024-03/Keyboard.AllKeysEnum"
+                            "$ref": "#/2024-03/Keyboard.AllKeys"
+                        },
+                        "shiftKey": {
+                            "$ref": "#/2024-03/Keyboard.AllKeysNullable"
                         }
                     }
                 },
@@ -29390,40 +29386,33 @@
                     "properties": {
                         "xPos": {
                             "type": "integer",
-                            "minimum": 0,
-                            "maximum": 999
+                            "minimum": 0
                         },
                         "yPos": {
                             "type": "integer",
-                            "minimum": 0,
-                            "maximum": 999
+                            "minimum": 0
                         },
                         "xSize": {
                             "type": "integer",
-                            "minimum": 1,
-                            "maximum": 1000
+                            "minimum": 1
                         },
                         "ySize": {
                             "type": "integer",
-                            "minimum": 1,
-                            "maximum": 1000
+                            "minimum": 1
                         }
                     }
                 },
-                "Keyboard.AllKeysEnum": {
+                "Keyboard.AllKeys": {
                     "type": "string",
                     "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                 },
-                "Keyboard.ShiftKey": {
-                    "$ref": "#/2024-03/Keyboard.KeyPosition",
-                    "required": [
-                        "shiftKey"
+                "Keyboard.AllKeysNullable": {
+                    "type": [
+                        "string",
+                        "null"
                     ],
-                    "properties": {
-                        "shiftKey": {
-                            "$ref": "#/2024-03/Keyboard.AllKeysEnum"
-                        }
-                    }
+                    "default": null,
+                    "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                 },
                 "Keyboard.LayoutPin": {
                     "properties": {
@@ -29496,9 +29485,7 @@
                             "$ref": "#/2024-03/Keyboard.EntryCompletion"
                         },
                         "digit": {
-                            "sensitive": true,
-                            "type": "string",
-                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
+                            "$ref": "#/2024-03/Keyboard.AllKeys"
                         }
                     }
                 },
