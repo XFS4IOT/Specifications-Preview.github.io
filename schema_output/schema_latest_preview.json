@@ -445,7 +445,7 @@
                                 "const": "CardReader.EMVClessQueryApplications"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -454,7 +454,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.EMVClessQueryApplicationsCompletion/2.0"
+                        "$ref": "/messages#/CardReader.EMVClessQueryApplicationsCompletion/3.0"
                     }
                 }
             }
@@ -497,7 +497,7 @@
                                 "const": "CardReader.ReadRawData"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -506,7 +506,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.ReadRawDataCompletion/2.0"
+                        "$ref": "/messages#/CardReader.ReadRawDataCompletion/3.0"
                     }
                 }
             }
@@ -627,7 +627,7 @@
                                 "const": "CardReader.WriteRawData"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -636,7 +636,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.WriteRawDataCommand/2.0"
+                        "$ref": "/messages#/CardReader.WriteRawDataCommand/3.0"
                     }
                 }
             }
@@ -731,7 +731,7 @@
                                 "const": "CardReader.SetKey"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -740,7 +740,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.SetKeyCommand/2.0"
+                        "$ref": "/messages#/CardReader.SetKeyCommand/3.0"
                     }
                 }
             }
@@ -783,7 +783,7 @@
                                 "const": "CardReader.ChipIO"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -792,7 +792,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.ChipIOCommand/2.0"
+                        "$ref": "/messages#/CardReader.ChipIOCommand/3.0"
                     }
                 }
             }
@@ -809,7 +809,7 @@
                                 "const": "CardReader.ChipIO"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -818,7 +818,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.ChipIOCompletion/2.0"
+                        "$ref": "/messages#/CardReader.ChipIOCompletion/3.0"
                     }
                 }
             }
@@ -939,7 +939,7 @@
                                 "const": "CardReader.EMVClessConfigure"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -948,7 +948,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.EMVClessConfigureCommand/2.0"
+                        "$ref": "/messages#/CardReader.EMVClessConfigureCommand/3.0"
                     }
                 }
             }
@@ -991,7 +991,7 @@
                                 "const": "CardReader.EMVClessPerformTransaction"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -1000,7 +1000,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.EMVClessPerformTransactionCommand/2.0"
+                        "$ref": "/messages#/CardReader.EMVClessPerformTransactionCommand/3.0"
                     }
                 }
             }
@@ -1017,7 +1017,7 @@
                                 "const": "CardReader.EMVClessPerformTransaction"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -1026,7 +1026,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.EMVClessPerformTransactionCompletion/2.0"
+                        "$ref": "/messages#/CardReader.EMVClessPerformTransactionCompletion/3.0"
                     }
                 }
             }
@@ -1095,7 +1095,7 @@
                                 "const": "CardReader.EMVClessIssuerUpdate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -1104,7 +1104,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.EMVClessIssuerUpdateCompletion/2.0"
+                        "$ref": "/messages#/CardReader.EMVClessIssuerUpdateCompletion/3.0"
                     }
                 }
             }
@@ -8115,7 +8115,7 @@
                                 "const": "BarcodeReader.Read"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8124,7 +8124,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/BarcodeReader.ReadCompletion/2.0"
+                        "$ref": "/messages#/BarcodeReader.ReadCompletion/3.0"
                     }
                 }
             }
@@ -8193,7 +8193,7 @@
                                 "const": "Biometric.Read"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8202,7 +8202,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Biometric.ReadCompletion/2.0"
+                        "$ref": "/messages#/Biometric.ReadCompletion/3.0"
                     }
                 }
             }
@@ -8323,7 +8323,7 @@
                                 "const": "Biometric.Import"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8332,7 +8332,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Biometric.ImportCompletion/2.0"
+                        "$ref": "/messages#/Biometric.ImportCompletion/3.0"
                     }
                 }
             }
@@ -8375,7 +8375,7 @@
                                 "const": "Biometric.Match"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8384,7 +8384,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Biometric.MatchCompletion/2.0"
+                        "$ref": "/messages#/Biometric.MatchCompletion/3.0"
                     }
                 }
             }
@@ -8661,7 +8661,7 @@
                                 "const": "Camera.TakePicture"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8670,7 +8670,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Camera.TakePictureCompletion/2.0"
+                        "$ref": "/messages#/Camera.TakePictureCompletion/3.0"
                     }
                 }
             }
@@ -10540,7 +10540,7 @@
                 }
             },
             "CardReader.EMVClessQueryApplicationsCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "appData": {
@@ -10633,7 +10633,7 @@
                 }
             },
             "CardReader.ReadRawDataCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -10793,7 +10793,7 @@
                 }
             },
             "CardReader.WriteRawDataCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "minProperties": 1,
                     "properties": {
@@ -10884,7 +10884,7 @@
                 }
             },
             "CardReader.SetKeyCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "keyValue"
@@ -10914,7 +10914,7 @@
                 }
             },
             "CardReader.ChipIOCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "chipData"
@@ -10940,7 +10940,7 @@
                 }
             },
             "CardReader.ChipIOCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -11065,7 +11065,7 @@
                 }
             },
             "CardReader.EMVClessConfigureCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "terminalData",
@@ -11176,7 +11176,7 @@
                 }
             },
             "CardReader.EMVClessPerformTransactionCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "data": {
@@ -11186,7 +11186,7 @@
                 }
             },
             "CardReader.EMVClessPerformTransactionCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -11235,7 +11235,7 @@
                 }
             },
             "CardReader.EMVClessIssuerUpdateCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -16523,7 +16523,7 @@
                 }
             },
             "BarcodeReader.ReadCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -16679,7 +16679,7 @@
                 }
             },
             "Biometric.ReadCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -16735,7 +16735,7 @@
                 }
             },
             "Biometric.ImportCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -16764,7 +16764,7 @@
                 }
             },
             "Biometric.MatchCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -16916,7 +16916,7 @@
                 }
             },
             "Camera.TakePictureCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -23259,6 +23259,7 @@
                                 "object",
                                 "null"
                             ],
+                            "default": null,
                             "properties": {
                                 "horizontal": {
                                     "type": "boolean",
@@ -24866,9 +24867,6 @@
                         "null"
                     ],
                     "default": null,
-                    "required": [
-                        "supportedAccessLevels"
-                    ],
                     "properties": {
                         "supportedAccessLevels": {
                             "type": [
@@ -26387,6 +26385,7 @@
                         "object",
                         "null"
                     ],
+                    "default": null,
                     "properties": {
                         "type": {
                             "type": [
@@ -26414,6 +26413,7 @@
                         "object",
                         "null"
                     ],
+                    "default": null,
                     "properties": {
                         "cardID": {
                             "type": [
@@ -26437,6 +26437,7 @@
                         "object",
                         "null"
                     ],
+                    "default": null,
                     "properties": {
                         "initialCount": {
                             "type": [
@@ -26569,6 +26570,7 @@
                         "object",
                         "null"
                     ],
+                    "default": null,
                     "properties": {
                         "types": {
                             "$ref": "#/2024-03/Check.StorageTypes"
@@ -30192,7 +30194,8 @@
                             "properties": {
                                 "repeatCountX": {
                                     "type": "integer",
-                                    "minimum": 0
+                                    "minimum": 0,
+                                    "default": 0
                                 },
                                 "offsetX": {
                                     "type": "integer",
@@ -30201,7 +30204,8 @@
                                 },
                                 "repeatCountY": {
                                     "type": "integer",
-                                    "minimum": 0
+                                    "minimum": 0,
+                                    "default": 0
                                 },
                                 "offsetY": {
                                     "type": "integer",
@@ -31635,6 +31639,7 @@
                         "object",
                         "null"
                     ],
+                    "default": null,
                     "required": [
                         "initialCount"
                     ],
