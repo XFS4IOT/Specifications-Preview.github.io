@@ -5125,7 +5125,7 @@
                                 "const": "KeyManagement.IllegalKeyAccessEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5134,7 +5134,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.IllegalKeyAccessEvent/2.0"
+                        "$ref": "/messages#/KeyManagement.IllegalKeyAccessEvent/3.0"
                     }
                 }
             }
@@ -13074,7 +13074,11 @@
                                     "pattern": "^[0-9BCDEGSTVXY]$"
                                 },
                                 "restrictedKeyUsage": {
-                                    "type": "string",
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "default": null,
                                     "pattern": "^B[0-2]$|^C0$|^D[0-2]$|^E[0-6]$|^I0$|^K[0-4]$|^M[0-8]$|^P0$|^S[0-2]$|^V[0-4]$|^[0-9][0-9]$"
                                 }
                             }
@@ -13823,7 +13827,7 @@
                 "2.0": {}
             },
             "KeyManagement.IllegalKeyAccessEvent": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "keyName",
@@ -13839,7 +13843,7 @@
                                 "keyNotFound",
                                 "keyNoValue",
                                 "useViolation",
-                                "algorithmNotSupp",
+                                "algorithmNotSupported",
                                 "dukptOverflow"
                             ]
                         }
@@ -14392,7 +14396,8 @@
                             "enum": [
                                 16,
                                 32,
-                                48
+                                48,
+                                64
                             ]
                         },
                         "autoEnd": {
@@ -16775,6 +16780,7 @@
                             "default": null,
                             "enum": [
                                 "noImportedData",
+                                "invalidIdentifier",
                                 "modeNotSupported",
                                 "noCaptureData",
                                 "invalidCompareMode",
@@ -18101,7 +18107,9 @@
                         "object",
                         "null"
                     ],
-                    "minProperties": 1,
+                    "required": [
+                        "remaining"
+                    ],
                     "default": null,
                     "properties": {
                         "remaining": {
@@ -20783,11 +20791,15 @@
                             "type": "boolean"
                         },
                         "responseSecurityEnabled": {
-                            "type": "string",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
                             "enum": [
                                 "ifConfigured",
                                 "always"
-                            ]
+                            ],
+                            "default": null
                         },
                         "commands": {
                             "type": "array",
@@ -20807,7 +20819,9 @@
                         "object",
                         "null"
                     ],
-                    "minProperties": 1,
+                    "required": [
+                        "capacity"
+                    ],
                     "default": null,
                     "properties": {
                         "capacity": {
@@ -22070,9 +22084,13 @@
                         "null"
                     ],
                     "default": null,
+                    "required": [
+                        "pinFormats"
+                    ],
                     "properties": {
                         "pinFormats": {
                             "type": "object",
+                            "minProperties": 1,
                             "properties": {
                                 "ibm3624": {
                                     "type": "boolean",
@@ -22598,6 +22616,7 @@
                                 "object",
                                 "null"
                             ],
+                            "default": null,
                             "properties": {
                                 "sha1": {
                                     "type": "boolean",
@@ -22614,6 +22633,7 @@
                                 "object",
                                 "null"
                             ],
+                            "default": null,
                             "properties": {
                                 "randomNumber": {
                                     "type": "boolean",
@@ -22818,7 +22838,11 @@
                     }
                 },
                 "KeyManagement.KeyAttribute": {
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
                     "patternProperties": {
                         "^B[0-3]$|^C0$|^D[0-3]$|^E[0-7]$|^I0$|^K[0-4]$|^M[0-8]$|^P[0-1]$|^S[0-2]$|^V[0-5]$|^[0-9][0-9]$": {
                             "type": "object",
@@ -24185,6 +24209,9 @@
                         "null"
                     ],
                     "default": null,
+                    "required": [
+                        "lights"
+                    ],
                     "properties": {
                         "individualFlashRates": {
                             "type": "boolean",
@@ -24657,7 +24684,11 @@
                             "default": false
                         },
                         "volume": {
-                            "type": "integer",
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
                             "minimum": 1,
                             "maximum": 1000
                         },
