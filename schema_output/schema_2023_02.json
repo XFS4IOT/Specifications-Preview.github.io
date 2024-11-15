@@ -17543,27 +17543,7 @@
             },
             "BanknoteNeutralization.SetProtectionCommand": {
                 "1.0": {
-                    "type": "object",
-                    "required": [
-                        "newState"
-                    ],
-                    "properties": {
-                        "newState": {
-                            "type": "string",
-                            "enum": [
-                                "arm",
-                                "ignoreAllSafeSensors",
-                                "disarm"
-                            ]
-                        },
-                        "token": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
-                        }
-                    }
+                    "$ref": "/schemas#/2023-02/BanknoteNeutralization.SetProtectionPayload"
                 }
             },
             "BanknoteNeutralization.SetProtectionCompletion": {
@@ -17585,25 +17565,7 @@
             },
             "BanknoteNeutralization.TriggerNeutralizationCommand": {
                 "1.0": {
-                    "type": "object",
-                    "required": [
-                        "neutralizationAction"
-                    ],
-                    "properties": {
-                        "neutralizationAction": {
-                            "type": "string",
-                            "enum": [
-                                "trigger"
-                            ]
-                        },
-                        "token": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null
-                        }
-                    }
+                    "$ref": "/schemas#/2023-02/BanknoteNeutralization.TriggerNeutralizationPayload"
                 }
             },
             "VendorMode.RegisterCommand": {
@@ -24421,7 +24383,7 @@
                             "type": "string",
                             "enum": [
                                 "autonomous",
-                                "programmable",
+                                "clientControlled",
                                 "vendorSpecific"
                             ]
                         },
@@ -31763,6 +31725,60 @@
                             "$ref": "#/2023-02/Storage.StorageUnit"
                         }
                     }
+                },
+                "BanknoteNeutralization.SetProtectionPayload": {
+                    "type": "object",
+                    "required": [
+                        "newState"
+                    ],
+                    "properties": {
+                        "newState": {
+                            "type": "string",
+                            "enum": [
+                                "arm",
+                                "ignoreAllSafeSensors",
+                                "disarm"
+                            ]
+                        },
+                        "token": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.SetProtectionE2ETokenNullable"
+                        }
+                    }
+                },
+                "BanknoteNeutralization.SetProtectionE2ETokenNullable": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^(?=[!-~]{0,1024}$)NONCE=[0-9A-F]+,TOKENFORMAT=1,TOKENLENGTH=[0-9]{4},(?:[A-Z0-9]+=[^,=]+?,)+HMACSHA256=[0-9A-F]{64}$",
+                    "format": "e2eToken",
+                    "default": null
+                },
+                "BanknoteNeutralization.TriggerNeutralizationPayload": {
+                    "type": "object",
+                    "required": [
+                        "neutralizationAction"
+                    ],
+                    "properties": {
+                        "neutralizationAction": {
+                            "type": "string",
+                            "enum": [
+                                "trigger"
+                            ]
+                        },
+                        "token": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.TriggerNeutralizationE2ETokenNullable"
+                        }
+                    }
+                },
+                "BanknoteNeutralization.TriggerNeutralizationE2ETokenNullable": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "pattern": "^(?=[!-~]{0,1024}$)NONCE=[0-9A-F]+,TOKENFORMAT=1,TOKENLENGTH=[0-9]{4},(?:[A-Z0-9]+=[^,=]+?,)+HMACSHA256=[0-9A-F]{64}$",
+                    "format": "e2eToken",
+                    "default": null
                 },
                 "VendorApplication.ActiveInterface": {
                     "type": "object",
