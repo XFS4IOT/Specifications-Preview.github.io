@@ -20544,7 +20544,8 @@
                                 "MixedMedia",
                                 "Deposit",
                                 "German",
-                                "BanknoteNeutralization"
+                                "BanknoteNeutralization",
+                                "PowerManagement"
                             ]
                         },
                         "commands": {
