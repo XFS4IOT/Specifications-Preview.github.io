@@ -1589,7 +1589,7 @@
                                 "const": "Storage.StorageErrorEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -1598,7 +1598,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.StorageErrorEvent/2.0"
+                        "$ref": "/messages#/Storage.StorageErrorEvent/2.1"
                     }
                 }
             }
@@ -2083,7 +2083,7 @@
                                 "const": "CashDispenser.Denominate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -2092,7 +2092,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashDispenser.DenominateCommand/2.0"
+                        "$ref": "/messages#/CashDispenser.DenominateCommand/3.0"
                     }
                 }
             }
@@ -2109,7 +2109,7 @@
                                 "const": "CashDispenser.Denominate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -2118,7 +2118,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashDispenser.DenominateCompletion/2.0"
+                        "$ref": "/messages#/CashDispenser.DenominateCompletion/3.0"
                     }
                 }
             }
@@ -2135,7 +2135,7 @@
                                 "const": "CashDispenser.Dispense"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -2144,7 +2144,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashDispenser.DispenseCommand/2.0"
+                        "$ref": "/messages#/CashDispenser.DispenseCommand/3.0"
                     }
                 }
             }
@@ -2161,7 +2161,7 @@
                                 "const": "CashDispenser.Dispense"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -2170,7 +2170,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashDispenser.DispenseCompletion/2.0"
+                        "$ref": "/messages#/CashDispenser.DispenseCompletion/3.0"
                     }
                 }
             }
@@ -2239,7 +2239,7 @@
                                 "const": "CashDispenser.IncompleteDispenseEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -2248,7 +2248,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashDispenser.IncompleteDispenseEvent/2.0"
+                        "$ref": "/messages#/CashDispenser.IncompleteDispenseEvent/3.0"
                     }
                 }
             }
@@ -11500,7 +11500,7 @@
                 }
             },
             "Storage.StorageErrorEvent": {
-                "2.0": {
+                "2.1": {
                     "$ref": "/schemas#/2024-03/Storage.Error"
                 }
             },
@@ -11751,7 +11751,7 @@
                 }
             },
             "CashDispenser.DenominateCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "request"
@@ -11764,7 +11764,7 @@
                 }
             },
             "CashDispenser.DenominateCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "allOf": [
                         {
@@ -11798,13 +11798,13 @@
                 }
             },
             "CashDispenser.DispenseCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/CashDispenser.DispenseRequest"
                 }
             },
             "CashDispenser.DispenseCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "allOf": [
                         {
@@ -11858,7 +11858,7 @@
                 "2.0": {}
             },
             "CashDispenser.IncompleteDispenseEvent": {
-                "2.0": {
+                "3.0": {
                     "$ref": "/schemas#/2024-03/CashDispenser.Denomination"
                 }
             },
@@ -12749,6 +12749,7 @@
                             ],
                             "default": null,
                             "required": [
+                                "count",
                                 "retractLocation"
                             ],
                             "properties": {
@@ -21561,7 +21562,8 @@
                     ],
                     "default": null,
                     "required": [
-                        "exchangeType"
+                        "exchangeType",
+                        "classifications"
                     ],
                     "properties": {
                         "cashBox": {
@@ -27280,6 +27282,9 @@
                         "null"
                     ],
                     "default": null,
+                    "required": [
+                        "currencies"
+                    ],
                     "properties": {
                         "currencies": {
                             "$ref": "#/2024-03/CashDispenser.Currencies"
