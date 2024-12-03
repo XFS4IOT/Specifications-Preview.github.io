@@ -24382,6 +24382,7 @@
                     "properties": {
                         "mode": {
                             "type": "string",
+                            "default": "autonomous",
                             "enum": [
                                 "autonomous",
                                 "clientControlled",
