@@ -341,7 +341,7 @@
                                 "const": "Common.StatusChangedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -350,7 +350,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Common.StatusChangedEvent/2.0"
+                        "$ref": "/messages#/Common.StatusChangedEvent/3.0"
                     }
                 }
             }
@@ -913,7 +913,7 @@
                                 "const": "CardReader.ChipPower"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -922,7 +922,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.ChipPowerCompletion/2.0"
+                        "$ref": "/messages#/CardReader.ChipPowerCompletion/3.0"
                     }
                 }
             }
@@ -1069,7 +1069,7 @@
                                 "const": "CardReader.EMVClessIssuerUpdate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -1078,7 +1078,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CardReader.EMVClessIssuerUpdateCommand/2.0"
+                        "$ref": "/messages#/CardReader.EMVClessIssuerUpdateCommand/3.0"
                     }
                 }
             }
@@ -1355,7 +1355,7 @@
                                 "const": "CashManagement.GetItemInfo"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -1364,7 +1364,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashManagement.GetItemInfoCompletion/2.0"
+                        "$ref": "/messages#/CashManagement.GetItemInfoCompletion/3.0"
                     }
                 }
             }
@@ -2057,7 +2057,7 @@
                                 "const": "CashDispenser.GetPresentStatus"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -2066,7 +2066,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashDispenser.GetPresentStatusCompletion/2.0"
+                        "$ref": "/messages#/CashDispenser.GetPresentStatusCompletion/3.0"
                     }
                 }
             }
@@ -2993,7 +2993,7 @@
                                 "const": "CashAcceptor.CreateSignature"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3002,7 +3002,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashAcceptor.CreateSignatureCompletion/2.0"
+                        "$ref": "/messages#/CashAcceptor.CreateSignatureCompletion/3.0"
                     }
                 }
             }
@@ -3071,7 +3071,7 @@
                                 "const": "CashAcceptor.CompareSignature"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3080,7 +3080,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/CashAcceptor.CompareSignatureCommand/2.0"
+                        "$ref": "/messages#/CashAcceptor.CompareSignatureCommand/3.0"
                     }
                 }
             }
@@ -3487,7 +3487,7 @@
                                 "const": "Check.GetTransactionStatus"
                             },
                             "version": {
-                                "const": "2.1"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3496,7 +3496,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.GetTransactionStatusCommand/2.1"
+                        "$ref": "/messages#/Check.GetTransactionStatusCommand/3.0"
                     }
                 }
             }
@@ -3513,7 +3513,7 @@
                                 "const": "Check.GetTransactionStatus"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3522,7 +3522,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.GetTransactionStatusCompletion/2.0"
+                        "$ref": "/messages#/Check.GetTransactionStatusCompletion/3.0"
                     }
                 }
             }
@@ -3617,7 +3617,7 @@
                                 "const": "Check.MediaInsertedEvent"
                             },
                             "version": {
-                                "const": "2.1"
+                                "const": "2.0"
                             }
                         }
                     }
@@ -3626,7 +3626,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaInsertedEvent/2.1"
+                        "$ref": "/messages#/Check.MediaInsertedEvent/2.0"
                     }
                 }
             }
@@ -3669,7 +3669,7 @@
                                 "const": "Check.MediaDataEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3678,7 +3678,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaDataEvent/2.0"
+                        "$ref": "/messages#/Check.MediaDataEvent/3.0"
                     }
                 }
             }
@@ -3721,7 +3721,7 @@
                                 "const": "Check.MediaInEnd"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -3730,7 +3730,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaInEndCompletion/2.0"
+                        "$ref": "/messages#/Check.MediaInEndCompletion/2.1"
                     }
                 }
             }
@@ -3747,7 +3747,7 @@
                                 "const": "Check.MediaPresentedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3756,7 +3756,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaPresentedEvent/2.0"
+                        "$ref": "/messages#/Check.MediaPresentedEvent/3.0"
                     }
                 }
             }
@@ -3773,7 +3773,7 @@
                                 "const": "Check.MediaInRollback"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -3782,7 +3782,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaInRollbackCompletion/2.0"
+                        "$ref": "/messages#/Check.MediaInRollbackCompletion/2.1"
                     }
                 }
             }
@@ -3825,7 +3825,7 @@
                                 "const": "Check.ReadImage"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3834,7 +3834,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.ReadImageCompletion/2.0"
+                        "$ref": "/messages#/Check.ReadImageCompletion/3.0"
                     }
                 }
             }
@@ -3851,7 +3851,7 @@
                                 "const": "Check.PresentMedia"
                             },
                             "version": {
-                                "const": "2.1"
+                                "const": "2.0"
                             }
                         }
                     }
@@ -3860,7 +3860,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.PresentMediaCommand/2.1"
+                        "$ref": "/messages#/Check.PresentMediaCommand/2.0"
                     }
                 }
             }
@@ -3929,7 +3929,7 @@
                                 "const": "Check.RetractMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -3938,7 +3938,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.RetractMediaCompletion/2.0"
+                        "$ref": "/messages#/Check.RetractMediaCompletion/3.0"
                     }
                 }
             }
@@ -4033,7 +4033,7 @@
                                 "const": "Check.ActionItem"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4042,7 +4042,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.ActionItemCompletion/2.0"
+                        "$ref": "/messages#/Check.ActionItemCompletion/3.0"
                     }
                 }
             }
@@ -4215,7 +4215,7 @@
                                 "const": "Check.MediaTakenEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4224,7 +4224,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.MediaTakenEvent/2.0"
+                        "$ref": "/messages#/Check.MediaTakenEvent/3.0"
                     }
                 }
             }
@@ -4267,7 +4267,7 @@
                                 "const": "Check.ShutterStatusChangedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4276,7 +4276,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Check.ShutterStatusChangedEvent/2.0"
+                        "$ref": "/messages#/Check.ShutterStatusChangedEvent/3.0"
                     }
                 }
             }
@@ -4397,7 +4397,7 @@
                                 "const": "KeyManagement.Initialization"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4406,7 +4406,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.InitializationCommand/2.0"
+                        "$ref": "/messages#/KeyManagement.InitializationCommand/3.0"
                     }
                 }
             }
@@ -4501,7 +4501,7 @@
                                 "const": "KeyManagement.DeleteKey"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4510,7 +4510,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.DeleteKeyCommand/2.0"
+                        "$ref": "/messages#/KeyManagement.DeleteKeyCommand/3.0"
                     }
                 }
             }
@@ -4579,7 +4579,7 @@
                                 "const": "KeyManagement.ExportRSAIssuerSignedItem"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4588,7 +4588,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ExportRSAIssuerSignedItemCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.ExportRSAIssuerSignedItemCompletion/3.0"
                     }
                 }
             }
@@ -4683,7 +4683,7 @@
                                 "const": "KeyManagement.ExportRSADeviceSignedItem"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4692,7 +4692,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ExportRSADeviceSignedItemCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.ExportRSADeviceSignedItemCompletion/3.0"
                     }
                 }
             }
@@ -4735,7 +4735,7 @@
                                 "const": "KeyManagement.GetCertificate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4744,7 +4744,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.GetCertificateCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.GetCertificateCompletion/3.0"
                     }
                 }
             }
@@ -4761,7 +4761,7 @@
                                 "const": "KeyManagement.ReplaceCertificate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4770,7 +4770,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ReplaceCertificateCommand/2.0"
+                        "$ref": "/messages#/KeyManagement.ReplaceCertificateCommand/3.0"
                     }
                 }
             }
@@ -4787,7 +4787,7 @@
                                 "const": "KeyManagement.ReplaceCertificate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4796,7 +4796,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ReplaceCertificateCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.ReplaceCertificateCompletion/3.0"
                     }
                 }
             }
@@ -4813,7 +4813,7 @@
                                 "const": "KeyManagement.StartKeyExchange"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4822,7 +4822,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.StartKeyExchangeCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.StartKeyExchangeCompletion/3.0"
                     }
                 }
             }
@@ -4865,7 +4865,7 @@
                                 "const": "KeyManagement.GenerateKCV"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4874,7 +4874,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.GenerateKCVCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.GenerateKCVCompletion/3.0"
                     }
                 }
             }
@@ -4891,7 +4891,7 @@
                                 "const": "KeyManagement.LoadCertificate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4900,7 +4900,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.LoadCertificateCommand/2.0"
+                        "$ref": "/messages#/KeyManagement.LoadCertificateCommand/3.0"
                     }
                 }
             }
@@ -4917,7 +4917,7 @@
                                 "const": "KeyManagement.LoadCertificate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4926,7 +4926,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.LoadCertificateCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.LoadCertificateCompletion/3.0"
                     }
                 }
             }
@@ -4969,7 +4969,7 @@
                                 "const": "KeyManagement.StartAuthenticate"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -4978,7 +4978,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.StartAuthenticateCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.StartAuthenticateCompletion/3.0"
                     }
                 }
             }
@@ -4995,7 +4995,7 @@
                                 "const": "KeyManagement.ImportKeyToken"
                             },
                             "version": {
-                                "const": "2.1"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5004,7 +5004,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ImportKeyTokenCommand/2.1"
+                        "$ref": "/messages#/KeyManagement.ImportKeyTokenCommand/3.0"
                     }
                 }
             }
@@ -5021,7 +5021,7 @@
                                 "const": "KeyManagement.ImportKeyToken"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5030,7 +5030,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ImportKeyTokenCompletion/2.0"
+                        "$ref": "/messages#/KeyManagement.ImportKeyTokenCompletion/3.0"
                     }
                 }
             }
@@ -5047,7 +5047,7 @@
                                 "const": "KeyManagement.ImportEmvPublicKey"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5056,7 +5056,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.ImportEmvPublicKeyCommand/2.0"
+                        "$ref": "/messages#/KeyManagement.ImportEmvPublicKeyCommand/3.0"
                     }
                 }
             }
@@ -5177,7 +5177,7 @@
                                 "const": "Crypto.GenerateRandom"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5186,7 +5186,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.GenerateRandomCompletion/2.0"
+                        "$ref": "/messages#/Crypto.GenerateRandomCompletion/3.0"
                     }
                 }
             }
@@ -5203,7 +5203,7 @@
                                 "const": "Crypto.CryptoData"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5212,7 +5212,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.CryptoDataCommand/2.0"
+                        "$ref": "/messages#/Crypto.CryptoDataCommand/3.0"
                     }
                 }
             }
@@ -5229,7 +5229,7 @@
                                 "const": "Crypto.CryptoData"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5238,7 +5238,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.CryptoDataCompletion/2.0"
+                        "$ref": "/messages#/Crypto.CryptoDataCompletion/3.0"
                     }
                 }
             }
@@ -5255,7 +5255,7 @@
                                 "const": "KeyManagement.DUKPTKSNEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5264,7 +5264,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/KeyManagement.DUKPTKSNEvent/2.0"
+                        "$ref": "/messages#/KeyManagement.DUKPTKSNEvent/3.0"
                     }
                 }
             }
@@ -5281,7 +5281,7 @@
                                 "const": "Crypto.GenerateAuthentication"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5290,7 +5290,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.GenerateAuthenticationCommand/2.0"
+                        "$ref": "/messages#/Crypto.GenerateAuthenticationCommand/3.0"
                     }
                 }
             }
@@ -5307,7 +5307,7 @@
                                 "const": "Crypto.GenerateAuthentication"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5316,7 +5316,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.GenerateAuthenticationCompletion/2.0"
+                        "$ref": "/messages#/Crypto.GenerateAuthenticationCompletion/3.0"
                     }
                 }
             }
@@ -5333,7 +5333,7 @@
                                 "const": "Crypto.VerifyAuthentication"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5342,7 +5342,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.VerifyAuthenticationCommand/2.0"
+                        "$ref": "/messages#/Crypto.VerifyAuthenticationCommand/3.0"
                     }
                 }
             }
@@ -5385,7 +5385,7 @@
                                 "const": "Crypto.Digest"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5394,7 +5394,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.DigestCommand/2.0"
+                        "$ref": "/messages#/Crypto.DigestCommand/3.0"
                     }
                 }
             }
@@ -5411,7 +5411,7 @@
                                 "const": "Crypto.Digest"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5420,7 +5420,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Crypto.DigestCompletion/2.0"
+                        "$ref": "/messages#/Crypto.DigestCompletion/3.0"
                     }
                 }
             }
@@ -5593,7 +5593,7 @@
                                 "const": "Keyboard.LayoutEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5602,7 +5602,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Keyboard.LayoutEvent/2.0"
+                        "$ref": "/messages#/Keyboard.LayoutEvent/3.0"
                     }
                 }
             }
@@ -5671,7 +5671,7 @@
                                 "const": "Keyboard.SecureKeyEntry"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -5680,7 +5680,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Keyboard.SecureKeyEntryCommand/2.0"
+                        "$ref": "/messages#/Keyboard.SecureKeyEntryCommand/2.1"
                     }
                 }
             }
@@ -5697,7 +5697,7 @@
                                 "const": "Keyboard.SecureKeyEntry"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5706,7 +5706,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Keyboard.SecureKeyEntryCompletion/2.0"
+                        "$ref": "/messages#/Keyboard.SecureKeyEntryCompletion/3.0"
                     }
                 }
             }
@@ -5749,7 +5749,7 @@
                                 "const": "Keyboard.DefineLayout"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5758,7 +5758,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Keyboard.DefineLayoutCommand/2.0"
+                        "$ref": "/messages#/Keyboard.DefineLayoutCommand/3.0"
                     }
                 }
             }
@@ -5879,7 +5879,7 @@
                                 "const": "PinPad.LocalVisa"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5888,7 +5888,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/PinPad.LocalVisaCommand/2.0"
+                        "$ref": "/messages#/PinPad.LocalVisaCommand/3.0"
                     }
                 }
             }
@@ -5931,7 +5931,7 @@
                                 "const": "PinPad.PresentIDC"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5940,7 +5940,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/PinPad.PresentIDCCommand/2.0"
+                        "$ref": "/messages#/PinPad.PresentIDCCommand/3.0"
                     }
                 }
             }
@@ -5957,7 +5957,7 @@
                                 "const": "PinPad.PresentIDC"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -5966,7 +5966,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/PinPad.PresentIDCCompletion/2.0"
+                        "$ref": "/messages#/PinPad.PresentIDCCompletion/3.0"
                     }
                 }
             }
@@ -6087,7 +6087,7 @@
                                 "const": "PinPad.GetPinBlock"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6096,7 +6096,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/PinPad.GetPinBlockCompletion/2.0"
+                        "$ref": "/messages#/PinPad.GetPinBlockCompletion/3.0"
                     }
                 }
             }
@@ -6191,7 +6191,7 @@
                                 "const": "Printer.GetQueryForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6200,7 +6200,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.GetQueryFormCompletion/2.0"
+                        "$ref": "/messages#/Printer.GetQueryFormCompletion/3.0"
                     }
                 }
             }
@@ -6217,7 +6217,7 @@
                                 "const": "Printer.GetQueryMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6226,7 +6226,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.GetQueryMediaCommand/2.0"
+                        "$ref": "/messages#/Printer.GetQueryMediaCommand/3.0"
                     }
                 }
             }
@@ -6243,7 +6243,7 @@
                                 "const": "Printer.GetQueryMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6252,7 +6252,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.GetQueryMediaCompletion/2.0"
+                        "$ref": "/messages#/Printer.GetQueryMediaCompletion/3.0"
                     }
                 }
             }
@@ -6295,7 +6295,7 @@
                                 "const": "Printer.GetQueryField"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6304,7 +6304,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.GetQueryFieldCompletion/2.0"
+                        "$ref": "/messages#/Printer.GetQueryFieldCompletion/3.0"
                     }
                 }
             }
@@ -6321,7 +6321,7 @@
                                 "const": "Printer.ControlMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6330,7 +6330,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.ControlMediaCommand/2.0"
+                        "$ref": "/messages#/Printer.ControlMediaCommand/3.0"
                     }
                 }
             }
@@ -6399,7 +6399,7 @@
                                 "const": "Printer.PrintForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6408,7 +6408,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.PrintFormCommand/2.0"
+                        "$ref": "/messages#/Printer.PrintFormCommand/3.0"
                     }
                 }
             }
@@ -6425,7 +6425,7 @@
                                 "const": "Printer.PrintForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6434,7 +6434,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.PrintFormCompletion/2.0"
+                        "$ref": "/messages#/Printer.PrintFormCompletion/3.0"
                     }
                 }
             }
@@ -6581,7 +6581,7 @@
                                 "const": "Printer.PrintRaw"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6590,7 +6590,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.PrintRawCommand/2.0"
+                        "$ref": "/messages#/Printer.PrintRawCommand/3.0"
                     }
                 }
             }
@@ -6607,7 +6607,7 @@
                                 "const": "Printer.PrintRaw"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6616,7 +6616,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.PrintRawCompletion/2.0"
+                        "$ref": "/messages#/Printer.PrintRawCompletion/3.0"
                     }
                 }
             }
@@ -6633,7 +6633,7 @@
                                 "const": "Printer.PrintNative"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6642,7 +6642,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.PrintNativeCommand/2.0"
+                        "$ref": "/messages#/Printer.PrintNativeCommand/3.0"
                     }
                 }
             }
@@ -6685,7 +6685,7 @@
                                 "const": "Printer.ReadForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6694,7 +6694,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.ReadFormCommand/2.0"
+                        "$ref": "/messages#/Printer.ReadFormCommand/3.0"
                     }
                 }
             }
@@ -6711,7 +6711,7 @@
                                 "const": "Printer.ReadForm"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6720,7 +6720,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.ReadFormCompletion/2.0"
+                        "$ref": "/messages#/Printer.ReadFormCompletion/3.0"
                     }
                 }
             }
@@ -6737,7 +6737,7 @@
                                 "const": "Printer.ReadImage"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6746,7 +6746,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.ReadImageCommand/2.0"
+                        "$ref": "/messages#/Printer.ReadImageCommand/3.0"
                     }
                 }
             }
@@ -6763,7 +6763,7 @@
                                 "const": "Printer.ReadImage"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6772,7 +6772,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.ReadImageCompletion/2.0"
+                        "$ref": "/messages#/Printer.ReadImageCompletion/3.0"
                     }
                 }
             }
@@ -6789,7 +6789,7 @@
                                 "const": "Printer.MediaExtents"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6798,7 +6798,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.MediaExtentsCommand/2.0"
+                        "$ref": "/messages#/Printer.MediaExtentsCommand/3.0"
                     }
                 }
             }
@@ -6815,7 +6815,7 @@
                                 "const": "Printer.MediaExtents"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6824,7 +6824,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.MediaExtentsCompletion/2.0"
+                        "$ref": "/messages#/Printer.MediaExtentsCompletion/3.0"
                     }
                 }
             }
@@ -6841,7 +6841,7 @@
                                 "const": "Printer.Reset"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6850,7 +6850,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.ResetCommand/2.0"
+                        "$ref": "/messages#/Printer.ResetCommand/3.0"
                     }
                 }
             }
@@ -6893,7 +6893,7 @@
                                 "const": "Printer.RetractMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6902,7 +6902,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.RetractMediaCommand/2.0"
+                        "$ref": "/messages#/Printer.RetractMediaCommand/3.0"
                     }
                 }
             }
@@ -6919,7 +6919,7 @@
                                 "const": "Printer.RetractMedia"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -6928,7 +6928,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.RetractMediaCompletion/2.0"
+                        "$ref": "/messages#/Printer.RetractMediaCompletion/3.0"
                     }
                 }
             }
@@ -7283,7 +7283,7 @@
                                 "const": "Printer.MediaDetectedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -7292,7 +7292,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.MediaDetectedEvent/2.0"
+                        "$ref": "/messages#/Printer.MediaDetectedEvent/3.0"
                     }
                 }
             }
@@ -7309,7 +7309,7 @@
                                 "const": "Printer.MediaAutoRetractedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -7318,7 +7318,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Printer.MediaAutoRetractedEvent/2.0"
+                        "$ref": "/messages#/Printer.MediaAutoRetractedEvent/3.0"
                     }
                 }
             }
@@ -8297,7 +8297,7 @@
                                 "const": "Biometric.Import"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "3.0"
                             }
                         }
                     }
@@ -8306,7 +8306,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Biometric.ImportCommand/2.0"
+                        "$ref": "/messages#/Biometric.ImportCommand/3.0"
                     }
                 }
             }
@@ -8323,7 +8323,7 @@
                                 "const": "Biometric.Import"
                             },
                             "version": {
-                                "const": "3.0"
+                                "const": "2.0"
                             }
                         }
                     }
@@ -8332,7 +8332,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Biometric.ImportCompletion/3.0"
+                        "$ref": "/messages#/Biometric.ImportCompletion/2.0"
                     }
                 }
             }
@@ -9753,7 +9753,7 @@
                                 "const": "Storage.GetStorage"
                             },
                             "version": {
-                                "const": "3.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -9762,7 +9762,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.GetStorageCompletion/3.0"
+                        "$ref": "/messages#/Storage.GetStorageCompletion/2.1"
                     }
                 }
             }
@@ -9779,7 +9779,7 @@
                                 "const": "Storage.SetStorage"
                             },
                             "version": {
-                                "const": "3.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -9788,7 +9788,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.SetStorageCommand/3.0"
+                        "$ref": "/messages#/Storage.SetStorageCommand/2.1"
                     }
                 }
             }
@@ -9805,7 +9805,7 @@
                                 "const": "Storage.SetStorage"
                             },
                             "version": {
-                                "const": "3.0"
+                                "const": "2.0"
                             }
                         }
                     }
@@ -9814,7 +9814,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.SetStorageCompletion/3.0"
+                        "$ref": "/messages#/Storage.SetStorageCompletion/2.0"
                     }
                 }
             }
@@ -9909,7 +9909,7 @@
                                 "const": "Storage.StorageChangedEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -9918,7 +9918,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.StorageChangedEvent/2.0"
+                        "$ref": "/messages#/Storage.StorageChangedEvent/2.1"
                     }
                 }
             }
@@ -9935,7 +9935,7 @@
                                 "const": "Storage.StorageThresholdEvent"
                             },
                             "version": {
-                                "const": "2.0"
+                                "const": "2.1"
                             }
                         }
                     }
@@ -9944,7 +9944,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/Storage.StorageThresholdEvent/2.0"
+                        "$ref": "/messages#/Storage.StorageThresholdEvent/2.1"
                     }
                 }
             }
@@ -10461,7 +10461,7 @@
                 }
             },
             "Common.StatusChangedEvent": {
-                "2.0": {
+                "3.0": {
                     "$ref": "/schemas#/2024-03/Common.StatusChangedData"
                 }
             },
@@ -11040,7 +11040,7 @@
                 }
             },
             "CardReader.ChipPowerCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -11222,7 +11222,7 @@
                 }
             },
             "CardReader.EMVClessIssuerUpdateCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "data"
@@ -11369,7 +11369,7 @@
                 }
             },
             "CashManagement.GetItemInfoCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/CashManagement.ItemInfos"
                 }
@@ -11727,7 +11727,7 @@
                 }
             },
             "CashDispenser.GetPresentStatusCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "allOf": [
                         {
@@ -12251,7 +12251,7 @@
                 }
             },
             "CashAcceptor.CreateSignatureCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "allOf": [
                         {
@@ -12314,7 +12314,7 @@
                 }
             },
             "CashAcceptor.CompareSignatureCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/CashAcceptor.CompareSignature"
                 }
@@ -12530,7 +12530,7 @@
                 }
             },
             "Check.GetTransactionStatusCommand": {
-                "2.1": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "includeImage": {
@@ -12541,7 +12541,7 @@
                 }
             },
             "Check.GetTransactionStatusCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/Check.TransStatus"
                 }
@@ -12587,7 +12587,7 @@
                 "2.0": {}
             },
             "Check.MediaInsertedEvent": {
-                "2.1": {}
+                "2.0": {}
             },
             "Check.MediaRefusedEvent": {
                 "2.0": {
@@ -12595,7 +12595,7 @@
                 }
             },
             "Check.MediaDataEvent": {
-                "2.0": {
+                "3.0": {
                     "$ref": "/schemas#/2024-03/Check.MediaData"
                 }
             },
@@ -12605,7 +12605,7 @@
                 }
             },
             "Check.MediaInEndCompletion": {
-                "2.0": {
+                "2.1": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -12631,12 +12631,12 @@
                 }
             },
             "Check.MediaPresentedEvent": {
-                "2.0": {
+                "3.0": {
                     "$ref": "/schemas#/2024-03/Check.MediaPresented"
                 }
             },
             "Check.MediaInRollbackCompletion": {
-                "2.0": {
+                "2.1": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -12666,7 +12666,7 @@
                 }
             },
             "Check.ReadImageCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -12690,7 +12690,7 @@
                 }
             },
             "Check.PresentMediaCommand": {
-                "2.1": {
+                "2.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/Check.PresentMediaRequest"
                 }
@@ -12722,7 +12722,7 @@
                 }
             },
             "Check.RetractMediaCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -12818,7 +12818,7 @@
                 }
             },
             "Check.ActionItemCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -12925,7 +12925,7 @@
                 }
             },
             "Check.MediaTakenEvent": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "position"
@@ -12943,7 +12943,7 @@
                 }
             },
             "Check.ShutterStatusChangedEvent": {
-                "2.0": {
+                "3.0": {
                     "$ref": "/schemas#/2024-03/Check.ShutterStatus"
                 }
             },
@@ -13012,7 +13012,7 @@
                 }
             },
             "KeyManagement.InitializationCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/KeyManagement.Authentication"
                 }
@@ -13264,7 +13264,7 @@
                 }
             },
             "KeyManagement.DeleteKeyCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "allOf": [
                         {
@@ -13318,7 +13318,7 @@
                 }
             },
             "KeyManagement.ExportRSAIssuerSignedItemCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13426,7 +13426,7 @@
                 }
             },
             "KeyManagement.ExportRSADeviceSignedItemCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13472,7 +13472,7 @@
                 }
             },
             "KeyManagement.GetCertificateCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13494,7 +13494,7 @@
                 }
             },
             "KeyManagement.ReplaceCertificateCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "replaceCertificate"
@@ -13507,7 +13507,7 @@
                 }
             },
             "KeyManagement.ReplaceCertificateCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13529,7 +13529,7 @@
                 }
             },
             "KeyManagement.StartKeyExchangeCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13570,7 +13570,7 @@
                 }
             },
             "KeyManagement.GenerateKCVCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13593,7 +13593,7 @@
                 }
             },
             "KeyManagement.LoadCertificateCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "loadOption",
@@ -13623,7 +13623,7 @@
                 }
             },
             "KeyManagement.LoadCertificateCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13684,7 +13684,7 @@
                 }
             },
             "KeyManagement.StartAuthenticateCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "dataToSign": {
@@ -13751,13 +13751,13 @@
                 }
             },
             "KeyManagement.ImportKeyTokenCommand": {
-                "2.1": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/KeyManagement.ImportKeyToken"
                 }
             },
             "KeyManagement.ImportKeyTokenCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "allOf": [
                         {
@@ -13790,7 +13790,7 @@
                 }
             },
             "KeyManagement.ImportEmvPublicKeyCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/KeyManagement.ImportEmvPublicKey"
                 }
@@ -13866,7 +13866,7 @@
                 }
             },
             "Crypto.GenerateRandomCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13886,7 +13886,7 @@
                 }
             },
             "Crypto.CryptoDataCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "key",
@@ -13939,7 +13939,7 @@
                 }
             },
             "Crypto.CryptoDataCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -13966,7 +13966,7 @@
                 }
             },
             "KeyManagement.DUKPTKSNEvent": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "key",
@@ -13983,7 +13983,7 @@
                 }
             },
             "Crypto.GenerateAuthenticationCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "key",
@@ -14045,7 +14045,7 @@
                 }
             },
             "Crypto.GenerateAuthenticationCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14073,7 +14073,7 @@
                 }
             },
             "Crypto.VerifyAuthenticationCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "key",
@@ -14167,7 +14167,7 @@
                 }
             },
             "Crypto.DigestCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "hashAlgorithm",
@@ -14188,7 +14188,7 @@
                 }
             },
             "Crypto.DigestCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14320,7 +14320,7 @@
                 "2.0": {}
             },
             "Keyboard.LayoutEvent": {
-                "2.0": {
+                "3.0": {
                     "$ref": "/schemas#/2024-03/Keyboard.Layout"
                 }
             },
@@ -14384,7 +14384,7 @@
                 }
             },
             "Keyboard.SecureKeyEntryCommand": {
-                "2.0": {
+                "2.1": {
                     "type": "object",
                     "required": [
                         "keyLen",
@@ -14431,7 +14431,7 @@
                 }
             },
             "Keyboard.SecureKeyEntryCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14492,7 +14492,7 @@
                 }
             },
             "Keyboard.DefineLayoutCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "layout"
@@ -14657,7 +14657,7 @@
                 }
             },
             "PinPad.LocalVisaCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "pan",
@@ -14711,7 +14711,7 @@
                 }
             },
             "PinPad.PresentIDCCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "presentAlgorithm",
@@ -14754,7 +14754,7 @@
                 }
             },
             "PinPad.PresentIDCCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14830,7 +14830,7 @@
                 }
             },
             "PinPad.GetPinBlockCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14906,7 +14906,7 @@
                 }
             },
             "Printer.GetQueryFormCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14931,7 +14931,7 @@
                 }
             },
             "Printer.GetQueryMediaCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "name"
@@ -14944,7 +14944,7 @@
                 }
             },
             "Printer.GetQueryMediaCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -14989,7 +14989,7 @@
                 }
             },
             "Printer.GetQueryFieldCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15018,7 +15018,7 @@
                 }
             },
             "Printer.ControlMediaCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "mediaControl"
@@ -15082,7 +15082,7 @@
                 }
             },
             "Printer.PrintFormCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "formName",
@@ -15154,7 +15154,7 @@
                 }
             },
             "Printer.PrintFormCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15245,7 +15245,7 @@
                 }
             },
             "Printer.PrintRawCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "inputData",
@@ -15267,7 +15267,7 @@
                 }
             },
             "Printer.PrintRawCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15294,7 +15294,7 @@
                 }
             },
             "Printer.PrintNativeCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "data"
@@ -15349,7 +15349,7 @@
                 }
             },
             "Printer.ReadFormCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "formName"
@@ -15382,7 +15382,7 @@
                 }
             },
             "Printer.ReadFormCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15431,7 +15431,7 @@
                 }
             },
             "Printer.ReadImageCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "minProperties": 1,
                     "properties": {
@@ -15453,7 +15453,7 @@
                 }
             },
             "Printer.ReadImageCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15495,7 +15495,7 @@
                 }
             },
             "Printer.MediaExtentsCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "unit"
@@ -15508,7 +15508,7 @@
                 }
             },
             "Printer.MediaExtentsCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15545,7 +15545,7 @@
                 }
             },
             "Printer.ResetCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "mediaControl"
@@ -15579,7 +15579,7 @@
                 }
             },
             "Printer.RetractMediaCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "mediaControl": {
@@ -15591,7 +15591,7 @@
                 }
             },
             "Printer.RetractMediaCompletion": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -15844,7 +15844,7 @@
                 }
             },
             "Printer.MediaDetectedEvent": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "position"
@@ -15858,7 +15858,7 @@
                 }
             },
             "Printer.MediaAutoRetractedEvent": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "result"
@@ -16724,7 +16724,7 @@
                 "2.0": {}
             },
             "Biometric.ImportCommand": {
-                "2.0": {
+                "3.0": {
                     "type": "object",
                     "required": [
                         "templates"
@@ -16741,7 +16741,7 @@
                 }
             },
             "Biometric.ImportCompletion": {
-                "3.0": {
+                "2.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -17457,13 +17457,13 @@
                 }
             },
             "Storage.GetStorageCompletion": {
-                "3.0": {
+                "2.1": {
                     "type": "object",
                     "$ref": "/schemas#/2024-03/Storage.Storage"
                 }
             },
             "Storage.SetStorageCommand": {
-                "3.0": {
+                "2.1": {
                     "type": "object",
                     "required": [
                         "storage"
@@ -17472,7 +17472,7 @@
                 }
             },
             "Storage.SetStorageCompletion": {
-                "3.0": {
+                "2.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
@@ -17533,12 +17533,12 @@
                 }
             },
             "Storage.StorageChangedEvent": {
-                "2.0": {
+                "2.1": {
                     "$ref": "/schemas#/2024-03/Storage.SingleStorageUnit"
                 }
             },
             "Storage.StorageThresholdEvent": {
-                "2.0": {
+                "2.1": {
                     "$ref": "/schemas#/2024-03/Storage.SingleStorageUnit"
                 }
             },
