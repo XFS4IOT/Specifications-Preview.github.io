@@ -335,6 +335,58 @@
                     "header": {
                         "properties": {
                             "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.StartSecureOperation"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.StartSecureOperationCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Common.StartSecureOperation"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.StartSecureOperationCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
                                 "const": "unsolicited"
                             },
                             "name": {
@@ -2535,6 +2587,32 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/CashDispenser.PrepareDispenseCompletion/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "CashAcceptor.GetCashInStatus"
+                            },
+                            "version": {
+                                "const": "2.1"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/CashAcceptor.GetCashInStatusCommand/2.1"
                     }
                 }
             }
@@ -10460,6 +10538,47 @@
                     }
                 }
             },
+            "Common.StartSecureOperationCommand": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "operation",
+                        "uniqueId"
+                    ],
+                    "properties": {
+                        "operation": {
+                            "type": [
+                                "string"
+                            ],
+                            "enum": [
+                                "cashInTransaction"
+                            ]
+                        },
+                        "uniqueId": {
+                            "type": [
+                                "string"
+                            ]
+                        }
+                    }
+                }
+            },
+            "Common.StartSecureOperationCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "keyNoValue"
+                            ]
+                        }
+                    }
+                }
+            },
             "Common.StatusChangedEvent": {
                 "3.0": {
                     "$ref": "/schemas#/2024-03/Common.StatusChangedData"
@@ -12033,6 +12152,21 @@
                             "enum": [
                                 "exchangeActive"
                             ]
+                        }
+                    }
+                }
+            },
+            "CashAcceptor.GetCashInStatusCommand": {
+                "2.1": {
+                    "type": "object",
+                    "properties": {
+                        "nonce": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "pattern": "^[0-9A-F]{32}$|^[0-9]*$"
                         }
                     }
                 }
@@ -27554,6 +27688,9 @@
                         },
                         "noteNumberList": {
                             "$ref": "#/2024-03/CashManagement.StorageCashCounts"
+                        },
+                        "token": {
+                            "$ref": "#/2024-03/Common.E2ETokenNullable"
                         }
                     }
                 },
