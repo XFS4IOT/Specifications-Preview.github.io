@@ -25117,6 +25117,9 @@
                         },
                         "powerManagement": {
                             "$ref": "#/2023-02/PowerManagement.Status"
+                        },
+                        "banknoteNeutralization": {
+                            "$ref": "#/2023-02/BanknoteNeutralization.Status"
                         }
                     }
                 },
