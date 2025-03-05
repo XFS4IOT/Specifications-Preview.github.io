@@ -8141,7 +8141,7 @@
                                 "const": "TextTerminal.SetForm"
                             },
                             "version": {
-                                "const": "2.0\""
+                                "const": "2.0"
                             }
                         }
                     }
@@ -8150,7 +8150,7 @@
             "then": {
                 "properties": {
                     "payload": {
-                        "$ref": "/messages#/TextTerminal.SetFormCompletion/2.0\""
+                        "$ref": "/messages#/TextTerminal.SetFormCompletion/2.0"
                     }
                 }
             }
@@ -16630,7 +16630,7 @@
                 }
             },
             "TextTerminal.SetFormCompletion": {
-                "2.0\"": {
+                "2.0": {
                     "type": "object",
                     "properties": {
                         "errorCode": {
