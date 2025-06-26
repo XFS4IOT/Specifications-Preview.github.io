@@ -14171,7 +14171,7 @@
                                     "type": "integer",
                                     "default": 4,
                                     "minimum": 4,
-                                    "maximum": 8
+                                    "maximum": 16
                                 }
                             }
                         }
@@ -17744,13 +17744,7 @@
             "VendorApplication.StartLocalApplicationCommand": {
                 "2.0": {
                     "type": "object",
-                    "required": [
-                        "appName"
-                    ],
                     "properties": {
-                        "appName": {
-                            "type": "string"
-                        },
                         "accessLevel": {
                             "type": [
                                 "string",
@@ -23185,6 +23179,13 @@
                                     }
                                 }
                             }
+                        },
+                        "osKeyboard": {
+                            "type": [
+                                "boolean",
+                                "null"
+                            ],
+                            "default": null
                         }
                     }
                 },
