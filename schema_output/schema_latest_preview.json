@@ -11606,9 +11606,6 @@
                                 "incompleteRetract"
                             ]
                         },
-                        "storage": {
-                            "$ref": "/schemas#/2025-04/CashManagement.Storage"
-                        },
                         "transport": {
                             "$ref": "/schemas#/2025-04/CashManagement.StorageCashCounts"
                         },
@@ -11696,9 +11693,6 @@
                                 "foreignItemsDetected",
                                 "incompleteRetract"
                             ]
-                        },
-                        "storage": {
-                            "$ref": "/schemas#/2025-04/CashManagement.Storage"
                         },
                         "transport": {
                             "$ref": "/schemas#/2025-04/CashManagement.StorageCashCounts"
@@ -12325,9 +12319,6 @@
                                 "positionNotEmpty",
                                 "safeDoorOpen"
                             ]
-                        },
-                        "storage": {
-                            "$ref": "/schemas#/2025-04/CashManagement.Storage"
                         }
                     }
                 }
@@ -12350,9 +12341,6 @@
                                 "positionNotEmpty",
                                 "noItems"
                             ]
-                        },
-                        "storage": {
-                            "$ref": "/schemas#/2025-04/CashManagement.Storage"
                         }
                     }
                 }
@@ -25880,50 +25868,6 @@
                     "default": null,
                     "minimum": 1
                 },
-                "CashManagement.Storage": {
-                    "type": [
-                        "object",
-                        "null"
-                    ],
-                    "default": null,
-                    "patternProperties": {
-                        "^unit[0-9A-Za-z]+$": {
-                            "$ref": "#/2025-04/CashManagement.StorageCashIn"
-                        }
-                    }
-                },
-                "CashManagement.StorageCashIn": {
-                    "type": [
-                        "object",
-                        "null"
-                    ],
-                    "default": null,
-                    "properties": {
-                        "retractOperations": {
-                            "type": [
-                                "integer",
-                                "null"
-                            ],
-                            "default": null,
-                            "minimum": 0
-                        },
-                        "deposited": {
-                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
-                        },
-                        "retracted": {
-                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
-                        },
-                        "rejected": {
-                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
-                        },
-                        "distributed": {
-                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
-                        },
-                        "transport": {
-                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
-                        }
-                    }
-                },
                 "CashManagement.StorageCashCounts": {
                     "type": [
                         "object",
@@ -26465,6 +26409,38 @@
                             "$ref": "#/2025-04/CashManagement.StorageCashCounts"
                         },
                         "diverted": {
+                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
+                        },
+                        "transport": {
+                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
+                        }
+                    }
+                },
+                "CashManagement.StorageCashIn": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "properties": {
+                        "retractOperations": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "default": null,
+                            "minimum": 0
+                        },
+                        "deposited": {
+                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
+                        },
+                        "retracted": {
+                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
+                        },
+                        "rejected": {
+                            "$ref": "#/2025-04/CashManagement.StorageCashCounts"
+                        },
+                        "distributed": {
                             "$ref": "#/2025-04/CashManagement.StorageCashCounts"
                         },
                         "transport": {
@@ -27080,6 +27056,18 @@
                                 "foreignItemsDetected",
                                 "invalidBunch"
                             ]
+                        }
+                    }
+                },
+                "CashManagement.Storage": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "patternProperties": {
+                        "^unit[0-9A-Za-z]+$": {
+                            "$ref": "#/2025-04/CashManagement.StorageCashIn"
                         }
                     }
                 },
@@ -28790,30 +28778,6 @@
                             "type": "integer",
                             "minimum": 0,
                             "default": 0
-                        },
-                        "storage": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "$ref": "#/2025-04/Storage.Storage"
-                        }
-                    }
-                },
-                "Storage.Storage": {
-                    "properties": {
-                        "storage": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "patternProperties": {
-                                "^unit[0-9A-Za-z]+$": {
-                                    "$ref": "#/2025-04/Storage.StorageUnit"
-                                }
-                            }
                         }
                     }
                 },
@@ -31688,6 +31652,22 @@
                             "default": null,
                             "minimum": 1,
                             "maximum": 1000
+                        }
+                    }
+                },
+                "Storage.Storage": {
+                    "properties": {
+                        "storage": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "patternProperties": {
+                                "^unit[0-9A-Za-z]+$": {
+                                    "$ref": "#/2025-04/Storage.StorageUnit"
+                                }
+                            }
                         }
                     }
                 },
