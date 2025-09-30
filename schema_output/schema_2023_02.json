@@ -101,6 +101,84 @@
                     "header": {
                         "properties": {
                             "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.GetInterfaceInfo"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.GetInterfaceInfoCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Common.GetInterfaceInfo"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.GetInterfaceInfoCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.SetVersions"
+                            },
+                            "version": {
+                                "const": "2.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.SetVersionsCommand/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
                                 "const": "completion"
                             },
                             "name": {
@@ -143,32 +221,6 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/Common.CapabilitiesCompletion/3.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "command"
-                            },
-                            "name": {
-                                "const": "Common.SetVersions"
-                            },
-                            "version": {
-                                "const": "2.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Common.SetVersionsCommand/2.0"
                     }
                 }
             }
@@ -10409,6 +10461,88 @@
                     "$ref": "/schemas#/2023-02/ServicePublisher.Services"
                 }
             },
+            "Common.GetInterfaceInfoCommand": {
+                "1.0": {}
+            },
+            "Common.GetInterfaceInfoCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "commands"
+                    ],
+                    "properties": {
+                        "commands": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
+                                    "type": "object",
+                                    "required": [
+                                        "versions"
+                                    ],
+                                    "properties": {
+                                        "versions": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "pattern": "^[1-9][0-9]*\\.([1-9][0-9]*|0)$"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "events": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "patternProperties": {
+                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
+                                    "type": "object",
+                                    "required": [
+                                        "versions"
+                                    ],
+                                    "properties": {
+                                        "versions": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string",
+                                                "pattern": "^[1-9][0-9]*\\.([1-9][0-9]*|0)$"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "maximumRequests": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "default": 0
+                        }
+                    }
+                }
+            },
+            "Common.SetVersionsCommand": {
+                "2.0": {
+                    "type": "object",
+                    "required": [
+                        "events"
+                    ],
+                    "properties": {
+                        "events": {
+                            "type": "object",
+                            "patternProperties": {
+                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
+                                    "type": "integer",
+                                    "minimum": 1
+                                }
+                            },
+                            "minProperties": 1
+                        }
+                    }
+                }
+            },
             "Common.StatusCompletion": {
                 "3.0": {
                     "type": "object",
@@ -10419,41 +10553,6 @@
                 "3.0": {
                     "type": "object",
                     "$ref": "/schemas#/2023-02/Common.Caps"
-                }
-            },
-            "Common.SetVersionsCommand": {
-                "2.0": {
-                    "type": "object",
-                    "properties": {
-                        "commands": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "patternProperties": {
-                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
-                                    "type": "integer",
-                                    "minimum": 1
-                                }
-                            },
-                            "minProperties": 1
-                        },
-                        "events": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "patternProperties": {
-                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
-                                    "type": "integer",
-                                    "minimum": 1
-                                }
-                            },
-                            "minProperties": 1
-                        }
-                    }
                 }
             },
             "Common.CancelCommand": {
@@ -20544,16 +20643,9 @@
                 "Common.Caps": {
                     "type": "object",
                     "required": [
-                        "interfaces",
                         "common"
                     ],
                     "properties": {
-                        "interfaces": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/2023-02/Common.Interface"
-                            }
-                        },
                         "common": {
                             "$ref": "#/2023-02/Common.CapabilityProperties"
                         },
@@ -20622,94 +20714,6 @@
                         },
                         "powerManagement": {
                             "$ref": "#/2023-02/PowerManagement.Capabilities"
-                        }
-                    }
-                },
-                "Common.Interface": {
-                    "type": "object",
-                    "required": [
-                        "name",
-                        "commands"
-                    ],
-                    "properties": {
-                        "name": {
-                            "type": "string",
-                            "enum": [
-                                "Common",
-                                "CardReader",
-                                "CashAcceptor",
-                                "CashDispenser",
-                                "CashManagement",
-                                "PinPad",
-                                "Crypto",
-                                "KeyManagement",
-                                "Keyboard",
-                                "TextTerminal",
-                                "Printer",
-                                "BarcodeReader",
-                                "Camera",
-                                "Lights",
-                                "Auxiliaries",
-                                "VendorMode",
-                                "VendorApplication",
-                                "Storage",
-                                "Biometric",
-                                "Check",
-                                "MixedMedia",
-                                "Deposit",
-                                "German",
-                                "BanknoteNeutralization",
-                                "PowerManagement"
-                            ]
-                        },
-                        "commands": {
-                            "type": "object",
-                            "patternProperties": {
-                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
-                                    "type": "object",
-                                    "required": [
-                                        "versions"
-                                    ],
-                                    "properties": {
-                                        "versions": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "pattern": "^[1-9][0-9]*\\.([1-9][0-9]*|0)$"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "events": {
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "default": null,
-                            "patternProperties": {
-                                "^[0-9A-Za-z]*\\.[0-9A-Za-z]*$": {
-                                    "type": "object",
-                                    "required": [
-                                        "versions"
-                                    ],
-                                    "properties": {
-                                        "versions": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "pattern": "^[1-9][0-9]*\\.([1-9][0-9]*|0)$"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        "maximumRequests": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
                         }
                     }
                 },
