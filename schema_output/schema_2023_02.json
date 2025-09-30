@@ -17126,19 +17126,51 @@
                     ],
                     "properties": {
                         "camera": {
-                            "type": "string",
-                            "enum": [
-                                "room",
-                                "person",
-                                "exitSlot"
-                            ]
+                            "$ref": "/schemas#/2023-02/Camera.Camera"
                         },
                         "camData": {
+                            "deprecated": true,
                             "type": [
                                 "string",
                                 "null"
                             ],
                             "default": null
+                        },
+                        "pixelSize": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "$ref": "/schemas#/2023-02/Camera.MaxPixel"
+                        },
+                        "captions": {
+                            "type": [
+                                "array",
+                                "null"
+                            ],
+                            "default": null,
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "text"
+                                ],
+                                "properties": {
+                                    "text": {
+                                        "type": "string"
+                                    },
+                                    "x": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "default": 0
+                                    },
+                                    "y": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "default": 0
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -19357,8 +19389,10 @@
                                     "$ref": "#/2023-02/Camera.MediaState"
                                 }
                             },
-                            "additionalProperties": {
-                                "$ref": "#/2023-02/Camera.MediaState"
+                            "patternProperties": {
+                                "^camera[0-9A-Za-z]+$": {
+                                    "$ref": "#/2023-02/Camera.MediaState"
+                                }
                             }
                         },
                         "cameras": {
@@ -19378,8 +19412,10 @@
                                     "$ref": "#/2023-02/Camera.CamerasState"
                                 }
                             },
-                            "additionalProperties": {
-                                "$ref": "#/2023-02/Camera.CamerasState"
+                            "patternProperties": {
+                                "^camera[0-9A-Za-z]+$": {
+                                    "$ref": "#/2023-02/Camera.CamerasState"
+                                }
                             }
                         },
                         "pictures": {
@@ -19414,13 +19450,59 @@
                                     "minimum": 0
                                 }
                             },
-                            "additionalProperties": {
-                                "type": [
-                                    "integer",
-                                    "null"
-                                ],
-                                "default": null,
-                                "minimum": 0
+                            "patternProperties": {
+                                "^camera[0-9A-Za-z]+$": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "minimum": 0
+                                }
+                            }
+                        },
+                        "mediaSize": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "room": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "minimum": 0
+                                },
+                                "person": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "minimum": 0
+                                },
+                                "exitSlot": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "minimum": 0
+                                }
+                            },
+                            "patternProperties": {
+                                "^camera[0-9A-Za-z]+$": {
+                                    "type": [
+                                        "integer",
+                                        "null"
+                                    ],
+                                    "default": null,
+                                    "minimum": 0
+                                }
                             }
                         }
                     }
@@ -24217,11 +24299,13 @@
                     ],
                     "default": null,
                     "required": [
-                        "cameras"
+                        "cameras",
+                        "cameraDetails"
                     ],
                     "properties": {
                         "cameras": {
                             "type": "object",
+                            "minProperties": 1,
                             "properties": {
                                 "room": {
                                     "$ref": "#/2023-02/Camera.Available"
@@ -24233,8 +24317,10 @@
                                     "$ref": "#/2023-02/Camera.Available"
                                 }
                             },
-                            "additionalProperties": {
-                                "$ref": "#/2023-02/Camera.Available"
+                            "patternProperties": {
+                                "^camera[0-9A-Za-z]+$": {
+                                    "$ref": "#/2023-02/Camera.Available"
+                                }
                             }
                         },
                         "maxPictures": {
@@ -24269,12 +24355,74 @@
                             ],
                             "default": null,
                             "minimum": 0
+                        },
+                        "cameraDetails": {
+                            "type": "object",
+                            "minProperties": 1,
+                            "properties": {
+                                "room": {
+                                    "$ref": "#/2023-02/Camera.Details"
+                                },
+                                "person": {
+                                    "$ref": "#/2023-02/Camera.Details"
+                                },
+                                "exitSlot": {
+                                    "$ref": "#/2023-02/Camera.Details"
+                                }
+                            },
+                            "patternProperties": {
+                                "^camera[0-9A-Za-z]+$": {
+                                    "$ref": "#/2023-02/Camera.Details"
+                                }
+                            }
                         }
                     }
                 },
                 "Camera.Available": {
                     "type": "boolean",
                     "default": false
+                },
+                "Camera.Details": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "mediaType",
+                        "maxPixelSize"
+                    ],
+                    "properties": {
+                        "mediaType": {
+                            "type": "object",
+                            "properties": {
+                                "picture": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "maxPixelSize": {
+                            "type": "object",
+                            "$ref": "#/2023-02/Camera.MaxPixel"
+                        }
+                    }
+                },
+                "Camera.MaxPixel": {
+                    "required": [
+                        "width",
+                        "height"
+                    ],
+                    "properties": {
+                        "width": {
+                            "type": "integer",
+                            "minimum": 1
+                        },
+                        "height": {
+                            "type": "integer",
+                            "minimum": 1
+                        }
+                    }
                 },
                 "German.Capabilities": {
                     "type": [
@@ -31149,6 +31297,10 @@
                             ]
                         }
                     }
+                },
+                "Camera.Camera": {
+                    "type": "string",
+                    "pattern": "^room$|^person$|^exitSlot$|^camera[0-9A-Za-z]+$"
                 },
                 "German.HSMTDataRead": {
                     "minProperties": 1,
