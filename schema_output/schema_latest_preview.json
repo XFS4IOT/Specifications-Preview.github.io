@@ -20675,17 +20675,6 @@
                     ],
                     "default": null,
                     "properties": {
-                        "device": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "enum": [
-                                "online",
-                                "offline"
-                            ]
-                        },
                         "service": {
                             "type": [
                                 "string",
@@ -20698,6 +20687,34 @@
                                 "exitPending",
                                 "inactive"
                             ]
+                        },
+                        "clients": {
+                            "type": [
+                                "array",
+                                "null"
+                            ],
+                            "default": null,
+                            "items": {
+                                "type": "object",
+                                "required": [
+                                    "appName",
+                                    "state"
+                                ],
+                                "properties": {
+                                    "appName": {
+                                        "type": "string"
+                                    },
+                                    "state": {
+                                        "type": "string",
+                                        "enum": [
+                                            "enterPending",
+                                            "active",
+                                            "exitPending",
+                                            "inactive"
+                                        ]
+                                    }
+                                }
+                            }
                         }
                     }
                 },
