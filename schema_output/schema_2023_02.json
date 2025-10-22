@@ -21704,7 +21704,6 @@
                     "required": [
                         "type",
                         "presentControl",
-                        "codelineFormat",
                         "dataSource",
                         "insertOrientation",
                         "positions"
@@ -21825,7 +21824,11 @@
                             "$ref": "#/2023-02/Check.ImageCapabilities"
                         },
                         "codelineFormat": {
-                            "type": "object",
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
                             "minProperties": 1,
                             "properties": {
                                 "cmc7": {
@@ -28399,9 +28402,12 @@
                     "minimum": 1
                 },
                 "Check.CodelineData": {
-                    "type": "string",
-                    "sensitive": true,
-                    "default": ""
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": null,
+                    "sensitive": true
                 },
                 "Check.MagneticReadIndicator": {
                     "type": "string",
