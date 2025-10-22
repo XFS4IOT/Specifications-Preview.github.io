@@ -9412,32 +9412,6 @@
                                 "const": "event"
                             },
                             "name": {
-                                "const": "Deposit.EnvTakenEvent"
-                            },
-                            "version": {
-                                "const": "1.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Deposit.EnvTakenEvent/1.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "event"
-                            },
-                            "name": {
                                 "const": "Deposit.EnvDepositedEvent"
                             },
                             "version": {
@@ -9617,32 +9591,6 @@
                     "header": {
                         "properties": {
                             "type": {
-                                "const": "event"
-                            },
-                            "name": {
-                                "const": "Deposit.MediaDetectedEvent"
-                            },
-                            "version": {
-                                "const": "1.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Deposit.MediaDetectedEvent/1.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
                                 "const": "command"
                             },
                             "name": {
@@ -9724,84 +9672,6 @@
                                 "const": "unsolicited"
                             },
                             "name": {
-                                "const": "Deposit.DepositErrorEvent"
-                            },
-                            "version": {
-                                "const": "1.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Deposit.DepositErrorEvent/1.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
-                                "const": "Deposit.EnvDepositedEvent"
-                            },
-                            "version": {
-                                "const": "1.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Deposit.EnvDepositedEvent/1.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
-                                "const": "Deposit.EnvInsertedEvent"
-                            },
-                            "version": {
-                                "const": "1.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Deposit.EnvInsertedEvent/1.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
                                 "const": "Deposit.EnvTakenEvent"
                             },
                             "version": {
@@ -9815,32 +9685,6 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/Deposit.EnvTakenEvent/1.0"
-                    }
-                }
-            }
-        },
-        {
-            "if": {
-                "properties": {
-                    "header": {
-                        "properties": {
-                            "type": {
-                                "const": "unsolicited"
-                            },
-                            "name": {
-                                "const": "Deposit.InsertDepositEvent"
-                            },
-                            "version": {
-                                "const": "1.0"
-                            }
-                        }
-                    }
-                }
-            },
-            "then": {
-                "properties": {
-                    "payload": {
-                        "$ref": "/messages#/Deposit.InsertDepositEvent/1.0"
                     }
                 }
             }
@@ -17522,9 +17366,6 @@
                     }
                 }
             },
-            "Deposit.EnvTakenEvent": {
-                "1.0": {}
-            },
             "Deposit.EnvDepositedEvent": {
                 "1.0": {}
             },
@@ -17618,42 +17459,6 @@
                     }
                 }
             },
-            "Deposit.MediaDetectedEvent": {
-                "1.0": {
-                    "type": "object",
-                    "required": [
-                        "depositMedia"
-                    ],
-                    "properties": {
-                        "dispenseMedia": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "default": null,
-                            "enum": [
-                                "noMedia",
-                                "retracted",
-                                "dispenser",
-                                "ejected",
-                                "jammed",
-                                "unknown"
-                            ]
-                        },
-                        "depositMedia": {
-                            "type": "string",
-                            "enum": [
-                                "noMedia",
-                                "retracted",
-                                "dispenser",
-                                "ejected",
-                                "jammed",
-                                "unknown"
-                            ]
-                        }
-                    }
-                }
-            },
             "Deposit.RetractCommand": {
                 "1.0": {
                     "type": [
@@ -17705,6 +17510,45 @@
                         "toner": {
                             "type": "boolean",
                             "default": false
+                        }
+                    }
+                }
+            },
+            "Deposit.EnvTakenEvent": {
+                "1.0": {}
+            },
+            "Deposit.MediaDetectedEvent": {
+                "1.0": {
+                    "type": "object",
+                    "required": [
+                        "depositMedia"
+                    ],
+                    "properties": {
+                        "dispenseMedia": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "noMedia",
+                                "retracted",
+                                "dispenser",
+                                "ejected",
+                                "jammed",
+                                "unknown"
+                            ]
+                        },
+                        "depositMedia": {
+                            "type": "string",
+                            "enum": [
+                                "noMedia",
+                                "retracted",
+                                "dispenser",
+                                "ejected",
+                                "jammed",
+                                "unknown"
+                            ]
                         }
                     }
                 }
