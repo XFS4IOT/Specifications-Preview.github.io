@@ -439,6 +439,58 @@
                     "header": {
                         "properties": {
                             "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.Reset"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.ResetCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Common.Reset"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.ResetCommandCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
                                 "const": "unsolicited"
                             },
                             "name": {
@@ -10521,6 +10573,12 @@
                         }
                     }
                 }
+            },
+            "Common.ResetCommand": {
+                "1.0": {}
+            },
+            "Common.ResetCommandCompletion": {
+                "1.0": {}
             },
             "Common.StatusChangedEvent": {
                 "3.0": {
