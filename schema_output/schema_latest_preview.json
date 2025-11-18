@@ -491,6 +491,162 @@
                     "header": {
                         "properties": {
                             "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.GetConfigurationSchema"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.GetConfigurationSchemaCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Common.GetConfigurationSchema"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.GetConfigurationSchemaCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.GetConfiguration"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.GetConfigurationCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Common.GetConfiguration"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.GetConfigurationCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "command"
+                            },
+                            "name": {
+                                "const": "Common.SetConfiguration"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.SetConfigurationCommand/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "completion"
+                            },
+                            "name": {
+                                "const": "Common.SetConfiguration"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.SetConfigurationCompletion/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
                                 "const": "unsolicited"
                             },
                             "name": {
@@ -559,6 +715,32 @@
                 "properties": {
                     "payload": {
                         "$ref": "/messages#/Common.NonceClearedEvent/2.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "unsolicited"
+                            },
+                            "name": {
+                                "const": "Common.ConfigurationChangedEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Common.ConfigurationChangedEvent/1.0"
                     }
                 }
             }
@@ -10580,6 +10762,116 @@
             "Common.ResetCommandCompletion": {
                 "1.0": {}
             },
+            "Common.GetConfigurationSchemaCommand": {
+                "1.0": {}
+            },
+            "Common.GetConfigurationSchemaCompletion": {
+                "1.0": {}
+            },
+            "Common.GetConfigurationCommand": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "selector": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        }
+                    }
+                }
+            },
+            "Common.GetConfigurationCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "notFound"
+                            ]
+                        },
+                        "configuration": {
+                            "type": [
+                                "object",
+                                "array",
+                                "string",
+                                "integer",
+                                "number",
+                                "boolean",
+                                "null"
+                            ],
+                            "items": {
+                                "type": [
+                                    "object",
+                                    "string",
+                                    "integer",
+                                    "number",
+                                    "boolean"
+                                ]
+                            },
+                            "default": null
+                        }
+                    }
+                }
+            },
+            "Common.SetConfigurationCommand": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "selector": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null
+                        },
+                        "configuration": {
+                            "type": [
+                                "object",
+                                "array",
+                                "string",
+                                "integer",
+                                "number",
+                                "boolean",
+                                "null"
+                            ],
+                            "default": null,
+                            "items": {
+                                "type": [
+                                    "object",
+                                    "string",
+                                    "integer",
+                                    "number",
+                                    "boolean"
+                                ]
+                            }
+                        }
+                    }
+                }
+            },
+            "Common.SetConfigurationCompletion": {
+                "1.0": {
+                    "type": "object",
+                    "properties": {
+                        "errorCode": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "enum": [
+                                "notFound"
+                            ]
+                        }
+                    }
+                }
+            },
             "Common.StatusChangedEvent": {
                 "3.0": {
                     "$ref": "/schemas#/2025-04/Common.StatusChangedData"
@@ -10639,6 +10931,9 @@
                         }
                     }
                 }
+            },
+            "Common.ConfigurationChangedEvent": {
+                "1.0": {}
             },
             "CardReader.QueryIFMIdentifierCompletion": {
                 "2.0": {
