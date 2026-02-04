@@ -31195,10 +31195,7 @@
                             "default": "optional"
                         },
                         "keys": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
+                            "type": "string",
                             "enum": [
                                 "numeric",
                                 "hexadecimal",
