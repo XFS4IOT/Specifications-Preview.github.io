@@ -11229,10 +11229,10 @@
                         },
                         "track3JIS": {
                             "$ref": "/schemas#/2026-04/CardReader.WriteTrack"
-                        },
-                        "additionalProperties": {
-                            "$ref": "/schemas#/2026-04/CardReader.WriteTrack"
                         }
+                    },
+                    "additionalProperties": {
+                        "$ref": "/schemas#/2026-04/CardReader.WriteTrack"
                     }
                 }
             },
