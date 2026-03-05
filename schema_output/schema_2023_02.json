@@ -26589,7 +26589,7 @@
                                 "boolean",
                                 "null"
                             ],
-                            "default": false
+                            "default": null
                         },
                         "unrecognized": {
                             "type": [
