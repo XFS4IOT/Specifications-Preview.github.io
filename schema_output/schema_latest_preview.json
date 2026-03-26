@@ -1,6 +1,5 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://xfs4iot.com/2026-04/schema",
     "type": "object",
     "required": [
         "header"
@@ -18248,7 +18247,6 @@
                                             "hardwareError",
                                             "internalError",
                                             "invalidCommand",
-                                            "invalidRequestID",
                                             "timeOut",
                                             "unsupportedCommand",
                                             "invalidData",
