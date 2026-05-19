@@ -5927,6 +5927,32 @@
                                 "const": "event"
                             },
                             "name": {
+                                "const": "Keyboard.SecretKeyEvent"
+                            },
+                            "version": {
+                                "const": "1.0"
+                            }
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "payload": {
+                        "$ref": "/messages#/Keyboard.SecretKeyEvent/1.0"
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "header": {
+                        "properties": {
+                            "type": {
+                                "const": "event"
+                            },
+                            "name": {
                                 "const": "Keyboard.EnterDataEvent"
                             },
                             "version": {
@@ -14692,7 +14718,7 @@
                             "default": "X"
                         },
                         "activeKeys": {
-                            "$ref": "/schemas#/2023-02/Keyboard.ActiveKeys"
+                            "$ref": "/schemas#/2023-02/Keyboard.PinEntryActiveKeys"
                         }
                     }
                 }
@@ -14734,6 +14760,9 @@
                     "$ref": "/schemas#/2023-02/Keyboard.KeyPressed"
                 }
             },
+            "Keyboard.SecretKeyEvent": {
+                "1.0": {}
+            },
             "Keyboard.EnterDataEvent": {
                 "2.0": {}
             },
@@ -14759,7 +14788,7 @@
                             "default": false
                         },
                         "activeKeys": {
-                            "$ref": "/schemas#/2023-02/Keyboard.ActiveKeys"
+                            "$ref": "/schemas#/2023-02/Keyboard.DataEntryActiveKeys"
                         }
                     }
                 }
@@ -14780,11 +14809,6 @@
                                 "noActivekeys"
                             ]
                         },
-                        "keys": {
-                            "type": "integer",
-                            "minimum": 0,
-                            "default": 0
-                        },
                         "pinKeys": {
                             "type": [
                                 "array",
@@ -14792,7 +14816,7 @@
                             ],
                             "default": null,
                             "items": {
-                                "$ref": "/schemas#/2023-02/Keyboard.KeyPressed"
+                                "$ref": "/schemas#/2023-02/Keyboard.DataEntryKeyPressed"
                             }
                         },
                         "completion": {
@@ -14824,7 +14848,7 @@
                             "default": false
                         },
                         "activeKeys": {
-                            "$ref": "/schemas#/2023-02/Keyboard.ActiveKeys"
+                            "$ref": "/schemas#/2023-02/Keyboard.SecureKeyEntryActiveKeys"
                         },
                         "verificationType": {
                             "type": "string",
@@ -21081,6 +21105,9 @@
                         },
                         "persistentDataStore": {
                             "$ref": "#/2023-02/Common.PersistentDataStoreCapability"
+                        },
+                        "fonts": {
+                            "$ref": "#/2023-02/Common.Fonts"
                         }
                     }
                 },
@@ -21242,6 +21269,225 @@
                         "capacity": {
                             "type": "integer",
                             "minimum": 1
+                        }
+                    }
+                },
+                "Common.Fonts": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "default": null,
+                    "required": [
+                        "source",
+                        "defaultFont"
+                    ],
+                    "properties": {
+                        "source": {
+                            "type": "string",
+                            "enum": [
+                                "system",
+                                "device"
+                            ]
+                        },
+                        "defaultFont": {
+                            "type": "string"
+                        },
+                        "device": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "patternProperties": {
+                                "^.+$": {
+                                    "$ref": "#/2023-02/Common.FontStyle"
+                                }
+                            }
+                        }
+                    }
+                },
+                "Common.FontStyle": {
+                    "type": "object",
+                    "minProperties": 1,
+                    "properties": {
+                        "bold": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "italic": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "underline": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "single": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "double": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "width": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "single": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "double": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "triple": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "quadruple": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "strike": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "rotate": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "ninety": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "upsideDown": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "twoSeventy": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "characterSpacing": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "standard": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "proportional": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "condensed": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "lineSpacing": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "standard": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "double": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "triple": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "quadruple": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "script": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "standard": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "superscript": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "subscript": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "overscore": {
+                            "type": "boolean",
+                            "default": false
+                        },
+                        "quality": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "default": null,
+                            "minProperties": 1,
+                            "properties": {
+                                "standard": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "letter": {
+                                    "type": "boolean",
+                                    "default": false
+                                },
+                                "nearLetter": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        },
+                        "transparent": {
+                            "type": "boolean",
+                            "default": false
                         }
                     }
                 },
@@ -29810,7 +30056,23 @@
                             ],
                             "default": null,
                             "items": {
-                                "$ref": "#/2023-02/Keyboard.LayoutFrame"
+                                "$ref": "#/2023-02/Keyboard.LayoutDataFrame"
+                            }
+                        }
+                    }
+                },
+                "Keyboard.LayoutDataFrame": {
+                    "$ref": "#/2023-02/Keyboard.LayoutFrame",
+                    "required": [
+                        "keys"
+                    ],
+                    "properties": {
+                        "keys": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Keyboard.DataKey"
                             }
                         }
                     }
@@ -29821,8 +30083,7 @@
                         "xPos",
                         "yPos",
                         "xSize",
-                        "ySize",
-                        "keys"
+                        "ySize"
                     ],
                     "properties": {
                         "xPos": {
@@ -29857,28 +30118,26 @@
                                     "default": false
                                 }
                             }
-                        },
-                        "keys": {
-                            "type": "array",
-                            "minItems": 1,
-                            "items": {
-                                "type": "object",
-                                "$ref": "#/2023-02/Keyboard.Key"
-                            }
                         }
                     }
                 },
-                "Keyboard.Key": {
+                "Keyboard.DataKey": {
                     "$ref": "#/2023-02/Keyboard.KeyPosition",
                     "required": [
                         "key"
                     ],
                     "properties": {
                         "key": {
-                            "$ref": "#/2023-02/Keyboard.AllKeys"
+                            "type": "string",
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                         },
                         "shiftKey": {
-                            "$ref": "#/2023-02/Keyboard.AllKeysNullable"
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|decPoint|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                         }
                     }
                 },
@@ -29908,18 +30167,6 @@
                         }
                     }
                 },
-                "Keyboard.AllKeys": {
-                    "type": "string",
-                    "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
-                },
-                "Keyboard.AllKeysNullable": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "default": null,
-                    "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
-                },
                 "Keyboard.LayoutPin": {
                     "properties": {
                         "pin": {
@@ -29929,8 +30176,44 @@
                             ],
                             "default": null,
                             "items": {
-                                "$ref": "#/2023-02/Keyboard.LayoutFrame"
+                                "$ref": "#/2023-02/Keyboard.LayoutPinFrame"
                             }
+                        }
+                    }
+                },
+                "Keyboard.LayoutPinFrame": {
+                    "$ref": "#/2023-02/Keyboard.LayoutFrame",
+                    "required": [
+                        "keys"
+                    ],
+                    "properties": {
+                        "keys": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Keyboard.PinKey"
+                            }
+                        }
+                    }
+                },
+                "Keyboard.PinKey": {
+                    "$ref": "#/2023-02/Keyboard.KeyPosition",
+                    "required": [
+                        "key"
+                    ],
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|shift|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
+                        },
+                        "shiftKey": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                         }
                     }
                 },
@@ -29943,15 +30226,50 @@
                             ],
                             "default": null,
                             "items": {
-                                "$ref": "#/2023-02/Keyboard.LayoutFrame"
+                                "$ref": "#/2023-02/Keyboard.LayoutSecureFrame"
                             }
                         }
                     }
                 },
-                "Keyboard.ActiveKeys": {
+                "Keyboard.LayoutSecureFrame": {
+                    "$ref": "#/2023-02/Keyboard.LayoutFrame",
+                    "required": [
+                        "keys"
+                    ],
+                    "properties": {
+                        "keys": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                                "type": "object",
+                                "$ref": "#/2023-02/Keyboard.SecureKey"
+                            }
+                        }
+                    }
+                },
+                "Keyboard.SecureKey": {
+                    "required": [
+                        "key"
+                    ],
+                    "properties": {
+                        "key": {
+                            "type": "string",
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|shift|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
+                        },
+                        "shiftKey": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "default": null,
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
+                        }
+                    }
+                },
+                "Keyboard.PinEntryActiveKeys": {
                     "type": "object",
                     "patternProperties": {
-                        "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$": {
+                        "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|shift|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$": {
                             "type": "object",
                             "properties": {
                                 "terminate": {
@@ -29972,13 +30290,11 @@
                         "auto",
                         "enter",
                         "cancel",
-                        "continue",
                         "clear",
                         "backspace",
                         "fdk",
                         "help",
-                        "fk",
-                        "contFdk"
+                        "fk"
                     ]
                 },
                 "Keyboard.KeyPressed": {
@@ -29987,11 +30303,9 @@
                         "digit"
                     ],
                     "properties": {
-                        "completion": {
-                            "$ref": "#/2023-02/Keyboard.EntryCompletion"
-                        },
                         "digit": {
-                            "$ref": "#/2023-02/Keyboard.AllKeys"
+                            "type": "string",
+                            "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|decPoint|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
                         }
                     }
                 },
@@ -30008,6 +30322,38 @@
                             "$ref": "#/2023-02/Keyboard.LayoutSecure"
                         }
                     ]
+                },
+                "Keyboard.DataEntryActiveKeys": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^(zero|one|two|three|four|five|six|seven|eight|nine|enter|cancel|clear|backspace|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$": {
+                            "type": "object",
+                            "properties": {
+                                "terminate": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        }
+                    }
+                },
+                "Keyboard.DataEntryKeyPressed": {
+                    "type": "string",
+                    "pattern": "^(zero|one|two|three|four|five|six|seven|eight|nine|help|decPoint|shift|doubleZero|tripleZero|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$"
+                },
+                "Keyboard.SecureKeyEntryActiveKeys": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^(zero|one|two|three|four|five|six|seven|eight|nine|[a-f]|enter|cancel|clear|backspace|help|shift|fdk(0[1-9]|[12][0-9]|3[0-2])|oem[a-zA-Z0-9]*)$": {
+                            "type": "object",
+                            "properties": {
+                                "terminate": {
+                                    "type": "boolean",
+                                    "default": false
+                                }
+                            }
+                        }
+                    }
                 },
                 "PinPad.PinBlock": {
                     "required": [
