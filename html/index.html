@@ -7082,7 +7082,7 @@
     <div id="coverpage">
       <div id="center">
       <h1>Extensions for Financial Services (XFS)</h1>
-      <h2>XFS4IoT Specification<br><br>2026-04 Preview<br/><br/>May 19, 2026</h2>
+      <h2>XFS4IoT Specification<br><br>2026-04 Preview<br/><br/>June 28, 2026</h2>
       </div>
 
       <p>This CEN Workshop Agreement has been drafted and approved by a Workshop of representatives of interested parties,
@@ -52638,10 +52638,12 @@ below. This way though is the recommended way.</p>
 certificate, which has been signed by the trusted CA. The device uses the Public Key of the CA (loaded at the time of
 production) to verify the validity of the certificate. If the certificate is valid, the device stores the HOST’s Public
 Verification Key.</li>
-<li>Next, <a href="#keymanagement.getcertificate">KeyManagement.GetCertificate</a> is called. The device then sends a message that
-contains a certificate, which is signed by the CA and is sent to the HOST. The HOST uses the Public Key from the CA to
-verify the certificate. If valid then the HOST stores the device’s verification or encryption key (primary or secondary
-this depends on the state of the device).</li>
+<li>Next, <a href="#keymanagement.getcertificate">KeyManagement.GetCertificate</a> is used to request the device
+<a href="#common.capabilities.completion.properties.keymanagement.certificatetypes.enckey">encKey</a> and
+<a href="#common.capabilities.completion.properties.keymanagement.certificatetypes.verificationkey">verificationKey</a>
+certificates. The device certificates which are signed by the CA are sent to the HOST. The HOST uses the Public Key
+from the CA to verify the certificates. If valid then the HOST stores the device’s verification and encryption keys
+(primary or secondary this depends on the state of the device).</li>
 </ul>
 <p>The following diagram shows how the Host and ATM Load and Get each other’s information to make Remote Key Loading
 possible:</p>
@@ -52678,9 +52680,9 @@ R<sub>DEVICE</sub> from the device to be used in the authenticating the
 </li>
 <li>
 <p>The Host obtains a Key Transport Key and wants to transfer it to the device. The Host constructs a key block
-containing an identifier of the host, I<sub>HOST</sub>, and the key, K<sub>KTK</sub>, and enciphers the block,
-using the device's Public Encryption Key from the <a href="#keymanagement.getcertificate">KeyManagement.GetCertificate</a>
-command.</p>
+containing an identifier of the host, I<sub>HOST</sub>, and the key, K<sub>KTK</sub>, and enciphers the block
+using the device <a href="#common.capabilities.completion.description.keymanagement.certificatetypes.enckey">encKey</a>
+from the <a href="#keymanagement.getcertificate">KeyManagement.GetCertificate</a> command.</p>
 </li>
 <li>
 <p>The host generates random data and builds the outer message containing the random number of the host,
@@ -52690,22 +52692,23 @@ the encryptor, I<sub>ENC</sub>, and the enciphered key block. The host signs the
 signature key and sends the message to the device using <a href="#keymanagement.importkey">KeyManagement.ImportKey</a>.</p>
 <p>The device then verifies the host's signature on the message by using the host's Public Verification Key. Then the
 device checks the identifier and the random number of the device passed in the message to make sure that the device
-is talking to the right host. The device then deciphers the enciphered block using its private verification key.
+is talking to the right host. The device then deciphers the enciphered block using its Private Encryption Key.
 After the message has been deciphered, the device checks the Identifier of the host. Finally, if everything checks
 out to this point the device will load the Key Transport Key.</p>
 <p>NOTE: If one step of this verification occurs the device will return the proper error to the host.</p>
 </li>
 <li>
 <p>After the Key Transport Key has been accepted, the device constructs a message that contains the random number of
-the host, the random number of the device and the host identifier all signed by the private signature key of the
+the host, the random number of the device and the host identifier all signed by the Private Verification Key of the
 device. This message is sent to the host.</p>
 </li>
 <li>
-<p>The host verifies the message sent from the device by using the device's public verification key. The host then
-checks the identifier of the host and then compares the identifier in the message with the one stored in the host.
-The host then checks the random number sent in the message and to the one stored in the host. The host finally
-checks the device's random number with the one received in the
-<a href="#keymanagement.startkeyexchange">KeyManagement.StartKeyExchange</a> command.</p>
+<p>The host verifies the message sent from the device using the
+<a href="#common.capabilities.completion.description.keymanagement.certificatetypes.verificationkey">verificationKey</a> from
+the <a href="#keymanagement.getcertificate">KeyManagement.GetCertificate</a> command. The host then checks the identifier of
+the host and then compares the identifier in the message with the one stored in the host. The host then checks the
+random number sent in the message and to the one stored in the host. The host finally checks the device random
+number with the one received in the <a href="#keymanagement.startkeyexchange">KeyManagement.StartKeyExchange</a> command.</p>
 </li>
 </ol>
 <p>The following diagram below shows how the host and device transmit the Key Transport Key.</p>
@@ -55983,7 +55986,9 @@ taken over. The output of this command will specify in the PKCS#7 (See
     </tr>
   </thead>
   <tbody>
-    <tr><td><a id="keymanagement.getcertificate.command.description.getcertificate"></a><p>getCertificate</p><p><p>Specifies which public key certificate is requested.
+    <tr><td><a id="keymanagement.getcertificate.command.description.getcertificate"></a><p>getCertificate</p><p><p>Specifies which public key certificate is requested. Applications should reference the
+<a href="#common.capabilities.completion.properties.keymanagement.certificatetypes">certificateTypes</a> capability
+to determine which certificate types are supported by the Service Provider before requesting a certificate.
 If the <a href="#common.status">KeyManagement.Status</a> command indicates Primary Certificates are accepted, then
 the Primary Public Encryption Key or the Primary Public Verification Key will be read out. If the
 <a href="#common.status">KeyManagement.Status</a> command indicates Secondary Certificates are accepted, then the
@@ -55991,7 +55996,10 @@ Secondary Public Encryption Key or the Secondary Public Verification Key will be
 values are possible:</p>
 <ul>
 <li><code>enckey</code> - The corresponding encryption key is to be returned.</li>
-<li><code>verificationkey</code> - The corresponding verification key is to be returned.</li>
+<li><code>verificationkey</code> - The corresponding verification key is to be returned. This key is only
+applicable to the original
+<a href="#keymanagement.generalinformation.crklsummary">Remote Key Loading Using Certificates</a>. It is not
+required for <a href="#keymanagement.generalinformation.tr34rkl">Remote Key Loading Using TR34</a>.</li>
 <li><code>hostkey</code> - The host public key is to be returned.</li>
 </ul>
 </p><pre><code>Type: string
