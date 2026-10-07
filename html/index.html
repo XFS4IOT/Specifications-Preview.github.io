@@ -7082,7 +7082,7 @@
     <div id="coverpage">
       <div id="center">
       <h1>Extensions for Financial Services (XFS)</h1>
-      <h2>XFS4IoT Specification<br><br>2026-04 Preview<br/><br/>June 28, 2026</h2>
+      <h2>XFS4IoT Specification<br><br>2026-04 Preview<br/><br/>October 7, 2026</h2>
       </div>
 
       <p>This CEN Workshop Agreement has been drafted and approved by a Workshop of representatives of interested parties,
@@ -32413,6 +32413,11 @@ time specified in the call for a card to be either inserted or pulled through. T
 tracks specified.</p>
 <p>The <a href="#cardreader.insertcardevent">CardReader.InsertCardEvent</a> will be generated when there is no card in the card
 reader and the device is ready to accept a card.</p>
+<p>If the magnetic stripe track data is not already in 8 bit form, the data is converted from its 5 or 7 bit
+character form to 8 bit ASCII form. The parity bit from each 5 or 7 bit magnetic stripe character is discarded.
+Start and end sentinel characters are not returned to the application. Field separator characters are returned to
+the application, and are also converted to 8 bit ASCII form. The ASCII data is base64 encoded in the
+<a href="#cardreader.readrawdata.completion">CardReader.ReadRawDataCompletion</a> message.</p>
 <p>For non-motorized card readers which read track data on card exit, the <em>invalidData</em> completion code is returned
 when a call to this command is made to read both track data and chip data.</p>
 <p>For latched dip card readers, the device may, dependent on configuration, automatically latch the card when the
