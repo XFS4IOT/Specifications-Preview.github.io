@@ -15295,6 +15295,7 @@
                             ]
                         },
                         "pinBlock": {
+                            "sensitive": true,
                             "$ref": "/schemas#/2026-04/Common.Base64Nullable"
                         }
                     }
